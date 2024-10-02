@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICam4DSetup", "DropFile_I3d\ICam4DSetup.csproj", "{DC8FF3CD-FE2E-4FA0-9260-2F6DC16D6F9E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ICamInstaller", "ICamSetup\ICamSetup.vdproj", "{21A4B6D3-9BC5-4C4D-962E-27BE3B344966}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC8FF3CD-FE2E-4FA0-9260-2F6DC16D6F9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC8FF3CD-FE2E-4FA0-9260-2F6DC16D6F9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC8FF3CD-FE2E-4FA0-9260-2F6DC16D6F9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC8FF3CD-FE2E-4FA0-9260-2F6DC16D6F9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21A4B6D3-9BC5-4C4D-962E-27BE3B344966}.Debug|Any CPU.ActiveCfg = Debug
+		{21A4B6D3-9BC5-4C4D-962E-27BE3B344966}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D5C19FD-7116-432B-8501-9D90246C813A}
+	EndGlobalSection
+EndGlobal
