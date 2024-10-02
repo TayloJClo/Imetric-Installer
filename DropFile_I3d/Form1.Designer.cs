@@ -38,11 +38,10 @@
             labelMessage = new Label();
             folderBrowserDialog = new FolderBrowserDialog();
             openFileDialog = new OpenFileDialog();
-            button1 = new Button();
-            button2 = new Button();
             buttonInstallDriver = new Button();
             buttonIScan3d = new Button();
             buttonInstallZip7 = new Button();
+            buttonInstallOffice = new Button();
             SuspendLayout();
             // 
             // buttonGetFile
@@ -78,9 +77,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 53);
             label1.Name = "label1";
-            label1.Size = new Size(103, 15);
+            label1.Size = new Size(140, 15);
             label1.TabIndex = 3;
-            label1.Text = "ICamBody Serial #";
+            label1.Text = "ICamBody Serial Number";
             // 
             // textBoxCustomerID
             // 
@@ -94,9 +93,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(10, 5);
             label2.Name = "label2";
-            label2.Size = new Size(66, 15);
+            label2.Size = new Size(113, 15);
             label2.TabIndex = 5;
-            label2.Text = "ICam Serial";
+            label2.Text = "ICam Serial Number";
             // 
             // labelProgress
             // 
@@ -118,29 +117,9 @@
             // 
             openFileDialog.FileName = "openFileDialog";
             // 
-            // button1
-            // 
-            button1.Location = new Point(295, 22);
-            button1.Name = "button1";
-            button1.Size = new Size(36, 23);
-            button1.TabIndex = 12;
-            button1.Text = "..";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(294, 72);
-            button2.Name = "button2";
-            button2.Size = new Size(37, 23);
-            button2.TabIndex = 13;
-            button2.Text = "..";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // buttonInstallDriver
             // 
-            buttonInstallDriver.Location = new Point(353, 24);
+            buttonInstallDriver.Location = new Point(304, 20);
             buttonInstallDriver.Name = "buttonInstallDriver";
             buttonInstallDriver.Size = new Size(137, 23);
             buttonInstallDriver.TabIndex = 14;
@@ -150,34 +129,43 @@
             // 
             // buttonIScan3d
             // 
-            buttonIScan3d.Location = new Point(353, 56);
+            buttonIScan3d.Location = new Point(304, 107);
             buttonIScan3d.Name = "buttonIScan3d";
-            buttonIScan3d.Size = new Size(137, 23);
+            buttonIScan3d.Size = new Size(137, 44);
             buttonIScan3d.TabIndex = 15;
-            buttonIScan3d.Text = "Install IScan3D_Dental";
+            buttonIScan3d.Text = "Install IScan3D Dental";
             buttonIScan3d.UseVisualStyleBackColor = true;
             buttonIScan3d.Click += buttonIScan3d_Click;
             // 
             // buttonInstallZip7
             // 
-            buttonInstallZip7.Location = new Point(353, 88);
+            buttonInstallZip7.Location = new Point(304, 49);
             buttonInstallZip7.Name = "buttonInstallZip7";
             buttonInstallZip7.Size = new Size(137, 23);
             buttonInstallZip7.TabIndex = 16;
-            buttonInstallZip7.Text = "Install Zip7";
+            buttonInstallZip7.Text = "Install 7Zip";
             buttonInstallZip7.UseVisualStyleBackColor = true;
             buttonInstallZip7.Click += buttonInstallZip7_Click;
+            // 
+            // buttonInstallOffice
+            // 
+            buttonInstallOffice.Location = new Point(304, 78);
+            buttonInstallOffice.Name = "buttonInstallOffice";
+            buttonInstallOffice.Size = new Size(137, 23);
+            buttonInstallOffice.TabIndex = 17;
+            buttonInstallOffice.Text = "Install LibreOffice";
+            buttonInstallOffice.UseVisualStyleBackColor = true;
+            buttonInstallOffice.Click += buttonInstallOffice_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(500, 151);
+            ClientSize = new Size(474, 164);
+            Controls.Add(buttonInstallOffice);
             Controls.Add(buttonInstallZip7);
             Controls.Add(buttonIScan3d);
             Controls.Add(buttonInstallDriver);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(labelMessage);
             Controls.Add(labelProgress);
             Controls.Add(label2);
@@ -187,7 +175,7 @@
             Controls.Add(buttonCancel);
             Controls.Add(buttonGetFile);
             Name = "Form1";
-            Text = "I3D Systems File Transfer";
+            Text = "ICam Setup";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -204,10 +192,9 @@
         private Label labelMessage;
         private FolderBrowserDialog folderBrowserDialog;
         private OpenFileDialog openFileDialog;
-        private Button button1;
-        private Button button2;
         private Button buttonInstallDriver;
         private Button buttonIScan3d;
         private Button buttonInstallZip7;
+        private Button buttonInstallOffice;
     }
 }

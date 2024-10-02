@@ -119,6 +119,29 @@ namespace DropFile_I3d
             install(batFilePath);
         }
 
+        private void buttonInstallOffice_Click(object sender, EventArgs e)
+        {
+            // The URL you want to open
+            string url = "https://www.libreoffice.org/download/download-libreoffice";
+
+            try
+            {
+                // Use Process.Start to open the URL in the default web browser
+                ProcessStartInfo processInfo = new ProcessStartInfo("explorer.exe", url);
+                Process.Start(processInfo);
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors that may occur (e.g., no default browser set)
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+
+            
+            //string batFilePath = @"C:\I3D_Software\General\LibreOffice\LibreOffice_24.8.2_Win_x86-64.msi";
+            //install(batFilePath);
+
+        }
+
         private void buttonInstallZip7_Click(object sender, EventArgs e)
         {
             string batFilePath = @"C:\I3D_Software\General\7zip\7z1900-x64.exe";
@@ -253,15 +276,6 @@ namespace DropFile_I3d
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 //private async Task DownloadFileFromDropbox()

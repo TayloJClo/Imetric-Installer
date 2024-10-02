@@ -513,12 +513,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1718005B5252440EA431E0D563DBDCC8"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_171B71BAE7D04C1D8FEC0A5997342B00"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1479,12 +1473,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_55F5B4ECE7164863857F4C876E895BA1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_563A0EB149BE41E1A512B9875158D6AD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1701,12 +1689,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_62EC520266F74AEB8A75C391568C44E0"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_632065CC1902415DB6F73F584C25A8C3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1840,12 +1822,6 @@
         "Entry"
         {
         "MsmKey" = "8:_6BF6FDEA17D0412B9B0FF1FBB4E9698A"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6BFD181BF8FE4345B04061238AFD6BE6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2493,12 +2469,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9845CD16B3DF425F98B28DBEC5DD8E3A"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_98C3D11A4CC54285801A08E4E570231B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2674,12 +2644,6 @@
         "Entry"
         {
         "MsmKey" = "8:_A4AF5F374031429EB59C882A32BCDE5D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A54AE2BB9E844264968E7946FE1878DB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2901,12 +2865,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B383B9069E5F4B2A9AAB1EB5E5D10844"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_B39E096DBBF9430CAB950778D23E6C78"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2950,12 +2908,6 @@
         "Entry"
         {
         "MsmKey" = "8:_B663D34E86B64F7E8B8FCAF917360BF2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B78349438F9B4306AA05C0F9C7A89574"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3579,12 +3531,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_DF900DE9F71946C0A5498AA1A3239A20"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_DF9BCCE2E7634FFF831DBEFC37C2E11A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -3724,12 +3670,6 @@
         "Entry"
         {
         "MsmKey" = "8:_E7E465AB79A9495BA0CBA91DDAABB476"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E805416E73C24783B43D97AF72EB4E59"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -6000,26 +5940,6 @@
             "TargetName" = "8:14047.sdfa"
             "Tag" = "8:"
             "Folder" = "8:_815F577FE52F402A8A4FAA993C027B1D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1718005B5252440EA431E0D563DBDCC8"
-            {
-            "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Software\\General\\HwMonitor\\hwmonitor_1.43\\hwm_readme.txt"
-            "TargetName" = "8:hwm_readme.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_252A38ECE58842AD90C82A1058CA04D7"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -9234,26 +9154,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_55F5B4ECE7164863857F4C876E895BA1"
-            {
-            "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Software\\Imetric4D Software\\IScan3D\\IScan3D_v9.1.112_2024-03-07_64bit.msi"
-            "TargetName" = "8:IScan3D_v9.1.112_2024-03-07_64bit.msi"
-            "Tag" = "8:"
-            "Folder" = "8:_55D0CE3A2C4D423C9968302B6038A771"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_563A0EB149BE41E1A512B9875158D6AD"
             {
             "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Systems\\_0 exocad implant libraries\\_0 exocad implant libraries\\NorisMedical_MultiUnit\\C9210_Rev3.stl"
@@ -9974,26 +9874,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_62EC520266F74AEB8A75C391568C44E0"
-            {
-            "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Software\\General\\HwMonitor\\hwmonitor_1.43\\HWMonitor_x64.exe"
-            "TargetName" = "8:HWMonitor_x64.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_252A38ECE58842AD90C82A1058CA04D7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_632065CC1902415DB6F73F584C25A8C3"
             {
             "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Systems\\_0 exocad implant libraries\\_0 exocad implant libraries\\BioHorizons_Hybrid_Abutments_Non-Hexed_Vulcan\\STL-PGSSB8-EX-SCAN Rev A.STL"
@@ -10440,26 +10320,6 @@
             "TargetName" = "8:config.xml"
             "Tag" = "8:"
             "Folder" = "8:_E79AA0D936BF4A3E8DFBC199DDA55C69"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6BFD181BF8FE4345B04061238AFD6BE6"
-            {
-            "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Software\\General\\HwMonitor\\hwmonitor_1.43\\HWMonitor_x32.exe"
-            "TargetName" = "8:HWMonitor_x32.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_252A38ECE58842AD90C82A1058CA04D7"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -12594,26 +12454,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9845CD16B3DF425F98B28DBEC5DD8E3A"
-            {
-            "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Software\\General\\Beyond Compare\\Beyond Compare download.txt"
-            "TargetName" = "8:Beyond Compare download.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_EB59D01D5EB94835B517FFAF83DAACA3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_98C3D11A4CC54285801A08E4E570231B"
             {
             "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Systems\\I221301 ICamBody Library\\_0 exocad ImplantPosition examples\\MIS TiBase CC480.implantPosition"
@@ -13200,26 +13040,6 @@
             "TargetName" = "8:MU-CC480 shell.sdfa"
             "Tag" = "8:"
             "Folder" = "8:_DE9C26304AB64D069E0F588F309A1242"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A54AE2BB9E844264968E7946FE1878DB"
-            {
-            "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Software\\General\\Imetric Logo\\icon_delete.png"
-            "TargetName" = "8:icon_delete.png"
-            "Tag" = "8:"
-            "Folder" = "8:_C212718A40CB4FE784D6B11CF531085F"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -13954,26 +13774,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B383B9069E5F4B2A9AAB1EB5E5D10844"
-            {
-            "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Software\\General\\Imetric Logo\\icon_ok.png"
-            "TargetName" = "8:icon_ok.png"
-            "Tag" = "8:"
-            "Folder" = "8:_C212718A40CB4FE784D6B11CF531085F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B39E096DBBF9430CAB950778D23E6C78"
             {
             "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Systems\\_0 exocad implant libraries\\_0 exocad implant libraries\\StraumannGroup_Variobase-Bar_Bridge_inhouse\\S_A RB.sdfa"
@@ -14120,26 +13920,6 @@
             "TargetName" = "8:MU inner.stl"
             "Tag" = "8:"
             "Folder" = "8:_9C5B82EF25A64D7B9CEE7C94F52E3606"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B78349438F9B4306AA05C0F9C7A89574"
-            {
-            "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Software\\General\\HwMonitor\\HW Monitor Download.txt"
-            "TargetName" = "8:HW Monitor Download.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_5A9D63A4C49341A4950FB30664A78B1E"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -16214,26 +15994,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DF900DE9F71946C0A5498AA1A3239A20"
-            {
-            "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Software\\General\\Beyond Compare\\BCompare-4.3.5.24893.exe"
-            "TargetName" = "8:BCompare-4.3.5.24893.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_EB59D01D5EB94835B517FFAF83DAACA3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DF9BCCE2E7634FFF831DBEFC37C2E11A"
             {
             "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Systems\\_0 exocad implant libraries\\BioHorizons_Hybrid_Abutments_Non-Hexed_Vulcan\\config.xml"
@@ -16700,26 +16460,6 @@
             "TargetName" = "8:36007.sdfa"
             "Tag" = "8:"
             "Folder" = "8:_815F577FE52F402A8A4FAA993C027B1D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E805416E73C24783B43D97AF72EB4E59"
-            {
-            "SourcePath" = "8:\\\\vmware-host\\Shared Folders\\MyDownLoads\\Tj's installer\\Version 9.1 ICam4D\\I3D_Software\\General\\HwMonitor\\hwmonitor_1.43.exe"
-            "TargetName" = "8:hwmonitor_1.43.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_5A9D63A4C49341A4950FB30664A78B1E"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -18443,7 +18183,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_24CB493B3C704A829ADE1BB05D1DB878"
             {
             "Name" = "8:#1916"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:DesktopFolder"
@@ -18475,7 +18215,7 @@
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_583F4896440445E3A3C82443CB4EC192"
                     {
                     "Name" = "8:Imetric4D Data"
-                    "AlwaysCreate" = "11:FALSE"
+                    "AlwaysCreate" = "11:TRUE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_D155C81E938F4E908E011D38D88FA4EF"
@@ -19260,28 +19000,6 @@
                                         {
                                         }
                                     }
-                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_5A9D63A4C49341A4950FB30664A78B1E"
-                                    {
-                                    "Name" = "8:HwMonitor"
-                                    "AlwaysCreate" = "11:FALSE"
-                                    "Condition" = "8:"
-                                    "Transitive" = "11:FALSE"
-                                    "Property" = "8:_80BEFAD3FBB84EC88F7E316F3CDFF796"
-                                        "Folders"
-                                        {
-                                            "{9EF0B969-E518-4E46-987F-47570745A589}:_252A38ECE58842AD90C82A1058CA04D7"
-                                            {
-                                            "Name" = "8:hwmonitor_1.43"
-                                            "AlwaysCreate" = "11:FALSE"
-                                            "Condition" = "8:"
-                                            "Transitive" = "11:FALSE"
-                                            "Property" = "8:_5BE5091CB3AE4F208707A5690266BF57"
-                                                "Folders"
-                                                {
-                                                }
-                                            }
-                                        }
-                                    }
                                     "{9EF0B969-E518-4E46-987F-47570745A589}:_5FCBCE4DAFA24F7B965BAD26E6940AC2"
                                     {
                                     "Name" = "8:Imetric Wallpaper"
@@ -19315,28 +19033,6 @@
                                         {
                                         }
                                     }
-                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_C212718A40CB4FE784D6B11CF531085F"
-                                    {
-                                    "Name" = "8:Imetric Logo"
-                                    "AlwaysCreate" = "11:FALSE"
-                                    "Condition" = "8:"
-                                    "Transitive" = "11:FALSE"
-                                    "Property" = "8:_937C8891E26F4238BA86D16EFE949AB0"
-                                        "Folders"
-                                        {
-                                        }
-                                    }
-                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_EB59D01D5EB94835B517FFAF83DAACA3"
-                                    {
-                                    "Name" = "8:Beyond Compare"
-                                    "AlwaysCreate" = "11:FALSE"
-                                    "Condition" = "8:"
-                                    "Transitive" = "11:FALSE"
-                                    "Property" = "8:_39809335C53F47A892674F3F61C947B3"
-                                        "Folders"
-                                        {
-                                        }
-                                    }
                                     "{9EF0B969-E518-4E46-987F-47570745A589}:_ED6AC9A2E54A48FDB42190B7D7113CC4"
                                     {
                                     "Name" = "8:7zip"
@@ -19366,17 +19062,6 @@
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "Property" = "8:_25796EE7012F453FB67DBED4A2070CCE"
-                                        "Folders"
-                                        {
-                                        }
-                                    }
-                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_55D0CE3A2C4D423C9968302B6038A771"
-                                    {
-                                    "Name" = "8:IScan3D"
-                                    "AlwaysCreate" = "11:FALSE"
-                                    "Condition" = "8:"
-                                    "Transitive" = "11:FALSE"
-                                    "Property" = "8:_0311B23B58F64B5EA55C232213C8CC99"
                                         "Folders"
                                         {
                                         }
@@ -19426,7 +19111,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ICamSetup"
         "ProductCode" = "8:{C9431293-6E83-42F6-87C9-A3283CA0EA02}"
-        "PackageCode" = "8:{4642173A-1D3B-4560-9532-7315A87AAE8C}"
+        "PackageCode" = "8:{166B6C05-1185-497B-8337-6AF607005F4F}"
         "UpgradeCode" = "8:{B77087ED-A503-4151-B44A-EFA56F55B0D6}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -19546,6 +19231,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_170073B35EE946DBA93E6691ABE607B1"
+            {
+            "Name" = "8:UsbTreeView.exe"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_49D1F0FF7CFB4D539DEAC8A17A717832"
+            "Folder" = "8:_24CB493B3C704A829ADE1BB05D1DB878"
+            "WorkingFolder" = "8:_05948563B2BB40008C9522CEC36E1979"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9E38F1EA2A4D458B91AC53B4055203AD"
+            {
+            "Name" = "8:Imetric4D Data"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_583F4896440445E3A3C82443CB4EC192"
+            "Folder" = "8:_24CB493B3C704A829ADE1BB05D1DB878"
+            "WorkingFolder" = "8:_E127D524F31F419895D6B4B243062EE8"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
