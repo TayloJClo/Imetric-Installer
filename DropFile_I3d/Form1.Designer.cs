@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             buttonGetFile = new Button();
             buttonCancel = new Button();
             textBoxName = new TextBox();
@@ -42,6 +43,7 @@
             buttonIScan3d = new Button();
             buttonInstallZip7 = new Button();
             buttonInstallOffice = new Button();
+            buttonNotePadPlus = new Button();
             SuspendLayout();
             // 
             // buttonGetFile
@@ -129,7 +131,7 @@
             // 
             // buttonIScan3d
             // 
-            buttonIScan3d.Location = new Point(304, 107);
+            buttonIScan3d.Location = new Point(304, 136);
             buttonIScan3d.Name = "buttonIScan3d";
             buttonIScan3d.Size = new Size(137, 44);
             buttonIScan3d.TabIndex = 15;
@@ -157,11 +159,22 @@
             buttonInstallOffice.UseVisualStyleBackColor = true;
             buttonInstallOffice.Click += buttonInstallOffice_Click;
             // 
+            // buttonNotePadPlus
+            // 
+            buttonNotePadPlus.Location = new Point(304, 107);
+            buttonNotePadPlus.Name = "buttonNotePadPlus";
+            buttonNotePadPlus.Size = new Size(137, 23);
+            buttonNotePadPlus.TabIndex = 18;
+            buttonNotePadPlus.Text = "Install NotePad ++";
+            buttonNotePadPlus.UseVisualStyleBackColor = true;
+            buttonNotePadPlus.Click += buttonNotePadPlus_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(474, 164);
+            ClientSize = new Size(474, 200);
+            Controls.Add(buttonNotePadPlus);
             Controls.Add(buttonInstallOffice);
             Controls.Add(buttonInstallZip7);
             Controls.Add(buttonIScan3d);
@@ -174,6 +187,7 @@
             Controls.Add(textBoxName);
             Controls.Add(buttonCancel);
             Controls.Add(buttonGetFile);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "ICam Setup";
             ResumeLayout(false);
@@ -196,5 +210,6 @@
         private Button buttonIScan3d;
         private Button buttonInstallZip7;
         private Button buttonInstallOffice;
+        private Button buttonNotePadPlus;
     }
 }

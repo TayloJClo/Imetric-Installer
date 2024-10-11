@@ -136,7 +136,7 @@ namespace DropFile_I3d
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
 
-            
+
             //string batFilePath = @"C:\I3D_Software\General\LibreOffice\LibreOffice_24.8.2_Win_x86-64.msi";
             //install(batFilePath);
 
@@ -276,6 +276,24 @@ namespace DropFile_I3d
             }
         }
 
+        private void buttonNotePadPlus_Click(object sender, EventArgs e)
+        {
+            
+            // The URL you want to open
+            string url = "https://notepad-plus-plus.org/downloads/";
+
+            try
+            {
+                // Use Process.Start to open the URL in the default web browser
+                ProcessStartInfo processInfo = new ProcessStartInfo("explorer.exe", url);
+                Process.Start(processInfo);
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors that may occur (e.g., no default browser set)
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
     }
 }
 //private async Task DownloadFileFromDropbox()
