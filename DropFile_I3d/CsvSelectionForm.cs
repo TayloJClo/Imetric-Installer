@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Text;
+using System.Net.Http;
 
 namespace ICam4DSetup
 {
@@ -68,7 +69,7 @@ namespace ICam4DSetup
                             }
                         }
                     }
-                    break; // Success, exit loop
+                    break;
                 }
                 catch (Exception ex)
                 {
@@ -80,7 +81,7 @@ namespace ICam4DSetup
             }
         }
 
-        private void buttonApply_Click(object sender, EventArgs e)
+        private async void buttonApply_Click(object sender, EventArgs e)
         {
             var selectedItems = checkedListBoxItems.CheckedItems.Cast<string>().ToList();
             if (!selectedItems.Any())
@@ -120,6 +121,8 @@ namespace ICam4DSetup
                 }
 
                 var newLines = new List<string>();
+                var gColumnValues = new HashSet<string>();
+
                 foreach (var item in selectedItems)
                 {
                     if (!itemToLineMap.TryGetValue(item, out var originalLine)) continue;
@@ -144,6 +147,11 @@ namespace ICam4DSetup
                     }
                     else if (filterType == "healing")
                     {
+                        var parts = originalLine.Split('\t');
+                        if (parts.Length > 6)
+                        {
+                            gColumnValues.Add(parts[6].Trim());
+                        }
                         if (!currentSet.Contains(originalLine))
                         {
                             newLines.Add(originalLine);
@@ -168,6 +176,11 @@ namespace ICam4DSetup
                             CopyDirectory(muRpFolder, newFolderPath);
                         }
                     }
+                }
+
+                if (filterType == "healing")
+                {
+                    await DownloadICamRefFilesAsync(gColumnValues);
                 }
 
                 MessageBox.Show("Selected items added to library.");
@@ -200,6 +213,35 @@ namespace ICam4DSetup
             {
                 string targetFilePath = fileName.Replace(sourceDir, targetDir);
                 File.Copy(fileName, targetFilePath, true);
+            }
+        }
+
+        private async Task DownloadICamRefFilesAsync(IEnumerable<string> columnGValues)
+        {
+            string baseFolder = Path.GetDirectoryName(localCsvPath);
+            string targetFolder = Path.Combine(baseFolder, "ICamRef");
+            Directory.CreateDirectory(targetFolder);
+
+            using (HttpClient client = new HttpClient())
+            {
+                foreach (string fileName in columnGValues)
+                {
+                    if (string.IsNullOrWhiteSpace(fileName)) continue;
+
+                    string githubBaseUrl = "https://github.com/TayloJClo/Imetric-Installer/tree/TayloJClo-IcamRefs/"; // Update this
+                    string fileUrl = githubBaseUrl + fileName;
+                    string targetPath = Path.Combine(targetFolder, fileName);
+
+                    try
+                    {
+                        byte[] fileBytes = await client.GetByteArrayAsync(fileUrl);
+                        await File.WriteAllBytesAsync(targetPath, fileBytes);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Failed to download {fileName}: {ex.Message}");
+                    }
+                }
             }
         }
     }
