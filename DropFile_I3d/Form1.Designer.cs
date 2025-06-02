@@ -244,7 +244,7 @@ namespace DropFile_I3d
             button2.TabIndex = 1;
             button2.Text = "Edit Healing Caps";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button2.Click += buttonHealing_Click;
             // 
             // button1
             // 
@@ -254,7 +254,7 @@ namespace DropFile_I3d
             button1.TabIndex = 0;
             button1.Text = "Edit Screw Channels";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += buttonScrew_Click;
             // 
             // Form1
             // 

@@ -7,11 +7,11 @@ namespace ICam4DSetup
     {
         private string localCsvPath;
         private string filterType;
-        private Dictionary<string, string> itemToLineMap = new(); // Add this field
-
+        private Dictionary<string, string> itemToLineMap = new();
 
         private Button buttonApply;
         private Button buttonCancel;
+        
 
         public CsvSelectionForm(string GitUrl, string type)
         {
@@ -21,7 +21,7 @@ namespace ICam4DSetup
             {
                 openFileDialog.Title = "Select your ICamBody Library CSV file";
                 openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
-                openFileDialog.InitialDirectory = @"C:\I3D_Systems\"; // <- Set default folder here
+                openFileDialog.InitialDirectory = @"C:\\I3D_Systems\\";
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -54,33 +54,39 @@ namespace ICam4DSetup
                         foreach (var line in lines.Skip(1)) // Skip header
                         {
                             var parts = line.Split('\t');
-                            if (parts.Length < 2) continue;
+                            if (parts.Length < 6) continue;
 
                             string columnB = parts[1].Trim();
+                            string columnE = parts[4].Trim();
 
-                            if (!string.IsNullOrWhiteSpace(columnB)
-                                && !columnB.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
+                            if (filterType == "screw" &&
+                                !string.IsNullOrWhiteSpace(columnB) &&
+                                !columnB.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
                             {
                                 checkedListBoxItems.Items.Add(columnB);
                                 itemToLineMap[columnB] = line;
                             }
-
+                            else if (filterType == "healing" &&
+                                     columnB.Equals("ICamRef", StringComparison.OrdinalIgnoreCase) &&
+                                     !string.IsNullOrWhiteSpace(columnE))
+                            {
+                                checkedListBoxItems.Items.Add(columnE);
+                                itemToLineMap[columnE] = line;
+                            }
                         }
+                        break; // exit loop if successful
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed to load CSV: " + ex.Message);
+                    if (attempt == maxRetries)
+                        MessageBox.Show("Failed to load CSV: " + ex.Message);
+                    else
+                        await Task.Delay(delayMilliseconds);
                 }
             }
         }
 
-
-
-        private void CsvSelectionForm_Load(object sender, EventArgs e)
-        {
-
-        }
         private void buttonApply_Click(object sender, EventArgs e)
         {
             var selectedItems = checkedListBoxItems.CheckedItems.Cast<string>().ToList();
@@ -97,85 +103,85 @@ namespace ICam4DSetup
                 var header = existingLines.First();
                 var dataLines = existingLines.Skip(1).ToList();
 
-                // Collect unique values in E (index 4) for screws (B != ICamRef)
-                var uniqueEValues = new HashSet<string>();
-                var fColumnValues = new HashSet<string>(); // Add this declaration
-
-                foreach (var line in dataLines)
+                if (filterType == "screw")
                 {
-                    var parts = line.Split('\t');
-                    if (parts.Length > 6)
-                    {
-                        string b = parts[1].Trim();
-                        string columnE = parts[4].Trim();
-                        string columnF = parts[5].Trim(); // Extract column F
+                    var uniqueEValues = new HashSet<string>();
+                    var fColumnValues = new HashSet<string>();
 
-                        if (!string.IsNullOrWhiteSpace(b) && !b.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
+                    foreach (var line in dataLines)
+                    {
+                        var parts = line.Split('\t');
+                        if (parts.Length > 6)
                         {
-                            if (!string.IsNullOrWhiteSpace(columnE))
+                            string b = parts[1].Trim();
+                            string columnE = parts[4].Trim();
+                            string columnF = parts[5].Trim();
+
+                            if (!string.IsNullOrWhiteSpace(b) && !b.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
                             {
-                                uniqueEValues.Add(columnE);
+                                if (!string.IsNullOrWhiteSpace(columnE))
+                                    uniqueEValues.Add(columnE);
+                                if (!string.IsNullOrWhiteSpace(columnF))
+                                    fColumnValues.Add(columnF);
                             }
-                            if (!string.IsNullOrWhiteSpace(columnF))
+                        }
+                    }
+
+                    var newLines = new List<string>();
+                    foreach (var item in selectedItems)
+                    {
+                        if (!itemToLineMap.TryGetValue(item, out var originalLine)) continue;
+
+                        foreach (var uniqueE in uniqueEValues)
+                        {
+                            var parts = originalLine.Split('\t');
+                            if (parts.Length < 7) continue;
+
+                            parts[4] = uniqueE;
+                            parts[6] = uniqueE + ".ad";
+
+                            newLines.Add(string.Join('\t', parts));
+                        }
+                    }
+
+                    int insertIndex = dataLines.FindIndex(line =>
+                    {
+                        var parts = line.Split('\t');
+                        return parts.Length > 1 && parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase);
+                    });
+
+                    if (insertIndex == -1)
+                        dataLines.AddRange(newLines);
+                    else
+                        dataLines.InsertRange(insertIndex, newLines);
+
+                    var baseDir = Path.GetDirectoryName(localCsvPath);
+                    var muRpFolder = Path.Combine(baseDir, "MU-RP");
+                    foreach (var folderName in fColumnValues)
+                    {
+                        var newFolderPath = Path.Combine(baseDir, folderName);
+                        if (!Directory.Exists(newFolderPath))
+                        {
+                            Directory.CreateDirectory(newFolderPath);
+                            if (Directory.Exists(muRpFolder))
                             {
-                                fColumnValues.Add(columnF); // Collect unique F values
+                                CopyDirectory(muRpFolder, newFolderPath);
                             }
                         }
                     }
                 }
-
-                // Prepare new lines
-                var newLines = new List<string>();
-                foreach (var item in selectedItems)
+                else if (filterType == "healing")
                 {
-                    if (!itemToLineMap.TryGetValue(item, out var originalLine)) continue;
-
-                    foreach (var uniqueE in uniqueEValues)
+                    foreach (var item in selectedItems)
                     {
-                        var parts = originalLine.Split('\t');
-                        if (parts.Length < 7) continue;
-
-                        parts[4] = uniqueE; // Column E
-                        parts[6] = uniqueE + ".ad"; // Column G
-
-                        newLines.Add(string.Join('\t', parts));
+                        if (itemToLineMap.TryGetValue(item, out var line))
+                        {
+                            dataLines.Add(line);
+                        }
                     }
-                }
-
-                // Find index of first "ICamRef"
-                int insertIndex = dataLines.FindIndex(line =>
-                {
-                    var parts = line.Split('\t');
-                    return parts.Length > 1 && parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase);
-                });
-
-                if (insertIndex == -1)
-                {
-                    dataLines.AddRange(newLines);
-                }
-                else
-                {
-                    dataLines.InsertRange(insertIndex, newLines);
                 }
 
                 File.WriteAllLines(localCsvPath, new[] { header }.Concat(dataLines), Encoding.UTF8);
-
-                // Create folders named by column F values and copy from MU-RP
-                var baseDir = Path.GetDirectoryName(localCsvPath);
-                var muRpFolder = Path.Combine(baseDir, "MU-RP");
-                foreach (var folderName in fColumnValues)
-                {
-                    var newFolderPath = Path.Combine(baseDir, folderName);
-                    if (!Directory.Exists(newFolderPath))
-                    {
-                        Directory.CreateDirectory(newFolderPath);
-                        if (Directory.Exists(muRpFolder))
-                        {
-                            CopyDirectory(muRpFolder, newFolderPath);
-                        }
-                    }
-                }
-
                 MessageBox.Show("Selected items added to library.");
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -192,9 +198,8 @@ namespace ICam4DSetup
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
+        private void button1_Click(object sender, EventArgs e) { }
+
         private void CopyDirectory(string sourceDir, string targetDir)
         {
             foreach (string dir in Directory.GetDirectories(sourceDir, "*", SearchOption.AllDirectories))
@@ -209,11 +214,5 @@ namespace ICam4DSetup
                 File.Copy(fileName, targetFilePath, true);
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
-

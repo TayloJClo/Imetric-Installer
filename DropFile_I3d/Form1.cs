@@ -207,13 +207,13 @@ namespace DropFile_I3d
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonHealing_Click(object sender, EventArgs e)
         {
             var form = new  CsvSelectionForm("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv", "healing");
             form.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonScrew_Click(object sender, EventArgs e)
         {
             var form = new CsvSelectionForm("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv", "screw");
             form.ShowDialog();
