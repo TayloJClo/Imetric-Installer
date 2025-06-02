@@ -77,54 +77,73 @@ namespace ICam4DSetup
 
             try
             {
-                var lines = File.Exists(localCsvPath)
-                    ? File.ReadAllLines(localCsvPath).ToList()
-                    : new List<string>();
+                var existingLines = File.ReadAllLines(localCsvPath).ToList();
+                var header = existingLines.First();
+                var dataLines = existingLines.Skip(1).ToList();
 
-                int insertIndex = lines.FindIndex(line =>
+                // Collect unique values in E (index 4) for screws (B != ICamRef)
+                var uniqueEValues = new HashSet<string>();
+                foreach (var line in dataLines)
+                {
+                    var parts = line.Split('\t');
+                    if (parts.Length > 6)
+                    {
+                        string b = parts[1].Trim();
+                        // Rename the variable 'e' to avoid conflict with the enclosing scope
+                        string columnE = parts[4].Trim();
+
+                        if (!string.IsNullOrWhiteSpace(b) && !b.Equals("ICamRef", StringComparison.OrdinalIgnoreCase) && !string.IsNullOrWhiteSpace(columnE))
+                        {
+                            uniqueEValues.Add(columnE);
+                        }
+                    }
+                }
+
+                // Prepare new lines
+                var newLines = new List<string>();
+                foreach (var item in selectedItems)
+                {
+                    if (!itemToLineMap.TryGetValue(item, out var originalLine)) continue;
+
+                    foreach (var uniqueE in uniqueEValues)
+                    {
+                        var parts = originalLine.Split('\t');
+                        if (parts.Length < 7) continue;
+
+                        parts[4] = uniqueE; // Column E
+                        parts[6] = uniqueE + ".ad"; // Column G
+
+                        newLines.Add(string.Join('\t', parts));
+                    }
+                }
+
+                // Find index of first "ICamRef"
+                int insertIndex = dataLines.FindIndex(line =>
                 {
                     var parts = line.Split('\t');
                     return parts.Length > 1 && parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase);
                 });
 
-                if (insertIndex == -1) insertIndex = lines.Count; // If not found, append to end
-
-                // Build list of new lines to insert
-                List<string> newLines = new();
-
-                foreach (var item in selectedItems)
+                if (insertIndex == -1)
                 {
-                    if (itemToLineMap.TryGetValue(item, out string fullLine))
-                    {
-                        newLines.Add(""); // add blank
-                    }
+                    dataLines.AddRange(newLines);
+                }
+                else
+                {
+                    dataLines.InsertRange(insertIndex, newLines);
                 }
 
-                // Insert blank lines first
-                lines.InsertRange(insertIndex, newLines);
+                File.WriteAllLines(localCsvPath, new[] { header }.Concat(dataLines), Encoding.UTF8);
 
-                // Then populate them
-                for (int i = 0; i < selectedItems.Count; i++)
-                {
-                    if (itemToLineMap.TryGetValue(selectedItems[i], out string fullLine))
-                    {
-                        lines[insertIndex + i] = fullLine;
-                    }
-                }
-
-                File.WriteAllLines(localCsvPath, lines, Encoding.UTF8);
-                MessageBox.Show("Selected items inserted before 'ICamRef'.");
+                MessageBox.Show("Selected items inserted with updated E/G values.");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to write to CSV: " + ex.Message);
+                MessageBox.Show("Error updating CSV: " + ex.Message);
             }
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
         }
-
-
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
@@ -134,7 +153,6 @@ namespace ICam4DSetup
 
         private void button1_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
