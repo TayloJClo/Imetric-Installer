@@ -12,7 +12,7 @@ namespace ICam4DSetup
 {
     public partial class CsvSelectionForm : Form
     {
-        private string localCsvPath = @"C:\I3D_Systems\I221301 ICamBody Library\ICamBody Library.csv";
+        private string localCsvPath;
         private string filterType;
         private Dictionary<string, string> itemToLineMap = new(); // Add this field
 
@@ -24,6 +24,23 @@ namespace ICam4DSetup
         {
             InitializeComponent();
             filterType = type.ToLower();
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Title = "Select your ICamBody Library CSV file";
+                openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+                openFileDialog.InitialDirectory = @"C:\I3D_Systems\"; // <- Set default folder here
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    localCsvPath = openFileDialog.FileName;
+                }
+                else
+                {
+                    MessageBox.Show("No local CSV file selected. The form will now close.");
+                    this.Close();
+                    return;
+                }
+            }
             LoadCsvFromDropbox(dropboxUrl);
         }
 
