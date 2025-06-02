@@ -11,7 +11,6 @@ namespace ICam4DSetup
 
         private Button buttonApply;
         private Button buttonCancel;
-        
 
         public CsvSelectionForm(string GitUrl, string type)
         {
@@ -51,31 +50,25 @@ namespace ICam4DSetup
                         string csvData = await client.GetStringAsync(url);
                         var lines = csvData.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-                        foreach (var line in lines.Skip(1)) // Skip header
+                        foreach (var line in lines.Skip(1))
                         {
                             var parts = line.Split('\t');
-                            if (parts.Length < 6) continue;
+                            if (parts.Length < 2) continue;
 
-                            string columnB = parts[1].Trim();
-                            string columnE = parts[4].Trim();
+                            string label = filterType == "healing" ? parts[4].Trim() : parts[1].Trim();
 
-                            if (filterType == "screw" &&
-                                !string.IsNullOrWhiteSpace(columnB) &&
-                                !columnB.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
+                            if (!string.IsNullOrWhiteSpace(label))
                             {
-                                checkedListBoxItems.Items.Add(columnB);
-                                itemToLineMap[columnB] = line;
-                            }
-                            else if (filterType == "healing" &&
-                                     columnB.Equals("ICamRef", StringComparison.OrdinalIgnoreCase) &&
-                                     !string.IsNullOrWhiteSpace(columnE))
-                            {
-                                checkedListBoxItems.Items.Add(columnE);
-                                itemToLineMap[columnE] = line;
+                                if ((filterType == "healing" && parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase)) ||
+                                    (filterType == "screw" && !parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase)))
+                                {
+                                    checkedListBoxItems.Items.Add(label);
+                                    itemToLineMap[label] = line;
+                                }
                             }
                         }
-                        break; // exit loop if successful
                     }
+                    break; // Success, exit loop
                 }
                 catch (Exception ex)
                 {
@@ -90,7 +83,6 @@ namespace ICam4DSetup
         private void buttonApply_Click(object sender, EventArgs e)
         {
             var selectedItems = checkedListBoxItems.CheckedItems.Cast<string>().ToList();
-
             if (!selectedItems.Any())
             {
                 MessageBox.Show("No items selected.");
@@ -102,12 +94,13 @@ namespace ICam4DSetup
                 var existingLines = File.ReadAllLines(localCsvPath).ToList();
                 var header = existingLines.First();
                 var dataLines = existingLines.Skip(1).ToList();
+                var currentSet = new HashSet<string>(dataLines);
+
+                var uniqueEValues = new HashSet<string>();
+                var fColumnValues = new HashSet<string>();
 
                 if (filterType == "screw")
                 {
-                    var uniqueEValues = new HashSet<string>();
-                    var fColumnValues = new HashSet<string>();
-
                     foreach (var line in dataLines)
                     {
                         var parts = line.Split('\t');
@@ -119,19 +112,20 @@ namespace ICam4DSetup
 
                             if (!string.IsNullOrWhiteSpace(b) && !b.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
                             {
-                                if (!string.IsNullOrWhiteSpace(columnE))
-                                    uniqueEValues.Add(columnE);
-                                if (!string.IsNullOrWhiteSpace(columnF))
-                                    fColumnValues.Add(columnF);
+                                if (!string.IsNullOrWhiteSpace(columnE)) uniqueEValues.Add(columnE);
+                                if (!string.IsNullOrWhiteSpace(columnF)) fColumnValues.Add(columnF);
                             }
                         }
                     }
+                }
 
-                    var newLines = new List<string>();
-                    foreach (var item in selectedItems)
+                var newLines = new List<string>();
+                foreach (var item in selectedItems)
+                {
+                    if (!itemToLineMap.TryGetValue(item, out var originalLine)) continue;
+
+                    if (filterType == "screw")
                     {
-                        if (!itemToLineMap.TryGetValue(item, out var originalLine)) continue;
-
                         foreach (var uniqueE in uniqueEValues)
                         {
                             var parts = originalLine.Split('\t');
@@ -140,48 +134,42 @@ namespace ICam4DSetup
                             parts[4] = uniqueE;
                             parts[6] = uniqueE + ".ad";
 
-                            newLines.Add(string.Join('\t', parts));
-                        }
-                    }
-
-                    int insertIndex = dataLines.FindIndex(line =>
-                    {
-                        var parts = line.Split('\t');
-                        return parts.Length > 1 && parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase);
-                    });
-
-                    if (insertIndex == -1)
-                        dataLines.AddRange(newLines);
-                    else
-                        dataLines.InsertRange(insertIndex, newLines);
-
-                    var baseDir = Path.GetDirectoryName(localCsvPath);
-                    var muRpFolder = Path.Combine(baseDir, "MU-RP");
-                    foreach (var folderName in fColumnValues)
-                    {
-                        var newFolderPath = Path.Combine(baseDir, folderName);
-                        if (!Directory.Exists(newFolderPath))
-                        {
-                            Directory.CreateDirectory(newFolderPath);
-                            if (Directory.Exists(muRpFolder))
+                            var line = string.Join('\t', parts);
+                            if (!currentSet.Contains(line))
                             {
-                                CopyDirectory(muRpFolder, newFolderPath);
+                                newLines.Add(line);
+                                currentSet.Add(line);
                             }
                         }
                     }
-                }
-                else if (filterType == "healing")
-                {
-                    foreach (var item in selectedItems)
+                    else if (filterType == "healing")
                     {
-                        if (itemToLineMap.TryGetValue(item, out var line))
+                        if (!currentSet.Contains(originalLine))
                         {
-                            dataLines.Add(line);
+                            newLines.Add(originalLine);
+                            currentSet.Add(originalLine);
                         }
                     }
                 }
 
+                dataLines.AddRange(newLines);
                 File.WriteAllLines(localCsvPath, new[] { header }.Concat(dataLines), Encoding.UTF8);
+
+                var baseDir = Path.GetDirectoryName(localCsvPath);
+                var muRpFolder = Path.Combine(baseDir, "MU-RP");
+                foreach (var folderName in fColumnValues)
+                {
+                    var newFolderPath = Path.Combine(baseDir, folderName);
+                    if (!Directory.Exists(newFolderPath))
+                    {
+                        Directory.CreateDirectory(newFolderPath);
+                        if (Directory.Exists(muRpFolder))
+                        {
+                            CopyDirectory(muRpFolder, newFolderPath);
+                        }
+                    }
+                }
+
                 MessageBox.Show("Selected items added to library.");
                 this.DialogResult = DialogResult.OK;
                 this.Close();
