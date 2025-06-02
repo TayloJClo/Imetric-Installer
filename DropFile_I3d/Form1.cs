@@ -1,42 +1,38 @@
-
+using ICam4DSetup;
+using ICam4DSetup.bin;
 using System.Diagnostics;
 using System.Text;
+using System.Net.Http;
+using System.IO;
+using System;
+using System.Windows.Forms;
 
 namespace DropFile_I3d
 {
     public partial class Form1 : Form
     {
-        //private string dropboxAccessToken = "YOUR_DROPBOX_ACCESS_TOKEN";
-        //private string filePathInDropbox = "/path/to/your/file.txt";
+        private const string V = "runas";
         private string iCamSerialNo = "";
         private IniFile iniFile;
 
         public Form1()
         {
             InitializeComponent();
-            // Specify the path to your INI file
-            iniFile = new IniFile(string.Format("{0}\\config.ini", Application.StartupPath));
+            iniFile = new IniFile(Path.Combine(Application.StartupPath, "config.ini"));
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        private void buttonCancel_Click(object sender, EventArgs e) => Application.Exit();
+
         private void LoadConfigButton_Click(object sender, EventArgs e)
         {
-            // Example: Load configuration values from the INI file
-            //string filePathInDropbox = iniFile.Read("Settings", "FilePathInDropbox");
             string iCamSerialNo = iniFile.Read("Settings", "ICamSerialNo");
-            //string dropboxAccessToken = iniFile.Read("Settings", "DropboxAccessToken");
-
         }
+
         private void buttonGetFile_Click(object sender, EventArgs e)
         {
-
             try
             {
-
-                string copytofolder = string.Format("C:\\I3D_Systems\\{0} ICamBody Library\\ICamRef\\{1}", textBoxCustomerID.Text, textBoxName.Text.Trim());
+                string copytofolder = $"C:\\I3D_Systems\\{textBoxCustomerID.Text} ICamBody Library\\";
 
                 if (string.IsNullOrEmpty(textBoxCustomerID.Text))
                 {
@@ -44,6 +40,7 @@ namespace DropFile_I3d
                     MessageBox.Show($"No ICam Serial : {textBoxCustomerID.Text}");
                     return;
                 }
+
                 iniFile.Write("Settings", "ICamSerialNo", textBoxCustomerID.Text);
 
                 if (string.IsNullOrEmpty(textBoxName.Text))
@@ -53,16 +50,7 @@ namespace DropFile_I3d
                     return;
                 }
 
-                //if (string.IsNullOrEmpty(textBoxPasteFile.Text))
-                //{
-                //    MessageBox.Show($"No Paste Line Data : {textBoxPasteFile.Text}");
-                //    return;
-                //}
-
-                //await DownloadFileFromDropbox();
-                //labelProgress.Text = "File downloaded successfully.";
-                //string destinationFilePath = Path.Combine(localFilePath, filePathInDropbox);
-                string filetoCopy = string.Format("{0}\\{1}", Application.StartupPath, textBoxName.Text);
+                string filetoCopy = Path.Combine(Application.StartupPath, textBoxName.Text);
                 if (!File.Exists(filetoCopy))
                 {
                     labelMessage.Text = filetoCopy;
@@ -71,242 +59,247 @@ namespace DropFile_I3d
                 }
 
                 File.Copy(filetoCopy, copytofolder, true);
-                string homeDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
 
-                // Specify the path to your CSV file
-                string cvsFile = string.Format("C:\\I3D_Systems\\{0} ICamBody Library\\ICamRef\\{1}", textBoxCustomerID, "ICamBody Library.csv");
+                string cvsFile = $"C:\\I3D_Systems\\{textBoxCustomerID.Text} ICamBody Library\\ICamRef\\ICamBody Library.csv";
 
                 if (!File.Exists(cvsFile))
                 {
                     labelMessage.Text = cvsFile;
-                    MessageBox.Show($"No CVS file: {"ICamBody Library.csv"}");
+                    MessageBox.Show("No CSV file: ICamBody Library.csv");
                     return;
                 }
-
-                //// Append the new line to the CSV file
-                //AddLineToCsv(cvsFile, textBoxPasteFile.Text.Trim());
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
-
         }
 
         static void AddLineToCsv(string filePath, string newData)
         {
-            // Use StreamWriter to append the new line to the CSV file
             using (StreamWriter writer = new StreamWriter(filePath, true))
             {
-                // Write the new line to the CSV file
                 writer.WriteLine(newData);
             }
         }
 
         private void buttonInstallDriver_Click(object sender, EventArgs e)
         {
-            string batFilePath = @"C:\I3D_Software\Drivers\Camera Flir\Flir_1.23.0.27_Driver\Install.bat";
-            installbat(batFilePath);
-
-            string batFilePath1 = @"C:\I3D_Software\Drivers\Projector Imetric4D 9\cyusb3.inf";
-            installInf(batFilePath1);
+            installbat("C:\\I3D_Software\\Drivers\\Camera Flir\\Flir_1.23.0.27_Driver");
+            installInf("C:\\I3D_Software\\Drivers\\Projector Imetric4D 9");
         }
 
         private void buttonIScan3d_Click(object sender, EventArgs e)
         {
-            string batFilePath = @"C:\I3D_Software\Imetric4D Software\IScan3D Dental\IScan3D_Dental_v9.1.112_2024-03-07_64bit.msi";
-            install(batFilePath);
+            var popup = new OptionPopupForm();
+
+            if (popup.ShowDialog() == DialogResult.OK)
+            {
+                string selected = popup.SelectedOption;
+                string sourceCsvPath = selected switch
+                {
+                    "Default" => "C:\\I3D_Software\\General\\CSV's\\Default.csv",
+                    "Nobel" => "C:\\I3D_Software\\General\\CSV's\\Nobel.csv",
+                    "Straumann" => "C:\\I3D_Software\\General\\CSV's\\Straumann.csv",
+                    _ => ""
+                };
+
+                string destinationDir = "C:\\I3D_Systems\\I221301 ICamBody Library";
+                string destinationCsvPath = Path.Combine(destinationDir, "ICamBody Library.csv");
+
+                try
+                {
+                    if (!File.Exists(sourceCsvPath))
+                    {
+                        MessageBox.Show("Source CSV file not found: " + sourceCsvPath);
+                        return;
+                    }
+
+                    if (!Directory.Exists(destinationDir))
+                    {
+                        Directory.CreateDirectory(destinationDir);
+                    }
+
+                    File.Copy(sourceCsvPath, destinationCsvPath, overwrite: true);
+                    MessageBox.Show($"Copied {selected} CSV to: {destinationCsvPath}");
+
+                    install("C:\\I3D_Software\\Imetric4D Software\\IScan3D Dental\\IScan3D_Dental_v9.1.113_2025-04-01_64bit.msi");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error copying CSV or running install: " + ex.Message);
+                }
+            }
         }
 
-        private void buttonInstallOffice_Click(object sender, EventArgs e)
+        private void installMsi(string msiPath)
         {
-            // The URL you want to open
-            string url = "https://www.libreoffice.org/download/download-libreoffice";
-
             try
             {
-                // Use Process.Start to open the URL in the default web browser
-                ProcessStartInfo processInfo = new ProcessStartInfo("explorer.exe", url);
+                if (!File.Exists(msiPath))
+                {
+                    MessageBox.Show("MSI file not found: " + msiPath);
+                    return;
+                }
+
+                var processInfo = new ProcessStartInfo
+                {
+                    FileName = "msiexec.exe",
+                    Arguments = $"/i \"{msiPath}\" /passive",
+                    UseShellExecute = true,
+                    Verb = "runas"
+                };
+
                 Process.Start(processInfo);
             }
             catch (Exception ex)
             {
-                // Handle any errors that may occur (e.g., no default browser set)
-                MessageBox.Show($"An error occurred: {ex.Message}");
+                MessageBox.Show("MSI install failed: " + ex.Message);
             }
+        }
 
-
-            //string batFilePath = @"C:\I3D_Software\General\LibreOffice\LibreOffice_24.8.2_Win_x86-64.msi";
-            //install(batFilePath);
-
+        private void buttonInstallOffice_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo("explorer.exe", "https://www.libreoffice.org/download/download-libreoffice"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
         }
 
         private void buttonInstallZip7_Click(object sender, EventArgs e)
         {
-            string batFilePath = @"C:\I3D_Software\General\7zip\7z1900-x64.exe";
-            install(batFilePath);
-
+            install("C:\\Newest Version of IScan\\I3D_Software\\General\\7zip");
         }
-        private void buttonCyUsb_Click(object sender, EventArgs e)
-        {
 
-        }
-        private void installInf(string batFilePath)
+        private void buttonNotePadPlus_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Process.Start(new ProcessStartInfo("explorer.exe", "https://notepad-plus-plus.org/downloads/"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private async void buttonUpdateCsv_Click(object sender, EventArgs e)
+        {
+            string dropboxUrl = "https://www.dropbox.com/scl/fi/mp940xrobg1psgcrsuu6b/ICamBody-Library-Master-test.csv?rlkey=vtw6rkb7vpm3128kelno2xxgc&dl=1";
+            string localCsvPath = "C:\\I3D_Systems\\I221301 ICamBody Library\\ICamBody Library.csv";
 
             try
             {
-                // Run PowerShell to install the INF file using pnputil.exe
-                ProcessStartInfo processInfo = new ProcessStartInfo
+                using var client = new HttpClient();
+                string csvContent = await client.GetStringAsync(dropboxUrl);
+                Directory.CreateDirectory(Path.GetDirectoryName(localCsvPath));
+                File.WriteAllText(localCsvPath, csvContent, Encoding.UTF8);
+                MessageBox.Show("CSV successfully downloaded and updated.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error downloading CSV: " + ex.Message);
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var form = new  CsvSelectionForm("https://www.dropbox.com/scl/fi/mp940xrobg1psgcrsuu6b/ICamBody-Library-Master-test.csv?rlkey=vtw6rkb7vpm3128kelno2xxgc&dl=1", "healing");
+            form.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form = new CsvSelectionForm("https://www.dropbox.com/scl/fi/mp940xrobg1psgcrsuu6b/ICamBody-Library-Master-test.csv?rlkey=vtw6rkb7vpm3128kelno2xxgc&dl=1", "screw");
+            form.ShowDialog();
+        }
+
+        private void installbat(string batFilePath)
+        {
+            try
+            {
+                var processInfo = new ProcessStartInfo
+                {
+                    FileName = batFilePath,
+                    Verb = V,
+                    UseShellExecute = true,
+                    CreateNoWindow = true
+                };
+
+                using var process = Process.Start(processInfo);
+                process.WaitForExit();
+                MessageBox.Show("Installation complete.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void installInf(string batFilePath)
+        {
+            try
+            {
+                var processInfo = new ProcessStartInfo
                 {
                     FileName = "powershell.exe",
-                    Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"Start-Process pnputil.exe -ArgumentList '/add-driver `\"{batFilePath}`\" /install' -Verb RunAs\"",
-
-                    // Ensure that the process is running as an Administrator
+                    Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"Start-Process pnputil.exe -ArgumentList '/add-driver `{batFilePath}` /install' -Verb RunAs\"",
                     UseShellExecute = false,
-                    CreateNoWindow = true,  // Do not show the PowerShell window
+                    CreateNoWindow = true,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true
                 };
 
-                using (Process process = Process.Start(processInfo))
-                {
-                    // Capture and read the output from PowerShell
-                    string output = process.StandardOutput.ReadToEnd();
-                    string error = process.StandardError.ReadToEnd();
+                using var process = Process.Start(processInfo);
+                string output = process.StandardOutput.ReadToEnd();
+                string error = process.StandardError.ReadToEnd();
 
-                    process.WaitForExit();
+                process.WaitForExit();
 
-                    // Display output or error messages
-                    if (!string.IsNullOrEmpty(output))
-                    {
-                        MessageBox.Show($"Output: {output}");
-                    }
+                if (!string.IsNullOrEmpty(output)) MessageBox.Show("Output: " + output);
+                if (!string.IsNullOrEmpty(error)) MessageBox.Show("Error: " + error);
 
-                    if (!string.IsNullOrEmpty(error))
-                    {
-                        MessageBox.Show($"Error: {error}");
-                    }
-
-                    MessageBox.Show("Driver installation complete.");
-                }
+                MessageBox.Show("Driver installation complete.");
             }
             catch (Exception ex)
             {
-                // Handle any errors during the process
-                MessageBox.Show($"An error occurred: {ex.Message}");
-            }
-        }
-        private void installbat(string batFilePath)
-        {
-            // Create a new process to run the batch file
-            ProcessStartInfo processInfo = new ProcessStartInfo
-            {
-                FileName = batFilePath,
-                Verb = "runas",  // Run the process as an Administrator
-                UseShellExecute = true,
-                CreateNoWindow = true
-            };
-
-            try
-            {
-                using (Process process = Process.Start(processInfo))
-                {
-                    process.WaitForExit();
-                    MessageBox.Show("Installation complete.");
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle any errors that occur during the execution
-                MessageBox.Show("An error occurred: " + ex.Message);
+                MessageBox.Show("Driver installation failed: " + ex.Message);
             }
         }
 
         private void install(string batFilePath)
         {
-            // Create a new process to run PowerShell
-            ProcessStartInfo processInfo = new ProcessStartInfo
-            {
-                FileName = "powershell.exe",
-                Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"& '{batFilePath}'\"",
-
-
-                // Force the process to run as Administrator
-                Verb = "runas",
-
-
-                // Prevents the PowerShell window from appearing
-                CreateNoWindow = true,
-                UseShellExecute = false,
-
-                // Redirect output if you need to capture the output
-                RedirectStandardOutput = true,
-                RedirectStandardError = true
-
-            };
-
             try
             {
-                using (Process process = Process.Start(processInfo))
+                var processInfo = new ProcessStartInfo
                 {
-                    // Optionally capture output and errors from the PowerShell process
-                    string output = process.StandardOutput.ReadToEnd();
-                    string error = process.StandardError.ReadToEnd();
+                    FileName = "powershell.exe",
+                    Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"& '{batFilePath}'\"",
+                    Verb = V,
+                    CreateNoWindow = true,
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true
+                };
 
-                    process.WaitForExit();
+                using var process = Process.Start(processInfo);
+                string output = process.StandardOutput.ReadToEnd();
+                string error = process.StandardError.ReadToEnd();
 
-                    // Show output or error in message box or log it
-                    if (!string.IsNullOrWhiteSpace(output))
-                    {
-                        MessageBox.Show("Output: " + output);
-                    }
+                process.WaitForExit();
 
-                    if (!string.IsNullOrWhiteSpace(error))
-                    {
-                        MessageBox.Show("Error: " + error);
-                    }
-                }
+                if (!string.IsNullOrWhiteSpace(output)) MessageBox.Show("Output: " + output);
+                if (!string.IsNullOrWhiteSpace(error)) MessageBox.Show("Error: " + error);
             }
             catch (Exception ex)
             {
-                // Handle any errors that occur during the execution
                 MessageBox.Show("An error occurred: " + ex.Message);
-            }
-        }
-
-        private void buttonNotePadPlus_Click(object sender, EventArgs e)
-        {
-            
-            // The URL you want to open
-            string url = "https://notepad-plus-plus.org/downloads/";
-
-            try
-            {
-                // Use Process.Start to open the URL in the default web browser
-                ProcessStartInfo processInfo = new ProcessStartInfo("explorer.exe", url);
-                Process.Start(processInfo);
-            }
-            catch (Exception ex)
-            {
-                // Handle any errors that may occur (e.g., no default browser set)
-                MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
     }
 }
-//private async Task DownloadFileFromDropbox()
-//{
-//    using (var dbx = new DropboxClient(dropboxAccessToken))
-//    {
-//        var response = await dbx.Files.DownloadAsync(filePathInDropbox);
-//        var content = await response.GetContentAsStreamAsync();
-
-//        using (var fileStream = File.Create(localFilePath))
-//        {
-//            content.CopyTo(fileStream);
-//            fileStream.Close();
-//        }
-//    }
-//}
