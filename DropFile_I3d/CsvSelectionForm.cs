@@ -13,7 +13,7 @@ namespace ICam4DSetup
         private Button buttonApply;
         private Button buttonCancel;
 
-        public CsvSelectionForm(string dropboxUrl, string type)
+        public CsvSelectionForm(string GitUrl, string type)
         {
             InitializeComponent();
             filterType = type.ToLower();
@@ -34,38 +34,44 @@ namespace ICam4DSetup
                     return;
                 }
             }
-            LoadCsvFromDropbox(dropboxUrl);
+            LoadCsvFromGithub(GitUrl);
         }
 
-        private async void LoadCsvFromDropbox(string url)
+        private async void LoadCsvFromGithub(string url)
         {
-            try
+            int maxRetries = 3;
+            int delayMilliseconds = 2000;
+
+            for (int attempt = 1; attempt <= maxRetries; attempt++)
             {
-                using (HttpClient client = new HttpClient())
+                try
                 {
-                    string csvData = await client.GetStringAsync(url);
-                    var lines = csvData.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
-
-                    foreach (var line in lines.Skip(1)) // Skip header
+                    using (HttpClient client = new HttpClient())
                     {
-                        var parts = line.Split('\t');
-                        if (parts.Length < 2) continue;
+                        string csvData = await client.GetStringAsync(url);
+                        var lines = csvData.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-                        string columnB = parts[1].Trim();
-
-                        if (!string.IsNullOrWhiteSpace(columnB)
-                            && !columnB.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
+                        foreach (var line in lines.Skip(1)) // Skip header
                         {
-                            checkedListBoxItems.Items.Add(columnB);
-                            itemToLineMap[columnB] = line; // <-- ADD THIS HERE
-                        }
+                            var parts = line.Split('\t');
+                            if (parts.Length < 2) continue;
 
+                            string columnB = parts[1].Trim();
+
+                            if (!string.IsNullOrWhiteSpace(columnB)
+                                && !columnB.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
+                            {
+                                checkedListBoxItems.Items.Add(columnB);
+                                itemToLineMap[columnB] = line;
+                            }
+
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed to load CSV: " + ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to load CSV: " + ex.Message);
+                }
             }
         }
 
