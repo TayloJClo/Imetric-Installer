@@ -100,18 +100,27 @@ namespace ICam4DSetup
 
                 // Collect unique values in E (index 4) for screws (B != ICamRef)
                 var uniqueEValues = new HashSet<string>();
+                var fColumnValues = new HashSet<string>(); // Add this declaration
+
                 foreach (var line in dataLines)
                 {
                     var parts = line.Split('\t');
                     if (parts.Length > 6)
                     {
                         string b = parts[1].Trim();
-                        // Rename the variable 'e' to avoid conflict with the enclosing scope
                         string columnE = parts[4].Trim();
+                        string columnF = parts[5].Trim(); // Extract column F
 
-                        if (!string.IsNullOrWhiteSpace(b) && !b.Equals("ICamRef", StringComparison.OrdinalIgnoreCase) && !string.IsNullOrWhiteSpace(columnE))
+                        if (!string.IsNullOrWhiteSpace(b) && !b.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
                         {
-                            uniqueEValues.Add(columnE);
+                            if (!string.IsNullOrWhiteSpace(columnE))
+                            {
+                                uniqueEValues.Add(columnE);
+                            }
+                            if (!string.IsNullOrWhiteSpace(columnF))
+                            {
+                                fColumnValues.Add(columnF); // Collect unique F values
+                            }
                         }
                     }
                 }
@@ -152,6 +161,22 @@ namespace ICam4DSetup
 
                 File.WriteAllLines(localCsvPath, new[] { header }.Concat(dataLines), Encoding.UTF8);
 
+                // Create folders named by column F values and copy from MU-RP
+                var baseDir = Path.GetDirectoryName(localCsvPath);
+                var muRpFolder = Path.Combine(baseDir, "MU-RP");
+                foreach (var folderName in fColumnValues)
+                {
+                    var newFolderPath = Path.Combine(baseDir, folderName);
+                    if (!Directory.Exists(newFolderPath))
+                    {
+                        Directory.CreateDirectory(newFolderPath);
+                        if (Directory.Exists(muRpFolder))
+                        {
+                            CopyDirectory(muRpFolder, newFolderPath);
+                        }
+                    }
+                }
+
                 MessageBox.Show("Selected items inserted with updated E/G values.");
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -171,6 +196,21 @@ namespace ICam4DSetup
         private void button1_Click(object sender, EventArgs e)
         {
         }
+        private void CopyDirectory(string sourceDir, string targetDir)
+        {
+            foreach (string dir in Directory.GetDirectories(sourceDir, "*", SearchOption.AllDirectories))
+            {
+                string targetSubDir = dir.Replace(sourceDir, targetDir);
+                Directory.CreateDirectory(targetSubDir);
+            }
+
+            foreach (string fileName in Directory.GetFiles(sourceDir, "*.*", SearchOption.AllDirectories))
+            {
+                string targetFilePath = fileName.Replace(sourceDir, targetDir);
+                File.Copy(fileName, targetFilePath, true);
+            }
+        }
+
     }
 }
 
