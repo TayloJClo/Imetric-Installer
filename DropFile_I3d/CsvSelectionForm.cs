@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using System.Data;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ICam4DSetup
 {
@@ -16,7 +9,7 @@ namespace ICam4DSetup
         private string filterType;
         private Dictionary<string, string> itemToLineMap = new(); // Add this field
 
-       
+
         private Button buttonApply;
         private Button buttonCancel;
 
@@ -211,6 +204,10 @@ namespace ICam4DSetup
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

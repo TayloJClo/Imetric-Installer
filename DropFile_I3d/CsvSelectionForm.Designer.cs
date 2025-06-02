@@ -49,7 +49,7 @@ namespace ICam4DSetup
             button2.TabIndex = 2;
             button2.Text = "Cancel";
             button2.UseVisualStyleBackColor = true;
-            button1.Click += buttonCancel_Click;
+            button2.Click += buttonCancel_Click;
             // 
             // CsvSelectionForm
             // 
