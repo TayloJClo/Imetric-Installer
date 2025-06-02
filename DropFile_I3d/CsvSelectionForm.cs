@@ -170,7 +170,7 @@ namespace ICam4DSetup
                     }
                 }
 
-                MessageBox.Show("Selected items inserted with updated E/G values.");
+                MessageBox.Show("Selected items added to library.");
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
