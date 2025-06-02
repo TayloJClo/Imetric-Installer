@@ -189,7 +189,7 @@ namespace DropFile_I3d
 
         private async void buttonUpdateCsv_Click(object sender, EventArgs e)
         {
-            string dropboxUrl = "https://www.dropbox.com/scl/fi/mp940xrobg1psgcrsuu6b/ICamBody-Library-Master-test.csv?rlkey=vtw6rkb7vpm3128kelno2xxgc&dl=1";
+            string dropboxUrl = "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv";
             string localCsvPath = "C:\\I3D_Systems\\I221301 ICamBody Library\\ICamBody Library.csv";
 
             try
@@ -209,13 +209,13 @@ namespace DropFile_I3d
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var form = new  CsvSelectionForm("https://www.dropbox.com/scl/fi/mp940xrobg1psgcrsuu6b/ICamBody-Library-Master-test.csv?rlkey=vtw6rkb7vpm3128kelno2xxgc&dl=1", "healing");
+            var form = new  CsvSelectionForm("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv", "healing");
             form.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var form = new CsvSelectionForm("https://www.dropbox.com/scl/fi/mp940xrobg1psgcrsuu6b/ICamBody-Library-Master-test.csv?rlkey=vtw6rkb7vpm3128kelno2xxgc&dl=1", "screw");
+            var form = new CsvSelectionForm("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv", "screw");
             form.ShowDialog();
         }
 

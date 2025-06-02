@@ -10,41 +10,67 @@ namespace ICam4DSetup
     public partial class CsvSelectionForm : Form
     {
         private CheckedListBox checkedListBoxItems;
-        
-      
 
-      
+
+
+
 
         private void InitializeComponent()
         {
-            this.checkedListBoxItems = new CheckedListBox();
-            this.SuspendLayout();
+            checkedListBoxItems = new CheckedListBox();
+            button1 = new Button();
+            button2 = new Button();
+            SuspendLayout();
             // 
             // checkedListBoxItems
             // 
-            this.checkedListBoxItems.FormattingEnabled = true;
-            this.checkedListBoxItems.Location = new Point(12, 12);
-            this.checkedListBoxItems.Name = "checkedListBoxItems";
-            this.checkedListBoxItems.Size = new Size(250, 424);
-            this.checkedListBoxItems.TabIndex = 0;
-            this.checkedListBoxItems.SelectedIndexChanged += new EventHandler(checkedListBoxItems_SelectedIndexChanged);
+            checkedListBoxItems.FormattingEnabled = true;
+            checkedListBoxItems.Location = new Point(12, 12);
+            checkedListBoxItems.Name = "checkedListBoxItems";
+            checkedListBoxItems.Size = new Size(601, 480);
+            checkedListBoxItems.TabIndex = 0;
+            checkedListBoxItems.SelectedIndexChanged += checkedListBoxItems_SelectedIndexChanged;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(100, 525);
+            button1.Name = "button1";
+            button1.Size = new Size(163, 58);
+            button1.TabIndex = 1;
+            button1.Text = "Apply";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += buttonApply_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(365, 525);
+            button2.Name = "button2";
+            button2.Size = new Size(163, 58);
+            button2.TabIndex = 2;
+            button2.Text = "Cancel";
+            button2.UseVisualStyleBackColor = true;
+            button1.Click += buttonCancel_Click;
             // 
             // CsvSelectionForm
             // 
-            this.AutoScaleDimensions = new SizeF(10F, 25F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(800, 450);
-            this.Controls.Add(this.checkedListBoxItems);
-            this.Name = "CsvSelectionForm";
-            this.Text = "Library Selection";
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(626, 613);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(checkedListBoxItems);
+            Name = "CsvSelectionForm";
+            Text = "Library Selection";
+            ResumeLayout(false);
         }
 
-     
+
 
         private void checkedListBoxItems_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Handle selection changes if needed
         }
+        private Button button1;
+        private Button button2;
     }
 }
