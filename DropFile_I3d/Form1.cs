@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.IO;
 using System;
 using System.Windows.Forms;
+using ImplantPositionEditor;
 
 namespace DropFile_I3d
 {
@@ -209,7 +210,7 @@ namespace DropFile_I3d
 
         private void buttonHealing_Click(object sender, EventArgs e)
         {
-            var form = new  CsvSelectionForm("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv", "healing");
+            var form = new CsvSelectionForm("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv", "healing");
             form.ShowDialog();
         }
 
@@ -301,5 +302,12 @@ namespace DropFile_I3d
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
+        private void buttonEditor_Click(object sender, EventArgs e)
+        {
+            ImplantEditor editorForm = new ImplantEditor();
+            editorForm.ShowDialog(); // Or use .Show() if you don’t want it modal
+        }
+
     }
 }

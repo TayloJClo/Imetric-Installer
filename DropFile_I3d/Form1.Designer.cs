@@ -50,6 +50,7 @@ namespace DropFile_I3d
             groupBox2 = new GroupBox();
             button2 = new Button();
             button1 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -256,11 +257,22 @@ namespace DropFile_I3d
             button1.UseVisualStyleBackColor = true;
             button1.Click += buttonScrew_Click;
             // 
+            // button3
+            // 
+            button3.Location = new Point(375, 418);
+            button3.Name = "button3";
+            button3.Size = new Size(196, 63);
+            button3.TabIndex = 24;
+            button3.Text = "Implant Position Editor";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += buttonEditor_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(601, 567);
+            Controls.Add(button3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label3);
@@ -312,5 +324,6 @@ namespace DropFile_I3d
         private Button button1;
         private EventHandler button1_Click_1;
         private EventHandler button2_Click_2;
+        private Button button3;
     }
 }
