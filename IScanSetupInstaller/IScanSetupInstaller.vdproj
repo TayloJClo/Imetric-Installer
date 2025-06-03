@@ -69,6 +69,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0DFCCC0407C24EEDA1AB452992D243D1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0E37945DF8FE471089287D8991948343"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1172,6 +1178,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -1382,6 +1396,26 @@
             "TargetName" = "8:Upper Jaw Gingiva with ICamRefs aligned.stl"
             "Tag" = "8:"
             "Folder" = "8:_501F1907602A426C8FF459E8F3B205C1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0DFCCC0407C24EEDA1AB452992D243D1"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\Iscan tool .ico"
+            "TargetName" = "8:Iscan tool .ico"
+            "Tag" = "8:"
+            "Folder" = "8:_C7F9059BBDD3483CA713278E7C8E4EFE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5812,7 +5846,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FDDBB474CFE54B59BD20A5DFFD6E98D2"
             {
-            "Name" = "8:IScanSetup.exe"
+            "Name" = "8:IScan Tools.exe"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -5821,7 +5855,7 @@
             "Target" = "8:_2C8DA7230C5E467B8AFCAE397B5DA24E"
             "Folder" = "8:_CB549EC7ADA44A1490E5414AEC9DD9B0"
             "WorkingFolder" = "8:_940913C58B904ABD8DA22E76A86C725B"
-            "Icon" = "8:_E2D4EB1A4A364055AA90D720F2510220"
+            "Icon" = "8:_0DFCCC0407C24EEDA1AB452992D243D1"
             "Feature" = "8:"
             }
         }
@@ -6225,7 +6259,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0BEB5965ABE04B06BA58381ABBC3EBDC"
             {
-            "SourcePath" = "8:..\\DropFile_I3d\\obj\\Release\\net6.0-windows\\ICam4DSetup.dll"
+            "SourcePath" = "8:..\\DropFile_I3d\\obj\\Debug\\net6.0-windows\\ICam4DSetup.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_940913C58B904ABD8DA22E76A86C725B"

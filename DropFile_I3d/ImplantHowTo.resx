@@ -117,12 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="folderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>246, 17</value>
-  </metadata>
+  <data name="label2.Text" xml:space="preserve">
+    <value>1. Load Implant Files:
+Drag and drop your .implantPosition files into the white space — or click "Load File" and select all your implant position files at once.
+
+2. Load the CSV Template:
+Click "Load CSV", then navigate to your *ICam Serial Number* ICamBody Library folder and select the file named "ICamBody Library.csv".
+
+3. Select a Screw Channel:
+Use the dropdown menu to choose the screw channel you’d like to apply to the loaded implants.
+
+4. Save Changes:
+Click "Save" to overwrite the original files or "Save As" to export the modified files to a new folder.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

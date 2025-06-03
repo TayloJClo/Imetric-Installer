@@ -29,6 +29,7 @@ namespace DropFile_I3d
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             buttonGetFile = new Button();
             buttonCancel = new Button();
             textBoxName = new TextBox();
@@ -228,11 +229,12 @@ namespace DropFile_I3d
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(button3);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(button1);
             groupBox2.Location = new Point(20, 378);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(306, 159);
+            groupBox2.Size = new Size(551, 159);
             groupBox2.TabIndex = 23;
             groupBox2.TabStop = false;
             groupBox2.Text = "Library Editor";
@@ -259,7 +261,7 @@ namespace DropFile_I3d
             // 
             // button3
             // 
-            button3.Location = new Point(375, 418);
+            button3.Location = new Point(311, 54);
             button3.Name = "button3";
             button3.Size = new Size(196, 63);
             button3.TabIndex = 24;
@@ -272,7 +274,6 @@ namespace DropFile_I3d
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(601, 567);
-            Controls.Add(button3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label3);
@@ -286,6 +287,7 @@ namespace DropFile_I3d
             Controls.Add(labelProgress);
             Controls.Add(buttonCancel);
             Controls.Add(buttonGetFile);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
             Text = "Imetric Installation";

@@ -305,9 +305,36 @@ namespace DropFile_I3d
 
         private void buttonEditor_Click(object sender, EventArgs e)
         {
-            ImplantEditor editorForm = new ImplantEditor();
-            editorForm.ShowDialog(); // Or use .Show() if you don’t want it modal
+            // If the popup should be shown
+            if (!Properties.Settings.Default.HideImplantHowTo)
+            {
+                var howToForm = new ImplantHowTo();
+                var result = howToForm.ShowDialog();
+
+                // If the user clicked OK, check for "Don't show again"
+                if (result == DialogResult.OK)
+                {
+                    if (howToForm.DontShowAgain)
+                    {
+                        Properties.Settings.Default.HideImplantHowTo = true;
+                        Properties.Settings.Default.Save();
+                    }
+
+                    // Open the editor only if they confirmed
+                    ImplantEditor editorForm = new ImplantEditor();
+                    editorForm.ShowDialog();
+                }
+                // If they clicked Cancel or closed the popup, do nothing
+            }
+            else
+            {
+                // If "Don't show again" was previously checked, just open the editor
+                ImplantEditor editorForm = new ImplantEditor();
+                editorForm.ShowDialog();
+            }
         }
+
+
 
     }
 }

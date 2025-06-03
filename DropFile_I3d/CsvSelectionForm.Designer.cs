@@ -17,6 +17,7 @@ namespace ICam4DSetup
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CsvSelectionForm));
             checkedListBoxItems = new CheckedListBox();
             button1 = new Button();
             button2 = new Button();
@@ -59,6 +60,7 @@ namespace ICam4DSetup
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(checkedListBoxItems);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CsvSelectionForm";
             Text = "Library Selection";
             ResumeLayout(false);
