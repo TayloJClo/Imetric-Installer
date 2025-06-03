@@ -26,6 +26,7 @@ namespace ImplantPositionEditor
         private void btnLoadFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
+
             {
                 Filter = "Implant Position Files (*.implantPosition)|*.implantPosition|All Files (*.*)|*.*",
                 Multiselect = true // Allow multiple file selection
@@ -47,17 +48,26 @@ namespace ImplantPositionEditor
 
         private void btnLoadCSV_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                Filter = "CSV Files (*.csv)|*.csv|All Files (*.*)|*.*"
-            };
+                openFileDialog.Title = "Select your ICamBody Library CSV file";
+                openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+                openFileDialog.InitialDirectory = @"C:\\I3D_Systems\\";
+                
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = openFileDialog.FileName;
-                Console.WriteLine($"CSV File Selected: {filePath}");
-                LoadCSV(filePath);
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    loadedFilePath = openFileDialog.FileName;
+                }
+                else
+                {
+                    MessageBox.Show("No local CSV file selected. The form will now close.");
+                    this.Close();
+                    return;
+                }
             }
+
+            
         }
 
         private void LoadCSV(string filePath)

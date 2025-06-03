@@ -28,153 +28,195 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnLoadFile = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbTemplates = new System.Windows.Forms.ComboBox();
-            this.txtFileContent = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnLoadCSV = new System.Windows.Forms.Button();
-            this.lstFiles = new System.Windows.Forms.ListBox();
-            this.btnSaveAs = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImplantEditor));
+            label1 = new Label();
+            btnLoadFile = new Button();
+            label2 = new Label();
+            cmbTemplates = new ComboBox();
+            txtFileContent = new TextBox();
+            btnSave = new Button();
+            btnLoadCSV = new Button();
+            lstFiles = new ListBox();
+            btnSaveAs = new Button();
+            label3 = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            label4 = new Label();
+            pictureBox1 = new PictureBox();
+            label5 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Select File";
+            label1.AutoSize = true;
+            label1.Location = new Point(64, 89);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(93, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Select File:";
             // 
             // btnLoadFile
             // 
-            this.btnLoadFile.Location = new System.Drawing.Point(74, 4);
-            this.btnLoadFile.Name = "btnLoadFile";
-            this.btnLoadFile.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadFile.TabIndex = 1;
-            this.btnLoadFile.Text = "Load File";
-            this.btnLoadFile.UseVisualStyleBackColor = true;
-            this.btnLoadFile.Click += new System.EventHandler(this.btnLoadFile_Click);
+            btnLoadFile.Location = new Point(53, 120);
+            btnLoadFile.Margin = new Padding(4, 6, 4, 6);
+            btnLoadFile.Name = "btnLoadFile";
+            btnLoadFile.Size = new Size(124, 44);
+            btnLoadFile.TabIndex = 1;
+            btnLoadFile.Text = "Load File";
+            btnLoadFile.UseVisualStyleBackColor = true;
+            btnLoadFile.Click += btnLoadFile_Click;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = " Screw Channel";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            label2.AutoSize = true;
+            label2.Location = new Point(296, 210);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(131, 25);
+            label2.TabIndex = 2;
+            label2.Text = " Screw Channel";
+            label2.Click += label2_Click;
             // 
             // cmbTemplates
             // 
-            this.cmbTemplates.FormattingEnabled = true;
-            this.cmbTemplates.Location = new System.Drawing.Point(15, 98);
-            this.cmbTemplates.Name = "cmbTemplates";
-            this.cmbTemplates.Size = new System.Drawing.Size(251, 21);
-            this.cmbTemplates.TabIndex = 3;
-            this.cmbTemplates.SelectedIndexChanged += new System.EventHandler(this.cmbTemplates_SelectedIndexChanged);
+            cmbTemplates.FormattingEnabled = true;
+            cmbTemplates.Location = new Point(164, 241);
+            cmbTemplates.Margin = new Padding(4, 6, 4, 6);
+            cmbTemplates.Name = "cmbTemplates";
+            cmbTemplates.Size = new Size(415, 33);
+            cmbTemplates.TabIndex = 3;
+            cmbTemplates.SelectedIndexChanged += cmbTemplates_SelectedIndexChanged;
             // 
             // txtFileContent
             // 
-            this.txtFileContent.Location = new System.Drawing.Point(15, 125);
-            this.txtFileContent.Multiline = true;
-            this.txtFileContent.Name = "txtFileContent";
-            this.txtFileContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFileContent.Size = new System.Drawing.Size(400, 284);
-            this.txtFileContent.TabIndex = 4;
-            this.txtFileContent.TextChanged += new System.EventHandler(this.txtFileContent_TextChanged);
+            txtFileContent.Location = new Point(79, 289);
+            txtFileContent.Margin = new Padding(4, 6, 4, 6);
+            txtFileContent.Multiline = true;
+            txtFileContent.Name = "txtFileContent";
+            txtFileContent.ScrollBars = ScrollBars.Vertical;
+            txtFileContent.Size = new Size(550, 464);
+            txtFileContent.TabIndex = 4;
+            txtFileContent.TextChanged += txtFileContent_TextChanged;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 415);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Save File";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.Location = new Point(142, 780);
+            btnSave.Margin = new Padding(4, 6, 4, 6);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(150, 61);
+            btnSave.TabIndex = 5;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnLoadCSV
             // 
-            this.btnLoadCSV.Location = new System.Drawing.Point(155, 4);
-            this.btnLoadCSV.Name = "btnLoadCSV";
-            this.btnLoadCSV.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadCSV.TabIndex = 6;
-            this.btnLoadCSV.Text = "Load CSV";
-            this.btnLoadCSV.UseVisualStyleBackColor = true;
-            this.btnLoadCSV.Click += new System.EventHandler(this.btnLoadCSV_Click);
+            btnLoadCSV.Location = new Point(556, 120);
+            btnLoadCSV.Margin = new Padding(4, 6, 4, 6);
+            btnLoadCSV.Name = "btnLoadCSV";
+            btnLoadCSV.Size = new Size(124, 44);
+            btnLoadCSV.TabIndex = 6;
+            btnLoadCSV.Text = "Load CSV";
+            btnLoadCSV.UseVisualStyleBackColor = true;
+            btnLoadCSV.Click += btnLoadCSV_Click;
             // 
             // lstFiles
             // 
-            this.lstFiles.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lstFiles.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lstFiles.FormattingEnabled = true;
-            this.lstFiles.Location = new System.Drawing.Point(430, 0);
-            this.lstFiles.Name = "lstFiles";
-            this.lstFiles.Size = new System.Drawing.Size(278, 450);
-            this.lstFiles.TabIndex = 7;
-            this.lstFiles.Click += new System.EventHandler(this.lstFiles_SelectedIndexChanged);
-            this.lstFiles.SelectedIndexChanged += new System.EventHandler(this.lstFiles_SelectedIndexChanged);
+            lstFiles.BackColor = SystemColors.InactiveBorder;
+            lstFiles.Dock = DockStyle.Right;
+            lstFiles.FormattingEnabled = true;
+            lstFiles.ItemHeight = 25;
+            lstFiles.Location = new Point(715, 0);
+            lstFiles.Margin = new Padding(4, 6, 4, 6);
+            lstFiles.Name = "lstFiles";
+            lstFiles.Size = new Size(465, 865);
+            lstFiles.TabIndex = 7;
+            lstFiles.Click += lstFiles_SelectedIndexChanged;
+            lstFiles.SelectedIndexChanged += lstFiles_SelectedIndexChanged;
             // 
             // btnSaveAs
             // 
-            this.btnSaveAs.Location = new System.Drawing.Point(108, 415);
-            this.btnSaveAs.Name = "btnSaveAs";
-            this.btnSaveAs.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveAs.TabIndex = 8;
-            this.btnSaveAs.Text = "Save As";
-            this.btnSaveAs.UseVisualStyleBackColor = true;
-            this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
+            btnSaveAs.Location = new Point(380, 780);
+            btnSaveAs.Margin = new Padding(4, 6, 4, 6);
+            btnSaveAs.Name = "btnSaveAs";
+            btnSaveAs.Size = new Size(144, 61);
+            btnSaveAs.TabIndex = 8;
+            btnSaveAs.Text = "Save As";
+            btnSaveAs.UseVisualStyleBackColor = true;
+            btnSaveAs.Click += btnSaveAs_Click;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(71, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Drag and Drop Files Here";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            label3.AutoSize = true;
+            label3.BackColor = Color.White;
+            label3.Location = new Point(243, 485);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(213, 25);
+            label3.TabIndex = 9;
+            label3.Text = "Drag and Drop Files Here";
+            label3.Click += label3_Click;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(236, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            label4.AutoSize = true;
+            label4.Location = new Point(393, 18);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(0, 25);
+            label4.TabIndex = 10;
+            label4.Click += label4_Click;
             // 
-            // Form1
+            // pictureBox1
             // 
-            this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(708, 450);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnSaveAs);
-            this.Controls.Add(this.lstFiles);
-            this.Controls.Add(this.btnLoadCSV);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtFileContent);
-            this.Controls.Add(this.cmbTemplates);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnLoadFile);
-            this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Screw Change";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            pictureBox1.Image = ICam4DSetup.Properties.Resources.imetric_0629req;
+            pictureBox1.Location = new Point(211, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(314, 164);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(559, 89);
+            label5.Name = "label5";
+            label5.Size = new Size(120, 25);
+            label5.TabIndex = 12;
+            label5.Text = "Select Library:";
+            // 
+            // ImplantEditor
+            // 
+            AllowDrop = true;
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(224, 224, 224);
+            BackgroundImageLayout = ImageLayout.None;
+            ClientSize = new Size(1180, 865);
+            Controls.Add(label5);
+            Controls.Add(pictureBox1);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(btnSaveAs);
+            Controls.Add(lstFiles);
+            Controls.Add(btnLoadCSV);
+            Controls.Add(btnSave);
+            Controls.Add(txtFileContent);
+            Controls.Add(cmbTemplates);
+            Controls.Add(label2);
+            Controls.Add(btnLoadFile);
+            Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 6, 4, 6);
+            Name = "ImplantEditor";
+            Text = "Implant Position Editor";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -192,6 +234,8 @@
         private System.Windows.Forms.Label label3;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
     }
 }
 

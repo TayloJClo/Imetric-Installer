@@ -190,13 +190,13 @@ namespace DropFile_I3d
 
         private async void buttonUpdateCsv_Click(object sender, EventArgs e)
         {
-            string dropboxUrl = "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv";
+            string GitUrl = "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv";
             string localCsvPath = "C:\\I3D_Systems\\I221301 ICamBody Library\\ICamBody Library.csv";
 
             try
             {
                 using var client = new HttpClient();
-                string csvContent = await client.GetStringAsync(dropboxUrl);
+                string csvContent = await client.GetStringAsync(GitUrl);
                 Directory.CreateDirectory(Path.GetDirectoryName(localCsvPath));
                 File.WriteAllText(localCsvPath, csvContent, Encoding.UTF8);
                 MessageBox.Show("CSV successfully downloaded and updated.");

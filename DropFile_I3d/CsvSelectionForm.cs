@@ -1,6 +1,7 @@
 ﻿using System.Data;
-using System.Text;
+using System.Diagnostics;
 using System.Net.Http;
+using System.Text;
 
 namespace ICam4DSetup
 {
@@ -51,6 +52,8 @@ namespace ICam4DSetup
                         string csvData = await client.GetStringAsync(url);
                         var lines = csvData.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
+                        var labelLinePairs = new List<(string Label, string Line)>();
+
                         foreach (var line in lines.Skip(1))
                         {
                             var parts = line.Split('\t');
@@ -60,13 +63,18 @@ namespace ICam4DSetup
 
                             if (!string.IsNullOrWhiteSpace(label))
                             {
-                                if ((filterType == "healing" && parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase)) ||
-                                    (filterType == "screw" && !parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase)))
+                                bool isHealing = parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase);
+                                if ((filterType == "healing" && isHealing) || (filterType == "screw" && !isHealing))
                                 {
-                                    checkedListBoxItems.Items.Add(label);
-                                    itemToLineMap[label] = line;
+                                    labelLinePairs.Add((label, line));
                                 }
                             }
+                        }
+
+                        foreach (var (label, line) in labelLinePairs.OrderBy(x => x.Label, StringComparer.OrdinalIgnoreCase))
+                        {
+                            checkedListBoxItems.Items.Add(label);
+                            itemToLineMap[label] = line;
                         }
                     }
                     break;
@@ -258,6 +266,15 @@ namespace ICam4DSetup
                     }
                 }
             }
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://forms.monday.com/forms/a95a7d295dec90ec7478f8470b01232f?r=use1",
+                UseShellExecute = true
+            });
         }
     }
 }
