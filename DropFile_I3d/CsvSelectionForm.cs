@@ -161,6 +161,21 @@ namespace ICam4DSetup
                 }
 
                 dataLines.AddRange(newLines);
+                int insertIndex = dataLines.FindIndex(line =>
+                {
+                    var parts = line.Split('\t');
+                    return parts.Length > 1 && parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase);
+                });
+
+                if (insertIndex == -1)
+                {
+                    dataLines.AddRange(newLines); // Fallback: append to end
+                }
+                else
+                {
+                    dataLines.InsertRange(insertIndex, newLines); // Insert before first ICamRef
+                }
+
                 File.WriteAllLines(localCsvPath, new[] { header }.Concat(dataLines), Encoding.UTF8);
 
                 var baseDir = Path.GetDirectoryName(localCsvPath);
