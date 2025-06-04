@@ -193,6 +193,7 @@
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(224, 224, 224);
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1180, 865);
