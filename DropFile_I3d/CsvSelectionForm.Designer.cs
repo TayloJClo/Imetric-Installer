@@ -29,9 +29,9 @@ namespace ICam4DSetup
             // 
             checkedListBoxItems.CheckOnClick = true;
             checkedListBoxItems.FormattingEnabled = true;
-            checkedListBoxItems.Location = new Point(51, 12);
+            checkedListBoxItems.Location = new Point(45, 12);
             checkedListBoxItems.Name = "checkedListBoxItems";
-            checkedListBoxItems.Size = new Size(533, 480);
+            checkedListBoxItems.Size = new Size(539, 480);
             checkedListBoxItems.TabIndex = 0;
             checkedListBoxItems.SelectedIndexChanged += checkedListBoxItems_SelectedIndexChanged;
             // 
@@ -57,7 +57,7 @@ namespace ICam4DSetup
             // 
             // button3
             // 
-            button3.Location = new Point(422, 540);
+            button3.Location = new Point(418, 533);
             button3.Name = "button3";
             button3.Size = new Size(137, 37);
             button3.TabIndex = 3;
@@ -68,7 +68,7 @@ namespace ICam4DSetup
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(375, 512);
+            label1.Location = new Point(371, 505);
             label1.Name = "label1";
             label1.Size = new Size(238, 25);
             label1.TabIndex = 4;
