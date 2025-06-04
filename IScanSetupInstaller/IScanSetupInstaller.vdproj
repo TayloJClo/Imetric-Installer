@@ -27,12 +27,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_05EB84642ECB4453AFAC716661D2D960"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_075D667F843740C69EFD274758D8F5D3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -69,12 +63,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0DFCCC0407C24EEDA1AB452992D243D1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_0E37945DF8FE471089287D8991948343"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -82,6 +70,12 @@
         "Entry"
         {
         "MsmKey" = "8:_12339A9F3A5D4F9BB1680248F92E0FD7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1A2B6EB1ED3F4F9484B0DDBC4487F827"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -579,12 +573,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_92C3A2841F2F47678B442E641E081379"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_92FB290FD6544D3685BA9B2A0CA8822D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1023,6 +1011,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_E46CC42E2C724DA7989BD63BE8480182"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E5E21E033E94462C92A73996F93D5F84"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1290,26 +1284,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_05EB84642ECB4453AFAC716661D2D960"
-            {
-            "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\Icons\\Manual.ico"
-            "TargetName" = "8:Manual.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_C7F9059BBDD3483CA713278E7C8E4EFE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_075D667F843740C69EFD274758D8F5D3"
             {
             "SourcePath" = "8:C:\\Newest Version of IScan\\Imetric4D Data\\ICam4D Workflow Sample1\\STLs Trios not aligned\\Upper Jaw Gingiva with ICamRefs Trios.stl"
@@ -1410,26 +1384,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0DFCCC0407C24EEDA1AB452992D243D1"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\Iscan tool .ico"
-            "TargetName" = "8:Iscan tool .ico"
-            "Tag" = "8:"
-            "Folder" = "8:_C7F9059BBDD3483CA713278E7C8E4EFE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0E37945DF8FE471089287D8991948343"
             {
             "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Systems\\I221301 ICamBody Library\\ICamRef\\ICamRef MURP Cylinder.bms"
@@ -1456,6 +1410,26 @@
             "TargetName" = "8:NM-C9213_EC.stl"
             "Tag" = "8:"
             "Folder" = "8:_B3F72295BCB84605980A3CB16B93C342"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1A2B6EB1ED3F4F9484B0DDBC4487F827"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\Iscan with cogs.ico"
+            "TargetName" = "8:Iscan with cogs.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_982BA4E787924258987454D8DE3B4872"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1755,7 +1729,7 @@
             "SourcePath" = "8:..\\DropFile_I3d\\bin\\Release\\net6.0-windows\\Release\\net6.0-windows\\ICam4DSetup.exe"
             "TargetName" = "8:ICam4DSetup.exe"
             "Tag" = "8:"
-            "Folder" = "8:_940913C58B904ABD8DA22E76A86C725B"
+            "Folder" = "8:_84268E489E454194AE18583A016D26E1"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2235,7 +2209,7 @@
             "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\Icons\\IScan3D Dental.ico"
             "TargetName" = "8:IScan3D Dental.ico"
             "Tag" = "8:"
-            "Folder" = "8:_C7F9059BBDD3483CA713278E7C8E4EFE"
+            "Folder" = "8:_982BA4E787924258987454D8DE3B4872"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2835,7 +2809,7 @@
             "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\Icons\\folder.ico"
             "TargetName" = "8:folder.ico"
             "Tag" = "8:"
-            "Folder" = "8:_C7F9059BBDD3483CA713278E7C8E4EFE"
+            "Folder" = "8:_982BA4E787924258987454D8DE3B4872"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3096,26 +3070,6 @@
             "TargetName" = "8:License 2022-02-02-19-07-49.txt"
             "Tag" = "8:"
             "Folder" = "8:_1C7F91D37CF44736B4E588C12EF145FE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_92C3A2841F2F47678B442E641E081379"
-            {
-            "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\Icons\\UsbTreeView.ico"
-            "TargetName" = "8:UsbTreeView.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_C7F9059BBDD3483CA713278E7C8E4EFE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4375,7 +4329,7 @@
             "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\Drivers\\UsbTreeView.ico"
             "TargetName" = "8:UsbTreeView.ico"
             "Tag" = "8:"
-            "Folder" = "8:_493288CD447B49D9BA3E14BE104ACBEF"
+            "Folder" = "8:_982BA4E787924258987454D8DE3B4872"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4535,7 +4489,7 @@
             "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\Icons\\CamSetup.ico"
             "TargetName" = "8:CamSetup.ico"
             "Tag" = "8:"
-            "Folder" = "8:_C7F9059BBDD3483CA713278E7C8E4EFE"
+            "Folder" = "8:_982BA4E787924258987454D8DE3B4872"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4576,6 +4530,26 @@
             "TargetName" = "8:Default.ply"
             "Tag" = "8:"
             "Folder" = "8:_738C7078405447CD9F9A9C27FD0B95DF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E46CC42E2C724DA7989BD63BE8480182"
+            {
+            "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\Icons\\IScan-Manual.ico"
+            "TargetName" = "8:IScan-Manual.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_982BA4E787924258987454D8DE3B4872"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5548,17 +5522,6 @@
                                         {
                                         }
                                     }
-                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_C7F9059BBDD3483CA713278E7C8E4EFE"
-                                    {
-                                    "Name" = "8:Icons"
-                                    "AlwaysCreate" = "11:FALSE"
-                                    "Condition" = "8:"
-                                    "Transitive" = "11:FALSE"
-                                    "Property" = "8:_DA662D7610D249CF8F53032C9795CE53"
-                                        "Folders"
-                                        {
-                                        }
-                                    }
                                 }
                             }
                             "{9EF0B969-E518-4E46-987F-47570745A589}:_493288CD447B49D9BA3E14BE104ACBEF"
@@ -5652,6 +5615,28 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_84268E489E454194AE18583A016D26E1"
+                    {
+                    "Name" = "8:ICamSetup"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_8928D1D922BF489B8EC75730B0998159"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_982BA4E787924258987454D8DE3B4872"
+                            {
+                            "Name" = "8:Icons"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_83FB2926661E4985B0C5F478D7C10EAA"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_CB549EC7ADA44A1490E5414AEC9DD9B0"
@@ -5813,12 +5798,12 @@
             "Target" = "8:_9C2CB1127F524A22A58699690D220693"
             "Folder" = "8:_CB549EC7ADA44A1490E5414AEC9DD9B0"
             "WorkingFolder" = "8:_29D81EE65D2245ABA3B6F19E1401BC22"
-            "Icon" = "8:_05EB84642ECB4453AFAC716661D2D960"
+            "Icon" = "8:_E46CC42E2C724DA7989BD63BE8480182"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_411A685D11784C3E8BC0FA3CD6F22434"
             {
-            "Name" = "8:UsbTreeView.exe"
+            "Name" = "8:UsbTreeView"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -5827,7 +5812,7 @@
             "Target" = "8:_35F378272AE143008CE6DFA123649C3B"
             "Folder" = "8:_CB549EC7ADA44A1490E5414AEC9DD9B0"
             "WorkingFolder" = "8:_493288CD447B49D9BA3E14BE104ACBEF"
-            "Icon" = "8:_92C3A2841F2F47678B442E641E081379"
+            "Icon" = "8:_D7B7462078AE4E1BA91CB36721B6F3CB"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5DB35161DF7D4F4E868981B2AC3E388F"
@@ -5846,7 +5831,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FDDBB474CFE54B59BD20A5DFFD6E98D2"
             {
-            "Name" = "8:IScan Tools.exe"
+            "Name" = "8:IScan Tools"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -5855,7 +5840,7 @@
             "Target" = "8:_2C8DA7230C5E467B8AFCAE397B5DA24E"
             "Folder" = "8:_CB549EC7ADA44A1490E5414AEC9DD9B0"
             "WorkingFolder" = "8:_940913C58B904ABD8DA22E76A86C725B"
-            "Icon" = "8:_0DFCCC0407C24EEDA1AB452992D243D1"
+            "Icon" = "8:_1A2B6EB1ED3F4F9484B0DDBC4487F827"
             "Feature" = "8:"
             }
         }
@@ -6262,7 +6247,7 @@
             "SourcePath" = "8:..\\DropFile_I3d\\obj\\Debug\\net6.0-windows\\ICam4DSetup.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_940913C58B904ABD8DA22E76A86C725B"
+            "Folder" = "8:_84268E489E454194AE18583A016D26E1"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
