@@ -86,8 +86,8 @@ namespace DropFile_I3d
 
         private void buttonInstallDriver_Click(object sender, EventArgs e)
         {
-            installbat("C:\\I3D_Software\\Drivers\\Camera Flir\\Flir_1.23.0.27_Driver");
-            installInf("C:\\I3D_Software\\Drivers\\Projector Imetric4D 9");
+            installbat("C:\\I3D_Software\\Drivers\\Camera Flir\\Flir_1.23.0.27_Driver\\install.bat");
+            installInf("C:\\I3D_Software\\Drivers\\Projector Imetric4D 9\\cyusb3.inf");
         }
 
         private void buttonIScan3d_Click(object sender, EventArgs e)

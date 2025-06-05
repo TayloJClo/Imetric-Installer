@@ -52,8 +52,6 @@ namespace ICam4DSetup
                         string csvData = await client.GetStringAsync(url);
                         var lines = csvData.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-                        var labelLinePairs = new List<(string Label, string Line)>();
-
                         foreach (var line in lines.Skip(1))
                         {
                             var parts = line.Split('\t');
@@ -63,18 +61,13 @@ namespace ICam4DSetup
 
                             if (!string.IsNullOrWhiteSpace(label))
                             {
-                                bool isHealing = parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase);
-                                if ((filterType == "healing" && isHealing) || (filterType == "screw" && !isHealing))
+                                if ((filterType == "healing" && parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase)) ||
+                                    (filterType == "screw" && !parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase)))
                                 {
-                                    labelLinePairs.Add((label, line));
+                                    checkedListBoxItems.Items.Add(label);
+                                    itemToLineMap[label] = line;
                                 }
                             }
-                        }
-
-                        foreach (var (label, line) in labelLinePairs.OrderBy(x => x.Label, StringComparer.OrdinalIgnoreCase))
-                        {
-                            checkedListBoxItems.Items.Add(label);
-                            itemToLineMap[label] = line;
                         }
                     }
                     break;
@@ -88,6 +81,7 @@ namespace ICam4DSetup
                 }
             }
         }
+
 
         private async void buttonApply_Click(object sender, EventArgs e)
         {
@@ -169,19 +163,17 @@ namespace ICam4DSetup
                 }
 
                 dataLines.AddRange(newLines);
-                int insertIndex = dataLines.FindIndex(line =>
-                {
-                    var parts = line.Split('\t');
-                    return parts.Length > 1 && parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase);
-                });
 
-                if (insertIndex == -1)
+                if (filterType == "screw")
                 {
-                    dataLines.AddRange(newLines); // Fallback: append to end
-                }
-                else
-                {
-                    dataLines.InsertRange(insertIndex, newLines); // Insert before first ICamRef
+                    var healingLines = dataLines.Where(line => line.Split('\t')[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase)).ToList();
+                    var screwLines = dataLines.Where(line => !line.Split('\t')[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase)).ToList();
+
+                    screwLines = screwLines.OrderBy(l => l.Split('\t')[4], StringComparer.OrdinalIgnoreCase)
+                                           .ThenBy(l => l.Split('\t')[1], StringComparer.OrdinalIgnoreCase)
+                                           .ToList();
+
+                    dataLines = screwLines.Concat(healingLines).ToList();
                 }
 
                 File.WriteAllLines(localCsvPath, new[] { header }.Concat(dataLines), Encoding.UTF8);
