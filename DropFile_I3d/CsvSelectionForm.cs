@@ -144,6 +144,12 @@ namespace ICam4DSetup
                             {
                                 newLines.Add(line);
                                 currentSet.Add(line);
+
+                                // Extract and collect column F value for folder creation
+                                if (parts.Length > 5 && !string.IsNullOrWhiteSpace(parts[5]))
+                                {
+                                    fColumnValues.Add(parts[5].Trim());
+                                }
                             }
                         }
                     }
@@ -174,6 +180,12 @@ namespace ICam4DSetup
                                            .ToList();
 
                     dataLines = screwLines.Concat(healingLines).ToList();
+                }
+                else if (filterType == "healing")
+                {
+                    dataLines = dataLines.OrderBy(l => l.Split('\t')[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase) ? l.Split('\t')[4] : "", StringComparer.OrdinalIgnoreCase)
+                                         .ThenBy(l => l.Split('\t')[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase) ? l.Split('\t')[1] : "", StringComparer.OrdinalIgnoreCase)
+                                         .ToList();
                 }
 
                 File.WriteAllLines(localCsvPath, new[] { header }.Concat(dataLines), Encoding.UTF8);

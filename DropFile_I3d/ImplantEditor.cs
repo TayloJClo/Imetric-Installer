@@ -58,6 +58,7 @@ namespace ImplantPositionEditor
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     loadedFilePath = openFileDialog.FileName;
+                    LoadCSV(loadedFilePath);
                 }
                 else
                 {

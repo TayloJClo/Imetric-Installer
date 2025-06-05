@@ -101,7 +101,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(142, 780);
+            btnSave.Location = new Point(164, 780);
             btnSave.Margin = new Padding(4, 6, 4, 6);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(150, 61);
@@ -137,7 +137,7 @@
             // 
             // btnSaveAs
             // 
-            btnSaveAs.Location = new Point(380, 780);
+            btnSaveAs.Location = new Point(435, 780);
             btnSaveAs.Margin = new Padding(4, 6, 4, 6);
             btnSaveAs.Name = "btnSaveAs";
             btnSaveAs.Size = new Size(144, 61);
