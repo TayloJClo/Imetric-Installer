@@ -71,10 +71,10 @@ namespace DropFile_I3d
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(230, 315);
+            buttonCancel.Location = new Point(195, 315);
             buttonCancel.Margin = new Padding(4, 5, 4, 5);
             buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(107, 38);
+            buttonCancel.Size = new Size(92, 38);
             buttonCancel.TabIndex = 1;
             buttonCancel.Text = "Cancel";
             buttonCancel.UseVisualStyleBackColor = true;
@@ -141,10 +141,10 @@ namespace DropFile_I3d
             // buttonInstallDriver
             // 
             buttonInstallDriver.BackColor = SystemColors.GradientActiveCaption;
-            buttonInstallDriver.Location = new Point(375, 180);
+            buttonInstallDriver.Location = new Point(360, 180);
             buttonInstallDriver.Margin = new Padding(4, 5, 4, 5);
             buttonInstallDriver.Name = "buttonInstallDriver";
-            buttonInstallDriver.Size = new Size(196, 38);
+            buttonInstallDriver.Size = new Size(211, 38);
             buttonInstallDriver.TabIndex = 14;
             buttonInstallDriver.Text = "Install Drivers";
             buttonInstallDriver.UseVisualStyleBackColor = false;
@@ -153,10 +153,10 @@ namespace DropFile_I3d
             // buttonIScan3d
             // 
             buttonIScan3d.BackColor = Color.White;
-            buttonIScan3d.Location = new Point(375, 269);
+            buttonIScan3d.Location = new Point(360, 269);
             buttonIScan3d.Margin = new Padding(4, 5, 4, 5);
             buttonIScan3d.Name = "buttonIScan3d";
-            buttonIScan3d.Size = new Size(196, 73);
+            buttonIScan3d.Size = new Size(211, 73);
             buttonIScan3d.TabIndex = 15;
             buttonIScan3d.Text = "Install IScan3D Dental";
             buttonIScan3d.UseVisualStyleBackColor = false;
@@ -164,10 +164,10 @@ namespace DropFile_I3d
             // 
             // buttonInstallZip7
             // 
-            buttonInstallZip7.Location = new Point(375, 14);
+            buttonInstallZip7.Location = new Point(360, 14);
             buttonInstallZip7.Margin = new Padding(4, 5, 4, 5);
             buttonInstallZip7.Name = "buttonInstallZip7";
-            buttonInstallZip7.Size = new Size(196, 38);
+            buttonInstallZip7.Size = new Size(211, 38);
             buttonInstallZip7.TabIndex = 16;
             buttonInstallZip7.Text = "Install 7Zip";
             buttonInstallZip7.UseVisualStyleBackColor = true;
@@ -175,10 +175,10 @@ namespace DropFile_I3d
             // 
             // buttonInstallOffice
             // 
-            buttonInstallOffice.Location = new Point(375, 62);
+            buttonInstallOffice.Location = new Point(360, 62);
             buttonInstallOffice.Margin = new Padding(4, 5, 4, 5);
             buttonInstallOffice.Name = "buttonInstallOffice";
-            buttonInstallOffice.Size = new Size(196, 38);
+            buttonInstallOffice.Size = new Size(211, 38);
             buttonInstallOffice.TabIndex = 17;
             buttonInstallOffice.Text = "Install LibreOffice";
             buttonInstallOffice.UseVisualStyleBackColor = true;
@@ -186,10 +186,10 @@ namespace DropFile_I3d
             // 
             // buttonNotePadPlus
             // 
-            buttonNotePadPlus.Location = new Point(375, 110);
+            buttonNotePadPlus.Location = new Point(360, 110);
             buttonNotePadPlus.Margin = new Padding(4, 5, 4, 5);
             buttonNotePadPlus.Name = "buttonNotePadPlus";
-            buttonNotePadPlus.Size = new Size(196, 38);
+            buttonNotePadPlus.Size = new Size(211, 38);
             buttonNotePadPlus.TabIndex = 18;
             buttonNotePadPlus.Text = "Install NotePad ++";
             buttonNotePadPlus.UseVisualStyleBackColor = true;
@@ -222,7 +222,7 @@ namespace DropFile_I3d
             groupBox1.Controls.Add(textBoxName);
             groupBox1.Location = new Point(20, 125);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(282, 177);
+            groupBox1.Size = new Size(267, 177);
             groupBox1.TabIndex = 21;
             groupBox1.TabStop = false;
             groupBox1.Text = "Feature coming soon";
@@ -251,11 +251,11 @@ namespace DropFile_I3d
             // 
             // button2
             // 
-            button2.Location = new Point(18, 101);
+            button2.Location = new Point(18, 88);
             button2.Name = "button2";
-            button2.Size = new Size(264, 34);
+            button2.Size = new Size(264, 42);
             button2.TabIndex = 1;
-            button2.Text = "Edit Healing Caps";
+            button2.Text = "Add Healing Caps";
             button2.UseVisualStyleBackColor = true;
             button2.Click += buttonHealing_Click;
             // 
@@ -263,9 +263,9 @@ namespace DropFile_I3d
             // 
             button1.Location = new Point(18, 40);
             button1.Name = "button1";
-            button1.Size = new Size(264, 34);
+            button1.Size = new Size(264, 42);
             button1.TabIndex = 0;
-            button1.Text = "Edit Screw Channels";
+            button1.Text = "Add Screw Channels";
             button1.UseVisualStyleBackColor = true;
             button1.Click += buttonScrew_Click;
             // 
@@ -273,8 +273,6 @@ namespace DropFile_I3d
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(601, 567);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -293,6 +291,7 @@ namespace DropFile_I3d
             Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
             Text = "Imetric Installation";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

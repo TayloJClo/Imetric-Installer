@@ -49,7 +49,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(64, 89);
+            label1.Location = new Point(58, 89);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(93, 25);
@@ -58,7 +58,7 @@
             // 
             // btnLoadFile
             // 
-            btnLoadFile.Location = new Point(53, 120);
+            btnLoadFile.Location = new Point(47, 120);
             btnLoadFile.Margin = new Padding(4, 6, 4, 6);
             btnLoadFile.Name = "btnLoadFile";
             btnLoadFile.Size = new Size(124, 44);
@@ -70,7 +70,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(296, 210);
+            label2.Location = new Point(290, 166);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(131, 25);
@@ -81,7 +81,7 @@
             // cmbTemplates
             // 
             cmbTemplates.FormattingEnabled = true;
-            cmbTemplates.Location = new Point(164, 241);
+            cmbTemplates.Location = new Point(158, 197);
             cmbTemplates.Margin = new Padding(4, 6, 4, 6);
             cmbTemplates.Name = "cmbTemplates";
             cmbTemplates.Size = new Size(415, 33);
@@ -101,7 +101,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(164, 780);
+            btnSave.Location = new Point(158, 783);
             btnSave.Margin = new Padding(4, 6, 4, 6);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(150, 61);
@@ -112,7 +112,7 @@
             // 
             // btnLoadCSV
             // 
-            btnLoadCSV.Location = new Point(556, 120);
+            btnLoadCSV.Location = new Point(550, 120);
             btnLoadCSV.Margin = new Padding(4, 6, 4, 6);
             btnLoadCSV.Name = "btnLoadCSV";
             btnLoadCSV.Size = new Size(124, 44);
@@ -137,7 +137,7 @@
             // 
             // btnSaveAs
             // 
-            btnSaveAs.Location = new Point(435, 780);
+            btnSaveAs.Location = new Point(429, 783);
             btnSaveAs.Margin = new Padding(4, 6, 4, 6);
             btnSaveAs.Name = "btnSaveAs";
             btnSaveAs.Size = new Size(144, 61);
@@ -149,8 +149,8 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Location = new Point(243, 485);
+            label3.BackColor = Color.Transparent;
+            label3.Location = new Point(251, 248);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(213, 25);
@@ -161,7 +161,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(393, 18);
+            label4.Location = new Point(387, 18);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(0, 25);
@@ -171,7 +171,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = ICam4DSetup.Properties.Resources.imetric_0629req;
-            pictureBox1.Location = new Point(211, 0);
+            pictureBox1.Location = new Point(205, 0);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(314, 164);
@@ -182,7 +182,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(559, 89);
+            label5.Location = new Point(553, 89);
             label5.Name = "label5";
             label5.Size = new Size(120, 25);
             label5.TabIndex = 12;

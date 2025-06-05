@@ -91,7 +91,7 @@ namespace ImplantPositionEditor
                     bool firstLine = true;
                     int rowIndex = 1;
 
-                    while ((line = sr.ReadLine()) != null && rowIndex <= 50)
+                    while ((line = sr.ReadLine()) != null)
                     {
                         if (firstLine)
                         {
@@ -112,20 +112,28 @@ namespace ImplantPositionEditor
                             // Check if the template name is "ICamRef" and skip it
                             if (!string.IsNullOrWhiteSpace(templateName) && !string.Equals(templateName, "ICamRef", StringComparison.OrdinalIgnoreCase))
                             {
-                                templateData[templateName] = (library, type, subtype);
-                                cmbTemplates.Items.Add(templateName);
-                                Console.WriteLine($"Loaded: {templateName} → Library: {library}, Type: {type}, Subtype: {subtype}");
-                                rowIndex++;
+                                if (!templateData.ContainsKey(templateName))
+                                {
+                                    templateData[templateName] = (library, type, subtype);
+                                    cmbTemplates.Items.Add(templateName);
+                                    Console.WriteLine($"Loaded: {templateName} → Library: {library}, Type: {type}, Subtype: {subtype}");
+                                }
                             }
+
                         }
                     }
                 }
+                // Sort dropdown alphabetically
+                var sortedItems = cmbTemplates.Items.Cast<string>().OrderBy(item => item).ToList();
+                cmbTemplates.Items.Clear();
+                cmbTemplates.Items.AddRange(sortedItems.ToArray());
 
                 if (cmbTemplates.Items.Count > 0)
                 {
                     cmbTemplates.SelectedIndex = 0;
                     MessageBox.Show("CSV loaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
                 else
                 {
                     MessageBox.Show("No templates found in CSV!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
