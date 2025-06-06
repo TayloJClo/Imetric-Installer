@@ -14,7 +14,7 @@ namespace ImplantPositionEditor
         private string loadedFilePath = "";
         private Dictionary<string, (string Library, string Type, string Subtype)> templateData = new Dictionary<string, (string, string, string)>();
         private List<string> loadedFilePaths = new List<string>(); // Store multiple files
-        
+
 
         public ImplantEditor()
         {
@@ -53,7 +53,7 @@ namespace ImplantPositionEditor
                 openFileDialog.Title = "Select your ICamBody Library CSV file";
                 openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
                 openFileDialog.InitialDirectory = @"C:\\I3D_Systems\\";
-                
+
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -68,7 +68,7 @@ namespace ImplantPositionEditor
                 }
             }
 
-            
+
         }
 
         private void LoadCSV(string filePath)
@@ -399,6 +399,11 @@ namespace ImplantPositionEditor
                 MessageBox.Show($"Currently loaded CSV: {label4.Text.Replace("CSV Loaded: ", "")}",
                                 "CSV Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

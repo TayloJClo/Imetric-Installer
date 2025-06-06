@@ -37,7 +37,7 @@ namespace ICam4DSetup
             // 
             // button1
             // 
-            button1.Location = new Point(12, 512);
+            button1.Location = new Point(123, 511);
             button1.Name = "button1";
             button1.Size = new Size(163, 58);
             button1.TabIndex = 1;
@@ -47,7 +47,7 @@ namespace ICam4DSetup
             // 
             // button2
             // 
-            button2.Location = new Point(181, 512);
+            button2.Location = new Point(343, 511);
             button2.Name = "button2";
             button2.Size = new Size(163, 58);
             button2.TabIndex = 2;
@@ -57,9 +57,9 @@ namespace ICam4DSetup
             // 
             // button3
             // 
-            button3.Location = new Point(418, 533);
+            button3.Location = new Point(228, 611);
             button3.Name = "button3";
-            button3.Size = new Size(137, 37);
+            button3.Size = new Size(165, 37);
             button3.TabIndex = 3;
             button3.Text = "Click here";
             button3.UseVisualStyleBackColor = true;
@@ -68,7 +68,7 @@ namespace ICam4DSetup
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(371, 505);
+            label1.Location = new Point(199, 583);
             label1.Name = "label1";
             label1.Size = new Size(238, 25);
             label1.TabIndex = 4;
@@ -79,13 +79,14 @@ namespace ICam4DSetup
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(626, 619);
+            ClientSize = new Size(626, 677);
             Controls.Add(label1);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(checkedListBoxItems);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "CsvSelectionForm";
             Text = "Library Selection";
             ResumeLayout(false);

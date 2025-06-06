@@ -227,6 +227,9 @@ namespace ICam4DSetup
         }
 
         private void button1_Click(object sender, EventArgs e) { }
+        
+        
+
 
         private void CopyDirectory(string sourceDir, string targetDir)
         {

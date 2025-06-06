@@ -41,7 +41,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(341, 86);
+            label1.Location = new Point(341, 116);
             label1.Name = "label1";
             label1.Size = new Size(468, 32);
             label1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(247, 481);
+            checkBox1.Location = new Point(718, 495);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(210, 29);
             checkBox1.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(485, 463);
+            button1.Location = new Point(486, 477);
             button1.Name = "button1";
             button1.Size = new Size(171, 63);
             button1.TabIndex = 2;
@@ -70,7 +70,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(24, 147);
+            label2.Location = new Point(24, 177);
             label2.Name = "label2";
             label2.Size = new Size(1092, 275);
             label2.TabIndex = 3;
@@ -79,10 +79,11 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Image = Properties.Resources.imetric_0629req;
-            pictureBox1.Location = new Point(12, 23);
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(323, 136);
+            pictureBox1.Size = new Size(1128, 113);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -91,15 +92,14 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1128, 552);
+            ClientSize = new Size(1128, 573);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(checkBox1);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "ImplantHowTo";
             Text = "How-To";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

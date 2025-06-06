@@ -29,15 +29,9 @@ namespace DropFile_I3d
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            buttonGetFile = new Button();
-            buttonCancel = new Button();
-            textBoxName = new TextBox();
-            label1 = new Label();
-            textBoxCustomerID = new TextBox();
-            label2 = new Label();
             labelProgress = new Label();
-            labelMessage = new Label();
             folderBrowserDialog = new FolderBrowserDialog();
             openFileDialog = new OpenFileDialog();
             buttonInstallDriver = new Button();
@@ -46,75 +40,19 @@ namespace DropFile_I3d
             buttonInstallOffice = new Button();
             buttonNotePadPlus = new Button();
             pictureBox1 = new PictureBox();
-            label3 = new Label();
-            groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
+            buttonRemove = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            toolTip1 = new ToolTip(components);
+            label1 = new Label();
+            label2 = new Label();
+            groupBox2 = new GroupBox();
+            groupBox3 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
-            // 
-            // buttonGetFile
-            // 
-            buttonGetFile.Enabled = false;
-            buttonGetFile.Location = new Point(17, 315);
-            buttonGetFile.Margin = new Padding(4, 5, 4, 5);
-            buttonGetFile.Name = "buttonGetFile";
-            buttonGetFile.Size = new Size(166, 38);
-            buttonGetFile.TabIndex = 0;
-            buttonGetFile.Text = "Get and Move File";
-            buttonGetFile.UseVisualStyleBackColor = true;
-            buttonGetFile.Click += buttonGetFile_Click;
-            // 
-            // buttonCancel
-            // 
-            buttonCancel.Location = new Point(195, 315);
-            buttonCancel.Margin = new Padding(4, 5, 4, 5);
-            buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(92, 38);
-            buttonCancel.TabIndex = 1;
-            buttonCancel.Text = "Cancel";
-            buttonCancel.UseVisualStyleBackColor = true;
-            buttonCancel.Click += buttonCancel_Click;
-            // 
-            // textBoxName
-            // 
-            textBoxName.Location = new Point(40, 136);
-            textBoxName.Margin = new Padding(4, 5, 4, 5);
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(170, 31);
-            textBoxName.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(40, 105);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(211, 25);
-            label1.TabIndex = 3;
-            label1.Text = "ICamBody Serial Number";
-            // 
-            // textBoxCustomerID
-            // 
-            textBoxCustomerID.Location = new Point(40, 62);
-            textBoxCustomerID.Margin = new Padding(4, 5, 4, 5);
-            textBoxCustomerID.Name = "textBoxCustomerID";
-            textBoxCustomerID.Size = new Size(170, 31);
-            textBoxCustomerID.TabIndex = 4;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(40, 32);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(170, 25);
-            label2.TabIndex = 5;
-            label2.Text = "ICam Serial Number";
             // 
             // labelProgress
             // 
@@ -125,38 +63,31 @@ namespace DropFile_I3d
             labelProgress.Size = new Size(0, 25);
             labelProgress.TabIndex = 8;
             // 
-            // labelMessage
-            // 
-            labelMessage.AutoSize = true;
-            labelMessage.Location = new Point(17, 315);
-            labelMessage.Margin = new Padding(4, 0, 4, 0);
-            labelMessage.Name = "labelMessage";
-            labelMessage.Size = new Size(0, 25);
-            labelMessage.TabIndex = 11;
-            // 
             // openFileDialog
             // 
             openFileDialog.FileName = "openFileDialog";
             // 
             // buttonInstallDriver
             // 
-            buttonInstallDriver.BackColor = SystemColors.GradientActiveCaption;
-            buttonInstallDriver.Location = new Point(360, 180);
+            buttonInstallDriver.BackColor = SystemColors.ButtonHighlight;
+            buttonInstallDriver.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            buttonInstallDriver.Location = new Point(285, 35);
             buttonInstallDriver.Margin = new Padding(4, 5, 4, 5);
             buttonInstallDriver.Name = "buttonInstallDriver";
-            buttonInstallDriver.Size = new Size(211, 38);
+            buttonInstallDriver.Size = new Size(238, 38);
             buttonInstallDriver.TabIndex = 14;
             buttonInstallDriver.Text = "Install Drivers";
+            toolTip1.SetToolTip(buttonInstallDriver, "Only install drivers if you have an ICam\r\n");
             buttonInstallDriver.UseVisualStyleBackColor = false;
             buttonInstallDriver.Click += buttonInstallDriver_Click;
             // 
             // buttonIScan3d
             // 
             buttonIScan3d.BackColor = Color.White;
-            buttonIScan3d.Location = new Point(360, 269);
+            buttonIScan3d.Location = new Point(285, 83);
             buttonIScan3d.Margin = new Padding(4, 5, 4, 5);
             buttonIScan3d.Name = "buttonIScan3d";
-            buttonIScan3d.Size = new Size(211, 73);
+            buttonIScan3d.Size = new Size(238, 86);
             buttonIScan3d.TabIndex = 15;
             buttonIScan3d.Text = "Install IScan3D Dental";
             buttonIScan3d.UseVisualStyleBackColor = false;
@@ -164,10 +95,10 @@ namespace DropFile_I3d
             // 
             // buttonInstallZip7
             // 
-            buttonInstallZip7.Location = new Point(360, 14);
+            buttonInstallZip7.Location = new Point(18, 35);
             buttonInstallZip7.Margin = new Padding(4, 5, 4, 5);
             buttonInstallZip7.Name = "buttonInstallZip7";
-            buttonInstallZip7.Size = new Size(211, 38);
+            buttonInstallZip7.Size = new Size(238, 38);
             buttonInstallZip7.TabIndex = 16;
             buttonInstallZip7.Text = "Install 7Zip";
             buttonInstallZip7.UseVisualStyleBackColor = true;
@@ -175,10 +106,10 @@ namespace DropFile_I3d
             // 
             // buttonInstallOffice
             // 
-            buttonInstallOffice.Location = new Point(360, 62);
+            buttonInstallOffice.Location = new Point(18, 83);
             buttonInstallOffice.Margin = new Padding(4, 5, 4, 5);
             buttonInstallOffice.Name = "buttonInstallOffice";
-            buttonInstallOffice.Size = new Size(211, 38);
+            buttonInstallOffice.Size = new Size(238, 38);
             buttonInstallOffice.TabIndex = 17;
             buttonInstallOffice.Text = "Install LibreOffice";
             buttonInstallOffice.UseVisualStyleBackColor = true;
@@ -186,10 +117,10 @@ namespace DropFile_I3d
             // 
             // buttonNotePadPlus
             // 
-            buttonNotePadPlus.Location = new Point(360, 110);
+            buttonNotePadPlus.Location = new Point(18, 131);
             buttonNotePadPlus.Margin = new Padding(4, 5, 4, 5);
             buttonNotePadPlus.Name = "buttonNotePadPlus";
-            buttonNotePadPlus.Size = new Size(211, 38);
+            buttonNotePadPlus.Size = new Size(238, 38);
             buttonNotePadPlus.TabIndex = 18;
             buttonNotePadPlus.Text = "Install NotePad ++";
             buttonNotePadPlus.UseVisualStyleBackColor = true;
@@ -197,55 +128,33 @@ namespace DropFile_I3d
             // 
             // pictureBox1
             // 
+            pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Image = ICam4DSetup.Properties.Resources.imetric_0629req;
-            pictureBox1.Location = new Point(12, 3);
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(325, 116);
+            pictureBox1.Size = new Size(624, 116);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             // 
-            // label3
+            // buttonRemove
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(375, 223);
-            label3.Name = "label3";
-            label3.Size = new Size(185, 25);
-            label3.TabIndex = 20;
-            label3.Text = "*don't install for labs*";
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBoxCustomerID);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(textBoxName);
-            groupBox1.Location = new Point(20, 125);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(267, 177);
-            groupBox1.TabIndex = 21;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Feature coming soon";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(button3);
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(button1);
-            groupBox2.Location = new Point(20, 378);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(551, 159);
-            groupBox2.TabIndex = 23;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Library Editor";
+            buttonRemove.Location = new Point(18, 136);
+            buttonRemove.Name = "buttonRemove";
+            buttonRemove.Size = new Size(238, 42);
+            buttonRemove.TabIndex = 0;
+            buttonRemove.Text = "Remove Screws/Healing caps";
+            toolTip1.SetToolTip(buttonRemove, "Click here to remove options from your\r\ndropdown menus");
+            buttonRemove.Click += buttonRemove_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(311, 54);
+            button3.Location = new Point(285, 40);
             button3.Name = "button3";
-            button3.Size = new Size(196, 63);
+            button3.Size = new Size(238, 90);
             button3.TabIndex = 24;
             button3.Text = "Implant Position Editor";
+            toolTip1.SetToolTip(button3, "Use this tool to edit the library for exocad if you\r\nchose the wrong one in the scanning process\r\n");
             button3.UseVisualStyleBackColor = true;
             button3.Click += buttonEditor_Click;
             // 
@@ -253,9 +162,10 @@ namespace DropFile_I3d
             // 
             button2.Location = new Point(18, 88);
             button2.Name = "button2";
-            button2.Size = new Size(264, 42);
+            button2.Size = new Size(238, 42);
             button2.TabIndex = 1;
             button2.Text = "Add Healing Caps";
+            toolTip1.SetToolTip(button2, "Click here to add healing caps to your current library");
             button2.UseVisualStyleBackColor = true;
             button2.Click += buttonHealing_Click;
             // 
@@ -263,55 +173,87 @@ namespace DropFile_I3d
             // 
             button1.Location = new Point(18, 40);
             button1.Name = "button1";
-            button1.Size = new Size(264, 42);
+            button1.Size = new Size(238, 42);
             button1.TabIndex = 0;
             button1.Text = "Add Screw Channels";
+            toolTip1.SetToolTip(button1, "Click here to add a screw channel to your current library\r\n");
             button1.UseVisualStyleBackColor = true;
             button1.Click += buttonScrew_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(202, 129);
+            label1.Name = "label1";
+            label1.Size = new Size(210, 32);
+            label1.TabIndex = 25;
+            label1.Text = "Installation Tools";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(237, 382);
+            label2.Name = "label2";
+            label2.Size = new Size(146, 30);
+            label2.TabIndex = 26;
+            label2.Text = "Library Tools";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(buttonRemove);
+            groupBox2.Controls.Add(button3);
+            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(button1);
+            groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox2.Location = new Point(37, 415);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(553, 198);
+            groupBox2.TabIndex = 23;
+            groupBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(buttonInstallDriver);
+            groupBox3.Controls.Add(buttonInstallZip7);
+            groupBox3.Controls.Add(buttonInstallOffice);
+            groupBox3.Controls.Add(buttonIScan3d);
+            groupBox3.Controls.Add(buttonNotePadPlus);
+            groupBox3.Location = new Point(37, 164);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(553, 200);
+            groupBox3.TabIndex = 24;
+            groupBox3.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(601, 567);
+            ClientSize = new Size(624, 637);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(groupBox3);
             Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Controls.Add(label3);
             Controls.Add(pictureBox1);
-            Controls.Add(buttonNotePadPlus);
-            Controls.Add(buttonInstallOffice);
-            Controls.Add(buttonInstallZip7);
-            Controls.Add(buttonIScan3d);
-            Controls.Add(buttonInstallDriver);
-            Controls.Add(labelMessage);
             Controls.Add(labelProgress);
-            Controls.Add(buttonCancel);
-            Controls.Add(buttonGetFile);
+            HelpButton = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 5, 4, 5);
+            MaximizeBox = false;
             Name = "Form1";
+            ShowInTaskbar = false;
             Text = "Imetric Installation";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
-
-
         #endregion
-
-        private Button buttonGetFile;
-        private Button buttonCancel;
-        private TextBox textBoxName;
-        private Label label1;
-        private TextBox textBoxCustomerID;
-        private Label label2;
         private Label labelProgress;
-        private Label labelMessage;
         private FolderBrowserDialog folderBrowserDialog;
         private OpenFileDialog openFileDialog;
         private Button buttonInstallDriver;
@@ -320,13 +262,16 @@ namespace DropFile_I3d
         private Button buttonInstallOffice;
         private Button buttonNotePadPlus;
         private PictureBox pictureBox1;
-        private Label label3;
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
         private Button button2;
         private Button button1;
         private EventHandler button1_Click_1;
         private EventHandler button2_Click_2;
         private Button button3;
+        private Button buttonRemove;
+        private ToolTip toolTip1;
+        private Label label1;
+        private Label label2;
+        private GroupBox groupBox2;
+        private GroupBox groupBox3;
     }
 }

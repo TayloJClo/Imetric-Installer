@@ -29,52 +29,7 @@ namespace DropFile_I3d
             string iCamSerialNo = iniFile.Read("Settings", "ICamSerialNo");
         }
 
-        private void buttonGetFile_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string copytofolder = $"C:\\I3D_Systems\\{textBoxCustomerID.Text} ICamBody Library\\";
-
-                if (string.IsNullOrEmpty(textBoxCustomerID.Text))
-                {
-                    labelMessage.Text = copytofolder;
-                    MessageBox.Show($"No ICam Serial : {textBoxCustomerID.Text}");
-                    return;
-                }
-
-                iniFile.Write("Settings", "ICamSerialNo", textBoxCustomerID.Text);
-
-                if (string.IsNullOrEmpty(textBoxName.Text))
-                {
-                    labelMessage.Text = copytofolder;
-                    MessageBox.Show($"No File Name : {textBoxName.Text}");
-                    return;
-                }
-
-                string filetoCopy = Path.Combine(Application.StartupPath, textBoxName.Text);
-                if (!File.Exists(filetoCopy))
-                {
-                    labelMessage.Text = filetoCopy;
-                    MessageBox.Show($"No file: {textBoxName.Text}");
-                    return;
-                }
-
-                File.Copy(filetoCopy, copytofolder, true);
-
-                string cvsFile = $"C:\\I3D_Systems\\{textBoxCustomerID.Text} ICamBody Library\\ICamRef\\ICamBody Library.csv";
-
-                if (!File.Exists(cvsFile))
-                {
-                    labelMessage.Text = cvsFile;
-                    MessageBox.Show("No CSV file: ICamBody Library.csv");
-                    return;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
+        
 
         static void AddLineToCsv(string filePath, string newData)
         {
@@ -335,6 +290,17 @@ namespace DropFile_I3d
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            var removeForm = new CsvRemoveForm();
+            removeForm.ShowDialog();
+        }
+
+        private void textBoxCustomerID_TextChanged(object sender, EventArgs e)
         {
 
         }
