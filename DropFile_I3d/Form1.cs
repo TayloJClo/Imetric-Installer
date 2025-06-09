@@ -163,15 +163,11 @@ namespace DropFile_I3d
 
         }
 
-        private void buttonHealing_Click(object sender, EventArgs e)
-        {
-            var form = new CsvSelectionForm("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv", "healing");
-            form.ShowDialog();
-        }
+        
 
-        private void buttonScrew_Click(object sender, EventArgs e)
+        private void buttonAddComponents_Click(object sender, EventArgs e)
         {
-            var form = new CsvSelectionForm("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv", "screw");
+            var form = new CsvSelectionForm("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv");
             form.ShowDialog();
         }
 

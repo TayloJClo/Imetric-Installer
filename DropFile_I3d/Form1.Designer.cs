@@ -42,7 +42,6 @@ namespace DropFile_I3d
             pictureBox1 = new PictureBox();
             buttonRemove = new Button();
             button3 = new Button();
-            button2 = new Button();
             button1 = new Button();
             toolTip1 = new ToolTip(components);
             label1 = new Label();
@@ -139,17 +138,17 @@ namespace DropFile_I3d
             // 
             // buttonRemove
             // 
-            buttonRemove.Location = new Point(18, 136);
+            buttonRemove.Location = new Point(18, 119);
             buttonRemove.Name = "buttonRemove";
-            buttonRemove.Size = new Size(238, 42);
+            buttonRemove.Size = new Size(238, 59);
             buttonRemove.TabIndex = 0;
-            buttonRemove.Text = "Remove Screws/Healing caps";
+            buttonRemove.Text = "Remove Screws/Healing Caps";
             toolTip1.SetToolTip(buttonRemove, "Click here to remove options from your\r\ndropdown menus");
             buttonRemove.Click += buttonRemove_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(285, 40);
+            button3.Location = new Point(285, 62);
             button3.Name = "button3";
             button3.Size = new Size(238, 90);
             button3.TabIndex = 24;
@@ -158,27 +157,16 @@ namespace DropFile_I3d
             button3.UseVisualStyleBackColor = true;
             button3.Click += buttonEditor_Click;
             // 
-            // button2
-            // 
-            button2.Location = new Point(18, 88);
-            button2.Name = "button2";
-            button2.Size = new Size(238, 42);
-            button2.TabIndex = 1;
-            button2.Text = "Add Healing Caps";
-            toolTip1.SetToolTip(button2, "Click here to add healing caps to your current library");
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += buttonHealing_Click;
-            // 
             // button1
             // 
             button1.Location = new Point(18, 40);
             button1.Name = "button1";
-            button1.Size = new Size(238, 42);
+            button1.Size = new Size(238, 59);
             button1.TabIndex = 0;
-            button1.Text = "Add Screw Channels";
-            toolTip1.SetToolTip(button1, "Click here to add a screw channel to your current library\r\n");
+            button1.Text = "Add Screws/Healing Caps";
+            toolTip1.SetToolTip(button1, "Click here to add screw channels or \r\nhealing caps to your current library\r\n");
             button1.UseVisualStyleBackColor = true;
-            button1.Click += buttonScrew_Click;
+            button1.Click += buttonAddComponents_Click;
             // 
             // label1
             // 
@@ -204,7 +192,6 @@ namespace DropFile_I3d
             // 
             groupBox2.Controls.Add(buttonRemove);
             groupBox2.Controls.Add(button3);
-            groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(button1);
             groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(37, 415);
@@ -262,7 +249,6 @@ namespace DropFile_I3d
         private Button buttonInstallOffice;
         private Button buttonNotePadPlus;
         private PictureBox pictureBox1;
-        private Button button2;
         private Button button1;
         private EventHandler button1_Click_1;
         private EventHandler button2_Click_2;

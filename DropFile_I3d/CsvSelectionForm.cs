@@ -8,16 +8,24 @@ namespace ICam4DSetup
     public partial class CsvSelectionForm : Form
     {
         private string localCsvPath;
-        private string filterType;
-        private Dictionary<string, string> itemToLineMap = new();
+        private Dictionary<string, string> screwMap = new();
+        private Dictionary<string, string> healingMap = new();
+        private HashSet<string> existingScrewKeys = new();
+        private HashSet<string> existingHealingKeys = new();
+        private bool suppressEvents = false;
 
-        private Button buttonApply;
-        private Button buttonCancel;
-
-        public CsvSelectionForm(string GitUrl, string type)
+        public CsvSelectionForm(string GitUrl)
         {
             InitializeComponent();
-            filterType = type.ToLower();
+
+            checkedListBoxItems.DrawMode = DrawMode.OwnerDrawFixed;
+            checkedListBoxItems.DrawItem += CheckedListBoxItems_DrawItem;
+            checkedListBoxItems.ItemCheck += CheckedListBoxItems_ItemCheck;
+
+            checkedListBox1.DrawMode = DrawMode.OwnerDrawFixed;
+            checkedListBox1.DrawItem += CheckedListBox1_DrawItem;
+            checkedListBox1.ItemCheck += CheckedListBox1_ItemCheck;
+
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Title = "Select your ICamBody Library CSV file";
@@ -35,58 +43,153 @@ namespace ICam4DSetup
                     return;
                 }
             }
-            LoadCsvFromGithub(GitUrl);
+            LoadCsvWithRetry(GitUrl);
         }
 
-        private async void LoadCsvFromGithub(string url)
+        private void CheckedListBoxItems_DrawItem(object sender, DrawItemEventArgs e)
         {
-            int maxRetries = 3;
-            int delayMilliseconds = 2000;
+            if (e.Index < 0) return;
+            string item = checkedListBoxItems.Items[e.Index].ToString();
+            bool isDisabled = existingScrewKeys.Contains(item.Trim().ToLowerInvariant());
 
-            for (int attempt = 1; attempt <= maxRetries; attempt++)
+            e.DrawBackground();
+            Font font = isDisabled ? new Font(e.Font, FontStyle.Italic) : e.Font;
+            Color color = isDisabled ? Color.Gray : SystemColors.ControlText;
+            TextRenderer.DrawText(e.Graphics, item, font, e.Bounds, color, TextFormatFlags.Left);
+            e.DrawFocusRectangle();
+        }
+
+        private void CheckedListBox1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+            string item = checkedListBox1.Items[e.Index].ToString();
+            bool isDisabled = existingHealingKeys.Contains(item.Trim().ToLowerInvariant());
+
+            e.DrawBackground();
+            Font font = isDisabled ? new Font(e.Font, FontStyle.Italic) : e.Font;
+            Color color = isDisabled ? Color.Gray : SystemColors.ControlText;
+            TextRenderer.DrawText(e.Graphics, item, font, e.Bounds, color, TextFormatFlags.Left);
+            e.DrawFocusRectangle();
+        }
+
+        private void CheckedListBoxItems_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (suppressEvents) return;
+            string item = checkedListBoxItems.Items[e.Index].ToString().Trim().ToLowerInvariant();
+            if (existingScrewKeys.Contains(item))
+            {
+                e.NewValue = e.CurrentValue;
+            }
+        }
+
+        private void CheckedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (suppressEvents) return;
+            string item = checkedListBox1.Items[e.Index].ToString().Trim().ToLowerInvariant();
+            if (existingHealingKeys.Contains(item))
+            {
+                e.NewValue = e.CurrentValue;
+            }
+        }
+
+        private async void LoadCsvWithRetry(string url)
+        {
+            int retryCount = 3;
+            int delay = 2000;
+
+            for (int attempt = 1; attempt <= retryCount; attempt++)
             {
                 try
                 {
-                    using (HttpClient client = new HttpClient())
-                    {
-                        string csvData = await client.GetStringAsync(url);
-                        var lines = csvData.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
-
-                        foreach (var line in lines.Skip(1))
-                        {
-                            var parts = line.Split('\t');
-                            if (parts.Length < 2) continue;
-
-                            string label = filterType == "healing" ? parts[4].Trim() : parts[1].Trim();
-
-                            if (!string.IsNullOrWhiteSpace(label))
-                            {
-                                if ((filterType == "healing" && parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase)) ||
-                                    (filterType == "screw" && !parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase)))
-                                {
-                                    checkedListBoxItems.Items.Add(label);
-                                    itemToLineMap[label] = line;
-                                }
-                            }
-                        }
-                    }
-                    break;
+                    await LoadCsvFromGithub(url);
+                    return;
                 }
                 catch (Exception ex)
                 {
-                    if (attempt == maxRetries)
-                        MessageBox.Show("Failed to load CSV: " + ex.Message);
+                    if (attempt == retryCount)
+                    {
+                        MessageBox.Show("Failed to load CSV from GitHub after multiple attempts: " + ex.Message);
+                        Close();
+                    }
                     else
-                        await Task.Delay(delayMilliseconds);
+                    {
+                        await Task.Delay(delay);
+                    }
                 }
             }
         }
 
+        private async Task LoadCsvFromGithub(string url)
+        {
+            var existingLines = File.Exists(localCsvPath) ? File.ReadAllLines(localCsvPath).ToList() : new List<string>();
+
+            foreach (var line in existingLines.Skip(1))
+            {
+                var parts = line.Split('\t');
+                if (parts.Length < 5) continue;
+                string b = parts[1].Trim().ToLowerInvariant();
+                string e = parts[4].Trim().ToLowerInvariant();
+                if (b.Equals("icamref"))
+                    existingHealingKeys.Add(e);
+                else
+                    existingScrewKeys.Add(b);
+            }
+
+            using HttpClient client = new HttpClient();
+            string csvData = await client.GetStringAsync(url);
+            var lines = csvData.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+            suppressEvents = true;
+            foreach (var line in lines.Skip(1))
+            {
+                var parts = line.Split('\t');
+                if (parts.Length < 5) continue;
+
+                string columnB = parts[1].Trim();
+                string columnE = parts[4].Trim();
+                string keyB = columnB.ToLowerInvariant();
+                string keyE = columnE.ToLowerInvariant();
+
+                if (columnB.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!healingMap.ContainsKey(columnE))
+                    {
+                        int index = checkedListBox1.Items.Add(columnE);
+                        healingMap[columnE] = line;
+                        if (existingHealingKeys.Contains(keyE))
+                        {
+                            BeginInvoke(() => checkedListBox1.SetItemCheckState(index, CheckState.Checked));
+                        }
+                    }
+                }
+                else
+                {
+                    if (!screwMap.ContainsKey(columnB) && !checkedListBoxItems.Items.Contains(columnB))
+                    {
+                        int index = checkedListBoxItems.Items.Add(columnB);
+                        screwMap[columnB] = line;
+                        if (existingScrewKeys.Contains(keyB))
+                        {
+                            BeginInvoke(() => checkedListBoxItems.SetItemCheckState(index, CheckState.Checked));
+                        }
+                    }
+                }
+            }
+            suppressEvents = false;
+
+            checkedListBoxItems.Refresh();
+            checkedListBox1.Refresh();
+        }
+
+
+
 
         private async void buttonApply_Click(object sender, EventArgs e)
         {
-            var selectedItems = checkedListBoxItems.CheckedItems.Cast<string>().ToList();
-            if (!selectedItems.Any())
+            var selectedScrews = checkedListBoxItems.CheckedItems.Cast<string>().ToList();
+            var selectedHealing = checkedListBox1.CheckedItems.Cast<string>().ToList();
+
+            if (!selectedScrews.Any() && !selectedHealing.Any())
             {
                 MessageBox.Show("No items selected.");
                 return;
@@ -98,121 +201,79 @@ namespace ICam4DSetup
                 var header = existingLines.First();
                 var dataLines = existingLines.Skip(1).ToList();
                 var currentSet = new HashSet<string>(dataLines);
-
                 var uniqueEValues = new HashSet<string>();
                 var fColumnValues = new HashSet<string>();
+                var gColumnValues = new HashSet<string>();
+                var newLines = new List<string>();
 
-                if (filterType == "screw")
+                foreach (var line in dataLines)
                 {
-                    foreach (var line in dataLines)
+                    var parts = line.Split('\t');
+                    if (parts.Length > 6 && !parts[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (!string.IsNullOrWhiteSpace(parts[4])) uniqueEValues.Add(parts[4].Trim());
+                        if (!string.IsNullOrWhiteSpace(parts[5])) fColumnValues.Add(parts[5].Trim());
+                    }
+                }
+
+                foreach (var item in selectedScrews)
+                {
+                    if (!screwMap.TryGetValue(item, out var line)) continue;
+                    foreach (var uniqueE in uniqueEValues)
                     {
                         var parts = line.Split('\t');
-                        if (parts.Length > 6)
-                        {
-                            string b = parts[1].Trim();
-                            string columnE = parts[4].Trim();
-                            string columnF = parts[5].Trim();
+                        parts[4] = uniqueE;
+                        parts[6] = uniqueE + ".ad";
 
-                            if (!string.IsNullOrWhiteSpace(b) && !b.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
-                            {
-                                if (!string.IsNullOrWhiteSpace(columnE)) uniqueEValues.Add(columnE);
-                                if (!string.IsNullOrWhiteSpace(columnF)) fColumnValues.Add(columnF);
-                            }
+                        var modifiedLine = string.Join('\t', parts);
+                        if (!currentSet.Contains(modifiedLine))
+                        {
+                            newLines.Add(modifiedLine);
+                            currentSet.Add(modifiedLine);
+                            if (!string.IsNullOrWhiteSpace(parts[5])) fColumnValues.Add(parts[5].Trim());
                         }
                     }
                 }
 
-                var newLines = new List<string>();
-                var gColumnValues = new HashSet<string>();
-
-                foreach (var item in selectedItems)
+                foreach (var item in selectedHealing)
                 {
-                    if (!itemToLineMap.TryGetValue(item, out var originalLine)) continue;
-
-                    if (filterType == "screw")
+                    if (!healingMap.TryGetValue(item, out var line)) continue;
+                    var parts = line.Split('\t');
+                    if (parts.Length > 6) gColumnValues.Add(parts[6].Trim());
+                    if (!currentSet.Contains(line))
                     {
-                        foreach (var uniqueE in uniqueEValues)
-                        {
-                            var parts = originalLine.Split('\t');
-                            if (parts.Length < 7) continue;
-
-                            parts[4] = uniqueE;
-                            parts[6] = uniqueE + ".ad";
-
-                            var line = string.Join('\t', parts);
-                            if (!currentSet.Contains(line))
-                            {
-                                newLines.Add(line);
-                                currentSet.Add(line);
-
-                                // Extract and collect column F value for folder creation
-                                if (parts.Length > 5 && !string.IsNullOrWhiteSpace(parts[5]))
-                                {
-                                    fColumnValues.Add(parts[5].Trim());
-                                }
-                            }
-                        }
-                    }
-                    else if (filterType == "healing")
-                    {
-                        var parts = originalLine.Split('\t');
-                        if (parts.Length > 6)
-                        {
-                            gColumnValues.Add(parts[6].Trim());
-                        }
-                        if (!currentSet.Contains(originalLine))
-                        {
-                            newLines.Add(originalLine);
-                            currentSet.Add(originalLine);
-                        }
+                        newLines.Add(line);
+                        currentSet.Add(line);
                     }
                 }
 
                 dataLines.AddRange(newLines);
 
-                if (filterType == "screw")
-                {
-                    var healingLines = dataLines.Where(line => line.Split('\t')[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase)).ToList();
-                    var screwLines = dataLines.Where(line => !line.Split('\t')[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase)).ToList();
+                var healingLines = dataLines.Where(l => l.Split('\t')[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase));
+                var screwLines = dataLines.Except(healingLines);
 
-                    screwLines = screwLines.OrderBy(l => l.Split('\t')[4], StringComparer.OrdinalIgnoreCase)
-                                           .ThenBy(l => l.Split('\t')[1], StringComparer.OrdinalIgnoreCase)
-                                           .ToList();
-
-                    dataLines = screwLines.Concat(healingLines).ToList();
-                }
-                else if (filterType == "healing")
-                {
-                    dataLines = dataLines.OrderBy(l => l.Split('\t')[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase) ? l.Split('\t')[4] : "", StringComparer.OrdinalIgnoreCase)
-                                         .ThenBy(l => l.Split('\t')[1].Trim().Equals("ICamRef", StringComparison.OrdinalIgnoreCase) ? l.Split('\t')[1] : "", StringComparer.OrdinalIgnoreCase)
-                                         .ToList();
-                }
+                screwLines = screwLines.OrderBy(l => l.Split('\t')[4]).ThenBy(l => l.Split('\t')[1]);
+                dataLines = screwLines.Concat(healingLines).ToList();
 
                 File.WriteAllLines(localCsvPath, new[] { header }.Concat(dataLines), Encoding.UTF8);
 
                 var baseDir = Path.GetDirectoryName(localCsvPath);
                 var muRpFolder = Path.Combine(baseDir, "MU-RP");
-                foreach (var folderName in fColumnValues)
+                foreach (var folder in fColumnValues)
                 {
-                    var newFolderPath = Path.Combine(baseDir, folderName);
-                    if (!Directory.Exists(newFolderPath))
+                    var newPath = Path.Combine(baseDir, folder);
+                    if (!Directory.Exists(newPath))
                     {
-                        Directory.CreateDirectory(newFolderPath);
-                        if (Directory.Exists(muRpFolder))
-                        {
-                            CopyDirectory(muRpFolder, newFolderPath);
-                        }
+                        Directory.CreateDirectory(newPath);
+                        if (Directory.Exists(muRpFolder)) CopyDirectory(muRpFolder, newPath);
                     }
                 }
 
-                if (filterType == "healing")
-                {
-                    await DownloadICamRefFilesAsync(gColumnValues);
-                }
+                await DownloadICamRefFilesAsync(gColumnValues);
 
                 MessageBox.Show("Selected items added to library.");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                DialogResult = DialogResult.OK;
+                Close();
             }
             catch (Exception ex)
             {
@@ -227,8 +288,8 @@ namespace ICam4DSetup
         }
 
         private void button1_Click(object sender, EventArgs e) { }
-        
-        
+
+
 
 
         private void CopyDirectory(string sourceDir, string targetDir)
@@ -283,5 +344,17 @@ namespace ICam4DSetup
                 UseShellExecute = true
             });
         }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+       
+        private int index;
     }
 }
