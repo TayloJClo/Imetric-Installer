@@ -310,56 +310,9 @@ namespace DropFile_I3d
         {
 
         }
-        private async Task<string> GetLatestVersionFromGitHub()
-        {
-            string apiUrl = "https://api.github.com/repos/TayloJClo/Imetric-Installer/releases/latest";
-
-            using var client = new HttpClient();
-            client.DefaultRequestHeaders.UserAgent.ParseAdd("ICamUpdater"); // GitHub requires a user-agent
-
-            string json = await client.GetStringAsync(apiUrl);
-
-            using var doc = JsonDocument.Parse(json);
-            return doc.RootElement.GetProperty("tag_name").GetString(); // e.g., "v1.2.4"
-        }
-
-        private bool IsUpdateAvailable(string current, string latest)
-        {
-            Version local = new Version(current.TrimStart('v'));
-            Version remote = new Version(latest.TrimStart('v'));
-            return remote > local;
-        }
-
-        private async void Form1_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                string latest = await GetLatestVersionFromGitHub();
-
-                if (IsUpdateAvailable(currentVersion, latest))
-                {
-                    var result = MessageBox.Show(
-                        $"A new version ({latest}) is available. Would you like to download it now?",
-                        "Update Available",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Information);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        Process.Start(new ProcessStartInfo
-                        {
-                            FileName = "https://github.com/TayloJClo/Imetric-Installer/releases/latest",
-                            UseShellExecute = true
-                        });
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Optional: silently fail or log to file
-                Console.WriteLine("Update check failed: " + ex.Message);
-            }
-        }
+        
+            
+        
 
     }
 }
