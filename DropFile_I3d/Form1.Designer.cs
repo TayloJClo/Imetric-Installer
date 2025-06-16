@@ -237,6 +237,7 @@ namespace DropFile_I3d
             groupBox3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
+            this.Load += new System.EventHandler(this.Form1_Load);
         }
 
         #endregion
@@ -259,5 +260,6 @@ namespace DropFile_I3d
         private Label label2;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
+
     }
 }

@@ -12,7 +12,6 @@ namespace ICam4DSetup
         private Dictionary<string, string> healingMap = new();
         private HashSet<string> existingScrewKeys = new();
         private HashSet<string> existingHealingKeys = new();
-        private bool suppressEvents = false;
 
         public CsvSelectionForm(string GitUrl)
         {
@@ -74,7 +73,6 @@ namespace ICam4DSetup
 
         private void CheckedListBoxItems_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (suppressEvents) return;
             string item = checkedListBoxItems.Items[e.Index].ToString().Trim().ToLowerInvariant();
             if (existingScrewKeys.Contains(item))
             {
@@ -84,7 +82,6 @@ namespace ICam4DSetup
 
         private void CheckedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (suppressEvents) return;
             string item = checkedListBox1.Items[e.Index].ToString().Trim().ToLowerInvariant();
             if (existingHealingKeys.Contains(item))
             {
@@ -139,7 +136,6 @@ namespace ICam4DSetup
             string csvData = await client.GetStringAsync(url);
             var lines = csvData.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-            suppressEvents = true;
             foreach (var line in lines.Skip(1))
             {
                 var parts = line.Split('\t');
@@ -160,6 +156,7 @@ namespace ICam4DSetup
                         {
                             BeginInvoke(() => checkedListBox1.SetItemCheckState(index, CheckState.Checked));
                         }
+
                     }
                 }
                 else
@@ -172,19 +169,19 @@ namespace ICam4DSetup
                         {
                             BeginInvoke(() => checkedListBoxItems.SetItemCheckState(index, CheckState.Checked));
                         }
+
                     }
                 }
             }
-            suppressEvents = false;
 
             checkedListBoxItems.Refresh();
             checkedListBox1.Refresh();
         }
+    
 
 
 
-
-        private async void buttonApply_Click(object sender, EventArgs e)
+private async void buttonApply_Click(object sender, EventArgs e)
         {
             var selectedScrews = checkedListBoxItems.CheckedItems.Cast<string>().ToList();
             var selectedHealing = checkedListBox1.CheckedItems.Cast<string>().ToList();

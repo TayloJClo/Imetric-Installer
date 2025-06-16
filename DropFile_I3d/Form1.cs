@@ -1,12 +1,14 @@
 using ICam4DSetup;
 using ICam4DSetup.bin;
-using System.Diagnostics;
-using System.Text;
-using System.Net.Http;
-using System.IO;
-using System;
-using System.Windows.Forms;
 using ImplantPositionEditor;
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace DropFile_I3d
 {
@@ -15,6 +17,8 @@ namespace DropFile_I3d
         private const string V = "runas";
         private string iCamSerialNo = "";
         private IniFile iniFile;
+
+        private const string currentVersion = "7.0.0";
 
         public Form1()
         {
@@ -80,6 +84,16 @@ namespace DropFile_I3d
                     MessageBox.Show($"Copied {selected} CSV to: {destinationCsvPath}");
 
                     install("C:\\I3D_Software\\Imetric4D Software\\IScan3D Dental\\IScan3D_Dental_v9.1.113_2025-04-01_64bit.msi");
+
+                    string exePath = "C:\\Program Files (x86)\\ICamSetup\\Manuals\\CreateShortcut.exe"; // Adjust path as needed
+                    if (File.Exists(exePath))
+                    {
+                        System.Diagnostics.Process.Start(exePath);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Could not find: " + exePath);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -128,7 +142,7 @@ namespace DropFile_I3d
 
         private void buttonInstallZip7_Click(object sender, EventArgs e)
         {
-            install("C:\\Newest Version of IScan\\I3D_Software\\General\\7zip");
+            install("C:\\I3D_Software\\General\\7zip\\7z1900-x64.exe");
         }
 
         private void buttonNotePadPlus_Click(object sender, EventArgs e)
@@ -285,10 +299,6 @@ namespace DropFile_I3d
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
@@ -300,5 +310,56 @@ namespace DropFile_I3d
         {
 
         }
+        private async Task<string> GetLatestVersionFromGitHub()
+        {
+            string apiUrl = "https://api.github.com/repos/TayloJClo/Imetric-Installer/releases/latest";
+
+            using var client = new HttpClient();
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("ICamUpdater"); // GitHub requires a user-agent
+
+            string json = await client.GetStringAsync(apiUrl);
+
+            using var doc = JsonDocument.Parse(json);
+            return doc.RootElement.GetProperty("tag_name").GetString(); // e.g., "v1.2.4"
+        }
+
+        private bool IsUpdateAvailable(string current, string latest)
+        {
+            Version local = new Version(current.TrimStart('v'));
+            Version remote = new Version(latest.TrimStart('v'));
+            return remote > local;
+        }
+
+        private async void Form1_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                string latest = await GetLatestVersionFromGitHub();
+
+                if (IsUpdateAvailable(currentVersion, latest))
+                {
+                    var result = MessageBox.Show(
+                        $"A new version ({latest}) is available. Would you like to download it now?",
+                        "Update Available",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Information);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = "https://github.com/TayloJClo/Imetric-Installer/releases/latest",
+                            UseShellExecute = true
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Optional: silently fail or log to file
+                Console.WriteLine("Update check failed: " + ex.Message);
+            }
+        }
+
     }
 }

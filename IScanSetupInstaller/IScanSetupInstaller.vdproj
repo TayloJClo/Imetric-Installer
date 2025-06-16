@@ -447,6 +447,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6E9D0DB11C48421D904347E3581EA59C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7124659054E0432A87B2FF9DB59CA3C9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -466,6 +472,12 @@
         "Entry"
         {
         "MsmKey" = "8:_73B3699A30524E2B8823B148788C6A96"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_74A8F6DB390742A6862DC44EC2446A06"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -544,6 +556,12 @@
         "Entry"
         {
         "MsmKey" = "8:_86DFA25CBA0F49E7A0B8EDE02B01B421"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_89DCB0BB5B724E77A4E855D94FF8E9BA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -981,6 +999,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DE97C428196241E091B5C3FF46765174"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DF5A43B8D4454DDE993DCCD5F100C57C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -988,12 +1012,6 @@
         "Entry"
         {
         "MsmKey" = "8:_E1307A5C2C4E44F0A3B926968DC9BCDF"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E2D4EB1A4A364055AA90D720F2510220"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1147,6 +1165,12 @@
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_89DCB0BB5B724E77A4E855D94FF8E9BA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -1230,6 +1254,14 @@
         {
             "LaunchCondition"
             {
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_AA201F3ED401437A904A781C552FE38D"
+                {
+                "Name" = "8:.NET Framework"
+                "Message" = "8:[VSDNETMSG]"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.7.2"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=863262"
+                }
                 "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_ACDE29F0A9C54A49817ADA42188C945D"
                 {
                 "Name" = "8:.NET Core"
@@ -2664,6 +2696,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6E9D0DB11C48421D904347E3581EA59C"
+            {
+            "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\OpenMyPDF.bat"
+            "TargetName" = "8:OpenMyPDF.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_AD1E77CEFDA5448093299E8835950FC1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7124659054E0432A87B2FF9DB59CA3C9"
             {
             "SourcePath" = "8:C:\\Newest Version of IScan\\Imetric4D Data\\ICam4D Workflow Sample1\\ICam4D Output\\exocad\\ScanAdapters l4d1.stl"
@@ -2730,6 +2782,26 @@
             "TargetName" = "8:IScan.mclog"
             "Tag" = "8:"
             "Folder" = "8:_FD2D501BC2154006B9974A57FC6DEAAA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_74A8F6DB390742A6862DC44EC2446A06"
+            {
+            "SourcePath" = "8:..\\..\\CreateShortcut\\CreateShortcut\\bin\\Debug\\net8.0\\CreateShortcut.runtimeconfig.json"
+            "TargetName" = "8:CreateShortcut.runtimeconfig.json"
+            "Tag" = "8:"
+            "Folder" = "8:_AD1E77CEFDA5448093299E8835950FC1"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3004,6 +3076,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_89DCB0BB5B724E77A4E855D94FF8E9BA"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:CreateShortcut, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_89DCB0BB5B724E77A4E855D94FF8E9BA"
+                    {
+                    "Name" = "8:CreateShortcut.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\..\\CreateShortcut\\CreateShortcut\\bin\\Debug\\net8.0\\CreateShortcut.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_AD1E77CEFDA5448093299E8835950FC1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8A480954E203485B9AB4527611E71BDD"
             {
             "SourcePath" = "8:C:\\Newest Version of IScan\\Imetric4D Data\\ICam4D Workflow Sample1\\STLs Standard aligned\\Lower Jaw Pre Op.stl"
@@ -3249,7 +3352,7 @@
             "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\ICam Manual 03.2024-Rev 0.pdf"
             "TargetName" = "8:ICam Manual 03.2024-Rev 0.pdf"
             "Tag" = "8:"
-            "Folder" = "8:_29D81EE65D2245ABA3B6F19E1401BC22"
+            "Folder" = "8:_AD1E77CEFDA5448093299E8835950FC1"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4444,6 +4547,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DE97C428196241E091B5C3FF46765174"
+            {
+            "SourcePath" = "8:..\\..\\CreateShortcut\\CreateShortcut\\bin\\Debug\\net8.0\\CreateShortcut.exe"
+            "TargetName" = "8:CreateShortcut.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_AD1E77CEFDA5448093299E8835950FC1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DF5A43B8D4454DDE993DCCD5F100C57C"
             {
             "SourcePath" = "8:C:\\Newest Version of IScan\\Imetric4D Data\\ICam4D Workflow Sample2\\IOS Data\\Pre Op with Markers UpperJawScan.stl"
@@ -4470,26 +4593,6 @@
             "TargetName" = "8:2020-10-09__17-54-05-25.implantPosition"
             "Tag" = "8:"
             "Folder" = "8:_244889995C8843F3A48721E65A6E9A82"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E2D4EB1A4A364055AA90D720F2510220"
-            {
-            "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\Icons\\CamSetup.ico"
-            "TargetName" = "8:CamSetup.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_982BA4E787924258987454D8DE3B4872"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4549,7 +4652,7 @@
             "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\Icons\\IScan-Manual.ico"
             "TargetName" = "8:IScan-Manual.ico"
             "Tag" = "8:"
-            "Folder" = "8:_982BA4E787924258987454D8DE3B4872"
+            "Folder" = "8:_AD1E77CEFDA5448093299E8835950FC1"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5635,6 +5738,17 @@
                                 {
                                 }
                             }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_AD1E77CEFDA5448093299E8835950FC1"
+                            {
+                            "Name" = "8:Manuals"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_45EEAB3605B149BF889D5D01D3143BB1"
+                                "Folders"
+                                {
+                                }
+                            }
                         }
                     }
                 }
@@ -5667,7 +5781,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:IScanSetupInstaller"
         "ProductCode" = "8:{AA89878A-E900-4994-83A5-890981AE5962}"
-        "PackageCode" = "8:{7A69A0A1-0B64-4A18-A19E-BBCC9720E46A}"
+        "PackageCode" = "8:{89A55D6D-210F-463F-ADF0-4BF2608289EE}"
         "UpgradeCode" = "8:{DEB6F008-45E9-4308-9549-819547B95B0B}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -5787,20 +5901,6 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2084C4A5C8CA47BCAB61892131BD7EAB"
-            {
-            "Name" = "8:ICam Manual.pdf"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_9C2CB1127F524A22A58699690D220693"
-            "Folder" = "8:_CB549EC7ADA44A1490E5414AEC9DD9B0"
-            "WorkingFolder" = "8:_29D81EE65D2245ABA3B6F19E1401BC22"
-            "Icon" = "8:_E46CC42E2C724DA7989BD63BE8480182"
-            "Feature" = "8:"
-            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_411A685D11784C3E8BC0FA3CD6F22434"
             {
             "Name" = "8:UsbTreeView"
@@ -5827,6 +5927,20 @@
             "Folder" = "8:_CB549EC7ADA44A1490E5414AEC9DD9B0"
             "WorkingFolder" = "8:_7A7E3E5E4E704F7AAD4AA76AE95182EE"
             "Icon" = "8:_76CBF69B019A4111A077F0352AE42A80"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_88E27055AE5246048625F11B6E091342"
+            {
+            "Name" = "8:Add manual to desktop"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_DE97C428196241E091B5C3FF46765174"
+            "Folder" = "8:_E46D741C1F604A66A796098302359A19"
+            "WorkingFolder" = "8:_AD1E77CEFDA5448093299E8835950FC1"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FDDBB474CFE54B59BD20A5DFFD6E98D2"
@@ -6244,7 +6358,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0BEB5965ABE04B06BA58381ABBC3EBDC"
             {
-            "SourcePath" = "8:..\\DropFile_I3d\\obj\\Debug\\net6.0-windows\\ICam4DSetup.dll"
+            "SourcePath" = "8:..\\DropFile_I3d\\obj\\Release\\net6.0-windows\\ICam4DSetup.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_84268E489E454194AE18583A016D26E1"

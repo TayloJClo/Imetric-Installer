@@ -42,12 +42,12 @@
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Location = new Point(20, 25);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(450, 340);
+            checkedListBox1.Size = new Size(520, 452);
             checkedListBox1.TabIndex = 0;
             // 
             // buttonRemove
             // 
-            buttonRemove.Location = new Point(20, 396);
+            buttonRemove.Location = new Point(56, 523);
             buttonRemove.Name = "buttonRemove";
             buttonRemove.Size = new Size(192, 44);
             buttonRemove.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(277, 396);
+            buttonCancel.Location = new Point(301, 523);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(193, 44);
             buttonCancel.TabIndex = 2;
@@ -65,10 +65,11 @@
             // 
             // CsvRemoveForm
             // 
-            ClientSize = new Size(500, 474);
+            ClientSize = new Size(572, 613);
             Controls.Add(checkedListBox1);
             Controls.Add(buttonRemove);
             Controls.Add(buttonCancel);
+            MaximizeBox = false;
             Name = "CsvRemoveForm";
             Text = "Remove From CSV";
             ResumeLayout(false);

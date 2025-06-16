@@ -9,7 +9,12 @@
     <BaseOutputPath>C:\Users\Taylor\source\repos\DropFile_I3d\DropFile_I3d\bin\Release\net6.0-windows</BaseOutputPath>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Platforms>AnyCPU;x86</Platforms>
+    <ApplicationIcon>Iscan with cogs.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Iscan with cogs.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="ImplantEditor.cs">

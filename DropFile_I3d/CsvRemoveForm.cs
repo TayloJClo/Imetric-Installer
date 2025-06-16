@@ -9,7 +9,7 @@ namespace ICam4DSetup
 {
     public partial class CsvRemoveForm : Form
     {
-        private string localCsvPath;
+        private string localCsvPath = string.Empty; // Initialize with a default value
         private Dictionary<string, string> itemToLineMap = new();
 
         public CsvRemoveForm()
