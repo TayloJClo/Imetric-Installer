@@ -231,13 +231,12 @@ namespace DropFile_I3d
             Name = "Form1";
             ShowInTaskbar = false;
             Text = "Imetric Installation";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
-            this.Load += new System.EventHandler(this.Form1_Load);
+           
         }
 
         #endregion

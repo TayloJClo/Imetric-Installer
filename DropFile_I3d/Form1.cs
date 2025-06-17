@@ -18,7 +18,6 @@ namespace DropFile_I3d
         private string iCamSerialNo = "";
         private IniFile iniFile;
 
-        private const string currentVersion = "7.0.0";
 
         public Form1()
         {
@@ -157,25 +156,7 @@ namespace DropFile_I3d
             }
         }
 
-        private async void buttonUpdateCsv_Click(object sender, EventArgs e)
-        {
-            string GitUrl = "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv";
-            string localCsvPath = "C:\\I3D_Systems\\I221301 ICamBody Library\\ICamBody Library.csv";
-
-            try
-            {
-                using var client = new HttpClient();
-                string csvContent = await client.GetStringAsync(GitUrl);
-                Directory.CreateDirectory(Path.GetDirectoryName(localCsvPath));
-                File.WriteAllText(localCsvPath, csvContent, Encoding.UTF8);
-                MessageBox.Show("CSV successfully downloaded and updated.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error downloading CSV: " + ex.Message);
-            }
-
-        }
+      
 
         
 
