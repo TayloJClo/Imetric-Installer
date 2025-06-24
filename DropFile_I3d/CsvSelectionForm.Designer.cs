@@ -17,7 +17,6 @@ namespace ICam4DSetup
 
         private void InitializeComponent()
         {
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CsvSelectionForm));
             checkedListBoxItems = new CheckedListBox();
             button1 = new Button();
@@ -96,6 +95,7 @@ namespace ICam4DSetup
             label2.Size = new Size(174, 30);
             label2.TabIndex = 7;
             label2.Text = "Screw Channels";
+            label2.Click += label2_Click;
             // 
             // label3
             // 

@@ -177,11 +177,11 @@ namespace ICam4DSetup
             checkedListBoxItems.Refresh();
             checkedListBox1.Refresh();
         }
-    
 
 
 
-private async void buttonApply_Click(object sender, EventArgs e)
+
+        private async void buttonApply_Click(object sender, EventArgs e)
         {
             var selectedScrews = checkedListBoxItems.CheckedItems.Cast<string>().ToList();
             var selectedHealing = checkedListBox1.CheckedItems.Cast<string>().ToList();
@@ -351,7 +351,12 @@ private async void buttonApply_Click(object sender, EventArgs e)
         {
 
         }
-       
+
         private int index;
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
