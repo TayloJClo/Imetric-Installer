@@ -233,12 +233,22 @@ namespace ImplantPositionEditor
 
             try
             {
-                foreach (string filePath in loadedFilePaths)
+                if (lstFiles.SelectedIndex >= 0)
                 {
-                    File.WriteAllText(filePath, File.ReadAllText(filePath)); // Save all files
+                    // Save changes to the currently selected file
+                    string selectedFilePath = loadedFilePaths[lstFiles.SelectedIndex];
+                    File.WriteAllText(selectedFilePath, txtFileContent.Text);
+                }
+                else
+                {
+                    // Fallback: update all loaded files with the current editor content
+                    foreach (string filePath in loadedFilePaths)
+                    {
+                        File.WriteAllText(filePath, txtFileContent.Text);
+                    }
                 }
 
-                MessageBox.Show("All files saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("File(s) saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
