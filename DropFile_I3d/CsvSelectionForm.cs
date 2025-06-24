@@ -134,42 +134,53 @@ namespace ICam4DSetup
 
             using HttpClient client = new HttpClient();
             string csvData = await client.GetStringAsync(url);
-            var lines = csvData.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+            var allLines = csvData.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-            foreach (var line in lines.Skip(1))
+            var screwLines = new List<string>();
+            var healingLines = new List<string>();
+
+            foreach (var line in allLines.Skip(1))
             {
                 var parts = line.Split('\t');
                 if (parts.Length < 5) continue;
 
                 string columnB = parts[1].Trim();
+                if (columnB.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
+                    healingLines.Add(line);
+                else
+                    screwLines.Add(line);
+            }
+
+            foreach (var line in healingLines.OrderBy(l => l.Split('\t')[4].Trim(), StringComparer.OrdinalIgnoreCase))
+            {
+                var parts = line.Split('\t');
                 string columnE = parts[4].Trim();
-                string keyB = columnB.ToLowerInvariant();
                 string keyE = columnE.ToLowerInvariant();
 
-                if (columnB.Equals("ICamRef", StringComparison.OrdinalIgnoreCase))
+                if (!healingMap.ContainsKey(columnE))
                 {
-                    if (!healingMap.ContainsKey(columnE))
+                    int index = checkedListBox1.Items.Add(columnE);
+                    healingMap[columnE] = line;
+                    if (existingHealingKeys.Contains(keyE))
                     {
-                        int index = checkedListBox1.Items.Add(columnE);
-                        healingMap[columnE] = line;
-                        if (existingHealingKeys.Contains(keyE))
-                        {
-                            BeginInvoke(() => checkedListBox1.SetItemCheckState(index, CheckState.Checked));
-                        }
-
+                        BeginInvoke(() => checkedListBox1.SetItemCheckState(index, CheckState.Checked));
                     }
                 }
-                else
-                {
-                    if (!screwMap.ContainsKey(columnB) && !checkedListBoxItems.Items.Contains(columnB))
-                    {
-                        int index = checkedListBoxItems.Items.Add(columnB);
-                        screwMap[columnB] = line;
-                        if (existingScrewKeys.Contains(keyB))
-                        {
-                            BeginInvoke(() => checkedListBoxItems.SetItemCheckState(index, CheckState.Checked));
-                        }
+            }
 
+            foreach (var line in screwLines.OrderBy(l => l.Split('\t')[1].Trim(), StringComparer.OrdinalIgnoreCase))
+            {
+                var parts = line.Split('\t');
+                string columnB = parts[1].Trim();
+                string keyB = columnB.ToLowerInvariant();
+
+                if (!screwMap.ContainsKey(columnB) && !checkedListBoxItems.Items.Contains(columnB))
+                {
+                    int index = checkedListBoxItems.Items.Add(columnB);
+                    screwMap[columnB] = line;
+                    if (existingScrewKeys.Contains(keyB))
+                    {
+                        BeginInvoke(() => checkedListBoxItems.SetItemCheckState(index, CheckState.Checked));
                     }
                 }
             }
@@ -177,6 +188,7 @@ namespace ICam4DSetup
             checkedListBoxItems.Refresh();
             checkedListBox1.Refresh();
         }
+
 
 
 
