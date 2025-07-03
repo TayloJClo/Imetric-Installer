@@ -10,7 +10,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Platforms>AnyCPU;x86</Platforms>
     <ApplicationIcon>Iscan with cogs.ico</ApplicationIcon>
-    <AssemblyVersion>8.1.0.0</AssemblyVersion>
+    <AssemblyVersion>8.1.2.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

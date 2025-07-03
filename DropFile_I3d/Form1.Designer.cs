@@ -53,7 +53,6 @@ namespace DropFile_I3d
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             SuspendLayout();
-            InitializeComponent();
             this.Load += MainForm_Load;
             // 
             // labelProgress
@@ -199,7 +198,7 @@ namespace DropFile_I3d
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(53, 21);
             labelVersion.TabIndex = 27;
-            labelVersion.Text = "V8.1.0";
+            labelVersion.Text = "V8.1.2";
             labelVersion.Click += labelVersion_Click;
             // 
             // groupBox2

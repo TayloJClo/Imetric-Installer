@@ -129,6 +129,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2455AE4A2C28B5ECB2F9CE3AE8221795"
+        "OwnerKey" = "8:_45CEA8CD13874F61ABBB605A19A5C7B1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2455AE4A2C28B5ECB2F9CE3AE8221795"
+        "OwnerKey" = "8:_B22C20802800E27CD1B73B6135C306FB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_250A176B32B14323A61121692B089F73"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -280,6 +292,12 @@
         "Entry"
         {
         "MsmKey" = "8:_4449D59528754E7AB8E95F6552FA711A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_45CEA8CD13874F61ABBB605A19A5C7B1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -753,6 +771,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B22C20802800E27CD1B73B6135C306FB"
+        "OwnerKey" = "8:_45CEA8CD13874F61ABBB605A19A5C7B1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_B43A81A2CBAE4E648182127328A6480A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -981,6 +1005,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D96986E076C24871AD6745042A7A246E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DA4376539C0C4276B0FF85ADEB057EAE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1169,6 +1199,24 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_89DCB0BB5B724E77A4E855D94FF8E9BA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_45CEA8CD13874F61ABBB605A19A5C7B1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_B22C20802800E27CD1B73B6135C306FB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_2455AE4A2C28B5ECB2F9CE3AE8221795"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -1634,6 +1682,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2455AE4A2C28B5ECB2F9CE3AE8221795"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Web.WebView2.Core, Version=1.0.2592.51, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_2455AE4A2C28B5ECB2F9CE3AE8221795"
+                    {
+                    "Name" = "8:Microsoft.Web.WebView2.Core.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.Web.WebView2.Core.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_84268E489E454194AE18583A016D26E1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_250A176B32B14323A61121692B089F73"
@@ -2142,6 +2221,37 @@
             "TargetName" = "8:ICam Photogrammetry Course Handout - REV1B.pdf.pdf"
             "Tag" = "8:"
             "Folder" = "8:_C433A89C5F4A49C4AD455B87314E7A68"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_45CEA8CD13874F61ABBB605A19A5C7B1"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AutoUpdater.NET, Version=1.9.2.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_45CEA8CD13874F61ABBB605A19A5C7B1"
+                    {
+                    "Name" = "8:AutoUpdater.NET.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\DropFile_I3d\\bin\\Release\\net6.0-windows\\Release\\net6.0-windows\\AutoUpdater.NET.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_84268E489E454194AE18583A016D26E1"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3727,6 +3837,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B22C20802800E27CD1B73B6135C306FB"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Web.WebView2.WinForms, Version=1.0.2592.51, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_B22C20802800E27CD1B73B6135C306FB"
+                    {
+                    "Name" = "8:Microsoft.Web.WebView2.WinForms.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.Web.WebView2.WinForms.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_84268E489E454194AE18583A016D26E1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B43A81A2CBAE4E648182127328A6480A"
             {
             "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Systems\\I221301\\License 2025-04-01-13-32-02.txt"
@@ -4473,6 +4614,26 @@
             "TargetName" = "8:Model Base Lower 01.stp"
             "Tag" = "8:"
             "Folder" = "8:_63F1A734069A4DC5A7364FD83DA954A1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D96986E076C24871AD6745042A7A246E"
+            {
+            "SourcePath" = "8:..\\DropFile_I3d\\bin\\Release\\net6.0-windows\\Release\\net6.0-windows\\Version.xml"
+            "TargetName" = "8:Version.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_84268E489E454194AE18583A016D26E1"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5781,7 +5942,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:IScanSetupInstaller"
         "ProductCode" = "8:{AA89878A-E900-4994-83A5-890981AE5962}"
-        "PackageCode" = "8:{89A55D6D-210F-463F-ADF0-4BF2608289EE}"
+        "PackageCode" = "8:{8FAD14ED-26B5-43DA-AE07-8851B9AEC907}"
         "UpgradeCode" = "8:{DEB6F008-45E9-4308-9549-819547B95B0B}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -6358,7 +6519,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0BEB5965ABE04B06BA58381ABBC3EBDC"
             {
-            "SourcePath" = "8:..\\DropFile_I3d\\obj\\Release\\net6.0-windows\\ICam4DSetup.dll"
+            "SourcePath" = "8:..\\DropFile_I3d\\obj\\Debug\\net6.0-windows\\ICam4DSetup.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_84268E489E454194AE18583A016D26E1"
