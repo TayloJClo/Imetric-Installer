@@ -46,6 +46,7 @@ namespace DropFile_I3d
             toolTip1 = new ToolTip(components);
             label1 = new Label();
             label2 = new Label();
+            labelVersion = new Label();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -188,8 +189,18 @@ namespace DropFile_I3d
             label2.TabIndex = 26;
             label2.Text = "Library Tools";
             // 
+            // labelVersion
+            //
+            labelVersion.AutoSize = true;
+            labelVersion.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            labelVersion.Location = new Point(548, 612);
+            labelVersion.Name = "labelVersion";
+            labelVersion.Size = new Size(63, 21);
+            labelVersion.TabIndex = 27;
+            labelVersion.Text = "V8.0.0";
+            //
             // groupBox2
-            // 
+            //
             groupBox2.Controls.Add(buttonRemove);
             groupBox2.Controls.Add(button3);
             groupBox2.Controls.Add(button1);
@@ -224,6 +235,7 @@ namespace DropFile_I3d
             Controls.Add(groupBox2);
             Controls.Add(pictureBox1);
             Controls.Add(labelProgress);
+            Controls.Add(labelVersion);
             HelpButton = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 5, 4, 5);
@@ -259,6 +271,7 @@ namespace DropFile_I3d
         private Label label2;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
+        private Label labelVersion;
 
     }
 }
