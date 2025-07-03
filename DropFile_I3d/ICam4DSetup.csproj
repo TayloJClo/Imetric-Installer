@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoUpdater.NET" Version="1.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="ImplantEditor.cs">
       <SubType>Form</SubType>
     </Compile>
