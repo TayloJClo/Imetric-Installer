@@ -1,3 +1,4 @@
+using AutoUpdaterDotNET;
 using ICam4DSetup;
 using ICam4DSetup.bin;
 using ImplantPositionEditor;
@@ -7,8 +8,8 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
-using System.Windows.Forms;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DropFile_I3d
 {
@@ -296,5 +297,10 @@ namespace DropFile_I3d
         {
 
         }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            AutoUpdater.Start("https://github.com/TayloJClo/Imetric-Installer/releases/download/V8.1.0/Version.xml");
+        }
+
     }
 }

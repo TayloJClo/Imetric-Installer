@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Autoupdater.NET.Official" Version="1.9.2" />
+    <PackageReference Include="OpenAI" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>

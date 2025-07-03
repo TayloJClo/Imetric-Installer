@@ -53,6 +53,8 @@ namespace DropFile_I3d
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             SuspendLayout();
+            InitializeComponent();
+            this.Load += MainForm_Load;
             // 
             // labelProgress
             // 
