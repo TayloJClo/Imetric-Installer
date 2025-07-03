@@ -32,7 +32,7 @@ namespace DropFile_I3d
             string iCamSerialNo = iniFile.Read("Settings", "ICamSerialNo");
         }
 
-        
+
 
         static void AddLineToCsv(string filePath, string newData)
         {
@@ -156,9 +156,9 @@ namespace DropFile_I3d
             }
         }
 
-      
 
-        
+
+
 
         private void buttonAddComponents_Click(object sender, EventArgs e)
         {
@@ -291,9 +291,10 @@ namespace DropFile_I3d
         {
 
         }
-        
-            
-        
 
+        private void labelVersion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

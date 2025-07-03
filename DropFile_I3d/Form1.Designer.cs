@@ -190,17 +190,18 @@ namespace DropFile_I3d
             label2.Text = "Library Tools";
             // 
             // labelVersion
-            //
+            // 
             labelVersion.AutoSize = true;
-            labelVersion.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            labelVersion.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
             labelVersion.Location = new Point(548, 612);
             labelVersion.Name = "labelVersion";
-            labelVersion.Size = new Size(63, 21);
+            labelVersion.Size = new Size(53, 21);
             labelVersion.TabIndex = 27;
-            labelVersion.Text = "V8.0.0";
-            //
+            labelVersion.Text = "V8.1.0";
+            labelVersion.Click += labelVersion_Click;
+            // 
             // groupBox2
-            //
+            // 
             groupBox2.Controls.Add(buttonRemove);
             groupBox2.Controls.Add(button3);
             groupBox2.Controls.Add(button1);
@@ -242,13 +243,12 @@ namespace DropFile_I3d
             MaximizeBox = false;
             Name = "Form1";
             ShowInTaskbar = false;
-            
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
-           
+
         }
 
         #endregion

@@ -10,6 +10,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Platforms>AnyCPU;x86</Platforms>
     <ApplicationIcon>Iscan with cogs.ico</ApplicationIcon>
+    <AssemblyVersion>8.1.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,7 +19,6 @@
 
   <ItemGroup>
     <PackageReference Include="Autoupdater.NET.Official" Version="1.9.2" />
-    <PackageReference Include="AutoUpdater.NET" Version="1.9.2" />
   </ItemGroup>
 
   <ItemGroup>
