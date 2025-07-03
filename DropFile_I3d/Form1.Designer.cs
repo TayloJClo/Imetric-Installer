@@ -53,7 +53,6 @@ namespace DropFile_I3d
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             SuspendLayout();
-            this.Load += MainForm_Load;
             // 
             // labelProgress
             // 
@@ -194,11 +193,11 @@ namespace DropFile_I3d
             // 
             labelVersion.AutoSize = true;
             labelVersion.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            labelVersion.Location = new Point(548, 612);
+            labelVersion.Location = new Point(559, 616);
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(53, 21);
             labelVersion.TabIndex = 27;
-            labelVersion.Text = "V8.1.2";
+            labelVersion.Text = "V8.1.3";
             labelVersion.Click += labelVersion_Click;
             // 
             // groupBox2
@@ -244,6 +243,7 @@ namespace DropFile_I3d
             MaximizeBox = false;
             Name = "Form1";
             ShowInTaskbar = false;
+            Load += MainForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox3.ResumeLayout(false);

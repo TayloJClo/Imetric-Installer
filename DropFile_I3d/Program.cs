@@ -17,7 +17,7 @@ namespace DropFile_I3d
             // Configure AutoUpdater to check updates from a specific XML file
             AutoUpdater.ApplicationExitEvent += RestartAfterUpdate;
             AutoUpdater.DownloadPath = Application.StartupPath;
-            AutoUpdater.Start("https://github.com/TayloJClo/Imetric-Installer/blob/7318d69ab8a1ab152c60e941afc9fc236d1c880e/Version.xml");
+            AutoUpdater.Start("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Version.xml");
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
