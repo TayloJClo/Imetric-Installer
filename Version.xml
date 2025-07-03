@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
 <item>
-  <version>8.1.0.0</version>
+  <version>8.1.1.0</version>
   <url>https://github.com/TayloJClo/Imetric-Installer/releases/download/V8.1.1/ICam4DSetup.zip</url>
   <changelog>https://github.com/TayloJClo/Imetric-Installer/releases</changelog>
   <mandatory>true</mandatory>
