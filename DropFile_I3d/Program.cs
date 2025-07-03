@@ -1,3 +1,5 @@
+using AutoUpdaterDotNET;
+
 namespace DropFile_I3d
 {
     internal static class Program
@@ -10,6 +12,9 @@ namespace DropFile_I3d
         {
             // Ensure secure HTTPS connections (required by GitHub/Dropbox)
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
+            // Configure AutoUpdater to check the latest release on GitHub
+            AutoUpdater.Start("https://github.com/TayloJClo/Imetric-Installer/releases/latest");
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.

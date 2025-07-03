@@ -230,7 +230,7 @@ namespace DropFile_I3d
             MaximizeBox = false;
             Name = "Form1";
             ShowInTaskbar = false;
-            Text = "Imetric Installation";GridItem:
+            
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
