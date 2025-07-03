@@ -1,5 +1,6 @@
 using AutoUpdaterDotNET;
 using System.Diagnostics;
+using System.IO;
 
 namespace DropFile_I3d
 {
@@ -16,7 +17,12 @@ namespace DropFile_I3d
 
             // Configure AutoUpdater to check updates from a specific XML file
             AutoUpdater.ApplicationExitEvent += RestartAfterUpdate;
-            AutoUpdater.DownloadPath = Application.StartupPath;
+
+            // Download updates to a writable temporary folder
+            string updatePath = Path.Combine(Path.GetTempPath(), "ImetricUpdater");
+            Directory.CreateDirectory(updatePath);
+            AutoUpdater.DownloadPath = updatePath;
+
             AutoUpdater.Start("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Version.xml");
 
             // To customize application configuration such as set high DPI settings or default font,
