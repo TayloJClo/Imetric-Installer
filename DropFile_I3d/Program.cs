@@ -1,4 +1,5 @@
 using AutoUpdaterDotNET;
+using System.Diagnostics;
 
 namespace DropFile_I3d
 {
@@ -14,12 +15,20 @@ namespace DropFile_I3d
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 
             // Configure AutoUpdater to check the latest release on GitHub
+            AutoUpdater.ApplicationExitEvent += RestartAfterUpdate;
+            AutoUpdater.DownloadPath = Application.StartupPath;
             AutoUpdater.Start("https://github.com/TayloJClo/Imetric-Installer/releases/latest");
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+        }
+
+        private static void RestartAfterUpdate()
+        {
+            Process.Start(Application.ExecutablePath);
+            Environment.Exit(0);
         }
     }
 }
