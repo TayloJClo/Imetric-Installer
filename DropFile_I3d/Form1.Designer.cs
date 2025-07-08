@@ -197,7 +197,7 @@ namespace DropFile_I3d
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(65, 21);
             labelVersion.TabIndex = 27;
-            labelVersion.Text = "V8.1.3.2";
+            labelVersion.Text = "V8.1.3.3";
             labelVersion.Click += labelVersion_Click;
             // 
             // groupBox2
@@ -229,6 +229,7 @@ namespace DropFile_I3d
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(624, 637);
             Controls.Add(label2);
             Controls.Add(label1);

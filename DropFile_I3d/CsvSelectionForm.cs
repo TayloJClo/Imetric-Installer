@@ -328,7 +328,7 @@ namespace ICam4DSetup
                 {
                     if (string.IsNullOrWhiteSpace(fileName)) continue;
 
-                    string githubBaseUrl = "https://github.com/TayloJClo/Imetric-Installer/tree/TayloJClo-IcamRefs/"; // Update this
+                    string githubBaseUrl = "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/TayloJClo-IcamRefs/";
                     string fileUrl = githubBaseUrl + fileName;
                     string targetPath = Path.Combine(targetFolder, fileName);
 
