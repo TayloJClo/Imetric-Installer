@@ -10,8 +10,8 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Platforms>AnyCPU;x86</Platforms>
     <ApplicationIcon>Iscan with cogs.ico</ApplicationIcon>
-    <AssemblyVersion>8.1.3.3</AssemblyVersion>
-    <FileVersion>8.1.3.3</FileVersion>
+    <AssemblyVersion>8.1.3.4</AssemblyVersion>
+    <FileVersion>8.1.3.4</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -55,5 +55,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="mkdir &quot;%25USERPROFILE%25\Desktop\ICam4DSetup&quot; 2&gt;nul&#xD;&#xA;copy /Y &quot;$(OutDir)ICam4DSetup.deps.json&quot; &quot;%25USERPROFILE%25\Desktop\ICam4DSetup\&quot;&#xD;&#xA;copy /Y &quot;$(OutDir)ICam4DSetup.dll&quot; &quot;%25USERPROFILE%25\Desktop\ICam4DSetup\&quot;&#xD;&#xA;copy /Y &quot;$(OutDir)ICam4DSetup.exe&quot; &quot;%25USERPROFILE%25\Desktop\ICam4DSetup\&quot;&#xD;&#xA;copy /Y &quot;$(OutDir)ICam4DSetup.pdb&quot; &quot;%25USERPROFILE%25\Desktop\ICam4DSetup\&quot;&#xD;&#xA;copy /Y &quot;$(OutDir)ICam4DSetup.runtimeconfig.json&quot; &quot;%25USERPROFILE%25\Desktop\ICam4DSetup\&quot;" />
+  </Target>
 
 </Project>

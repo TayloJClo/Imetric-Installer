@@ -197,7 +197,7 @@ namespace DropFile_I3d
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(65, 21);
             labelVersion.TabIndex = 27;
-            labelVersion.Text = "V8.1.3.3";
+            labelVersion.Text = "V8.1.3.4";
             labelVersion.Click += labelVersion_Click;
             // 
             // groupBox2
