@@ -268,15 +268,19 @@ namespace ICam4DSetup
 
                 var baseDir = Path.GetDirectoryName(localCsvPath);
                 var muRpFolder = Path.Combine(baseDir, "MU-RP");
+
+                // Ensure directories from column F exist
                 foreach (var folder in fColumnValues)
                 {
                     var newPath = Path.Combine(baseDir, folder);
                     if (!Directory.Exists(newPath))
                     {
                         Directory.CreateDirectory(newPath);
-                        if (Directory.Exists(muRpFolder)) CopyDirectory(muRpFolder, newPath);
                     }
                 }
+
+                // Ensure MU-RP contents are copied to all relevant directories
+                EnsureMuRpFiles(baseDir, muRpFolder);
 
                 await DownloadICamRefFilesAsync(gColumnValues);
 
@@ -313,6 +317,21 @@ namespace ICam4DSetup
             {
                 string targetFilePath = fileName.Replace(sourceDir, targetDir);
                 File.Copy(fileName, targetFilePath, true);
+            }
+        }
+
+        private void EnsureMuRpFiles(string baseDir, string muRpFolder)
+        {
+            if (!Directory.Exists(muRpFolder)) return;
+
+            foreach (var dir in Directory.GetDirectories(baseDir))
+            {
+                var name = Path.GetFileName(dir);
+                if (name.Equals("ICamRef", StringComparison.OrdinalIgnoreCase) ||
+                    name.Equals("MU-RP", StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                CopyDirectory(muRpFolder, dir);
             }
         }
 
