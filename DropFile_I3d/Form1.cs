@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace DropFile_I3d
 {
@@ -24,6 +25,8 @@ namespace DropFile_I3d
         {
             InitializeComponent();
             iniFile = new IniFile(Path.Combine(Application.StartupPath, "config.ini"));
+            labelVersion.Text = "V" + Assembly.GetExecutingAssembly()
+                                     .GetName().Version?.ToString();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e) => Application.Exit();
