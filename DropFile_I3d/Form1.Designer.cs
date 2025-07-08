@@ -193,11 +193,11 @@ namespace DropFile_I3d
             // 
             labelVersion.AutoSize = true;
             labelVersion.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            labelVersion.Location = new Point(559, 616);
+            labelVersion.Location = new Point(547, 616);
             labelVersion.Name = "labelVersion";
-            labelVersion.Size = new Size(53, 21);
+            labelVersion.Size = new Size(65, 21);
             labelVersion.TabIndex = 27;
-            labelVersion.Text = "V8.1.3";
+            labelVersion.Text = "V8.1.3.2";
             labelVersion.Click += labelVersion_Click;
             // 
             // groupBox2

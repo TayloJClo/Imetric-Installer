@@ -16,7 +16,8 @@ namespace DropFile_I3d
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 
             // Configure AutoUpdater to check updates from a specific XML file
-            AutoUpdater.ApplicationExitEvent += RestartAfterUpdate;
+            AutoUpdater.ApplicationExitEvent += CloseApplication;
+            AutoUpdater.RunUpdateAsAdmin = true;
 
             // Download updates to a writable temporary folder
             string updatePath = Path.Combine(Path.GetTempPath(), "ImetricUpdater");
@@ -31,9 +32,10 @@ namespace DropFile_I3d
             Application.Run(new Form1());
         }
 
-        private static void RestartAfterUpdate()
+        private static void CloseApplication()
         {
-            Process.Start(Application.ExecutablePath);
+            // Exit so the updater can apply the downloaded files. The updater
+            // will relaunch the application when extraction is complete.
             Environment.Exit(0);
         }
     }

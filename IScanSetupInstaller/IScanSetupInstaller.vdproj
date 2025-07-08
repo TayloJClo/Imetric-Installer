@@ -507,12 +507,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_75BDF183B7834048A533C0D21636FC40"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_76616079F22F4A9B950B4362F1775D32"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2932,26 +2926,6 @@
             "TargetName" = "8:ICamRef NB HC Wide MU 300166 31146 Y.stl"
             "Tag" = "8:"
             "Folder" = "8:_B3F72295BCB84605980A3CB16B93C342"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_75BDF183B7834048A533C0D21636FC40"
-            {
-            "SourcePath" = "8:C:\\Newest Version of IScan\\Imetric4D Data\\ICam4D Workflow Sample2\\ICam Photogrammetry Course Handout - REV1.pdf.pdf"
-            "TargetName" = "8:ICam Photogrammetry Course Handout - REV1.pdf.pdf"
-            "Tag" = "8:"
-            "Folder" = "8:_C433A89C5F4A49C4AD455B87314E7A68"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5942,7 +5916,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:IScanSetupInstaller"
         "ProductCode" = "8:{AA89878A-E900-4994-83A5-890981AE5962}"
-        "PackageCode" = "8:{8FAD14ED-26B5-43DA-AE07-8851B9AEC907}"
+        "PackageCode" = "8:{4F5134A9-0812-4310-86AE-3106A22543E3}"
         "UpgradeCode" = "8:{DEB6F008-45E9-4308-9549-819547B95B0B}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -6519,7 +6493,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0BEB5965ABE04B06BA58381ABBC3EBDC"
             {
-            "SourcePath" = "8:..\\DropFile_I3d\\obj\\Debug\\net6.0-windows\\ICam4DSetup.dll"
+            "SourcePath" = "8:..\\DropFile_I3d\\obj\\Release\\net6.0-windows\\ICam4DSetup.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_84268E489E454194AE18583A016D26E1"
