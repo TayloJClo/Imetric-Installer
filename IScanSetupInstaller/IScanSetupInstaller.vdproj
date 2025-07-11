@@ -369,12 +369,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_52FFE579DCF74F878129CF90D1E392BD"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_583A121236B94877A13906FEA4106D1F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -472,12 +466,6 @@
         "Entry"
         {
         "MsmKey" = "8:_7124659054E0432A87B2FF9DB59CA3C9"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7260B645AAD1440B999D99D5496C83BD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -892,12 +880,6 @@
         "Entry"
         {
         "MsmKey" = "8:_CE92E0770F654470AFE31C8B36C7B204"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CED74D38AB0844138E973F18FE88B394"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2480,26 +2462,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_52FFE579DCF74F878129CF90D1E392BD"
-            {
-            "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\CSV's\\Nobel.csv"
-            "TargetName" = "8:Nobel.csv"
-            "Tag" = "8:"
-            "Folder" = "8:_126FF03E76404F0680CDE2364511FB01"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_583A121236B94877A13906FEA4106D1F"
             {
             "SourcePath" = "8:C:\\Newest Version of IScan\\Imetric4D Data\\ICam4D Workflow Sample1\\CAD-Data exocad project finished\\2021-01-20_00001-001\\2021-01-20_00001-001-preview.png"
@@ -2826,26 +2788,6 @@
             "TargetName" = "8:ScanAdapters l4d1.stl"
             "Tag" = "8:"
             "Folder" = "8:_244889995C8843F3A48721E65A6E9A82"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7260B645AAD1440B999D99D5496C83BD"
-            {
-            "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\CSV's\\Straumann.csv"
-            "TargetName" = "8:Straumann.csv"
-            "Tag" = "8:"
-            "Folder" = "8:_126FF03E76404F0680CDE2364511FB01"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4248,26 +4190,6 @@
             "TargetName" = "8:ICamRef DESS 400071 2.stl"
             "Tag" = "8:"
             "Folder" = "8:_B3F72295BCB84605980A3CB16B93C342"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CED74D38AB0844138E973F18FE88B394"
-            {
-            "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\CSV's\\Default.csv"
-            "TargetName" = "8:Default.csv"
-            "Tag" = "8:"
-            "Folder" = "8:_126FF03E76404F0680CDE2364511FB01"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
