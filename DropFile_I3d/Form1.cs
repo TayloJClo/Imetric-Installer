@@ -166,8 +166,20 @@ namespace DropFile_I3d
 
         private void buttonAddComponents_Click(object sender, EventArgs e)
         {
-            var form = new CsvSelectionForm("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv");
-            form.ShowDialog();
+            using OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Select your ICamBody Library CSV file",
+                Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*",
+                InitialDirectory = @"C:\\I3D_Systems\\"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using var form = new CsvSelectionForm(
+                    "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv",
+                    openFileDialog.FileName);
+                form.ShowDialog();
+            }
         }
 
         private void installbat(string batFilePath)

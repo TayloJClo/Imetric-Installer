@@ -84,6 +84,7 @@ namespace DropFile_I3d
             // buttonIScan3d
             // 
             buttonIScan3d.BackColor = Color.White;
+            buttonIScan3d.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             buttonIScan3d.Location = new Point(285, 83);
             buttonIScan3d.Margin = new Padding(4, 5, 4, 5);
             buttonIScan3d.Name = "buttonIScan3d";
@@ -197,7 +198,7 @@ namespace DropFile_I3d
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(65, 21);
             labelVersion.TabIndex = 27;
-            labelVersion.Text = "V8.1.3.4";
+            labelVersion.Text = "V8.1.3.5";
             labelVersion.Click += labelVersion_Click;
             // 
             // groupBox2

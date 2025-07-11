@@ -12,7 +12,7 @@ namespace ICam4DSetup
         private HashSet<string> existingScrewKeys = new();
         private HashSet<string> existingHealingKeys = new();
 
-        public CsvSelectionForm(string GitUrl)
+        public CsvSelectionForm(string GitUrl, string localCsvPath)
         {
             InitializeComponent();
 
@@ -24,23 +24,16 @@ namespace ICam4DSetup
             checkedListBox1.DrawItem += CheckedListBox1_DrawItem;
             checkedListBox1.ItemCheck += CheckedListBox1_ItemCheck;
 
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Title = "Select your ICamBody Library CSV file";
-                openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
-                openFileDialog.InitialDirectory = @"C:\\I3D_Systems\\";
+            this.localCsvPath = localCsvPath;
 
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    localCsvPath = openFileDialog.FileName;
-                }
-                else
-                {
-                    MessageBox.Show("No local CSV file selected. The form will now close.");
-                    this.Close();
-                    return;
-                }
+            if (string.IsNullOrWhiteSpace(this.localCsvPath))
+            {
+                MessageBox.Show("No local CSV file selected. The form will now close.");
+                DialogResult = DialogResult.Cancel;
+                Close();
+                return;
             }
+
             LoadCsvWithRetry(GitUrl);
         }
 
