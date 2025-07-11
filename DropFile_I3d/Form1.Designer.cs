@@ -63,6 +63,7 @@ namespace DropFile_I3d
             labelProgress.Size = new Size(0, 25);
             labelProgress.TabIndex = 8;
             // 
+            // 
             // openFileDialog
             // 
             openFileDialog.FileName = "openFileDialog";
