@@ -10,7 +10,10 @@ namespace ICam4DSetup
     public partial class CsvRemoveForm : Form
     {
         private string localCsvPath = string.Empty; // Initialize with a default value
-        private Dictionary<string, string> itemToLineMap = new();
+        private const string Separator = "----------------";
+        private Dictionary<string, List<string>> itemToLinesMap = new();
+        private HashSet<string> screwKeys = new();
+        private HashSet<string> healingKeys = new();
 
         public CsvRemoveForm()
         {
@@ -38,23 +41,48 @@ namespace ICam4DSetup
         private void LoadCsv()
         {
             var lines = File.ReadAllLines(localCsvPath).ToList();
-            itemToLineMap.Clear();
+            itemToLinesMap.Clear();
+            screwKeys.Clear();
+            healingKeys.Clear();
             checkedListBox1.Items.Clear();
 
-            foreach (var line in lines.Skip(1)) // skip header
+            foreach (var line in lines.Skip(1)) // skip header row
             {
                 var parts = line.Split('\t');
-                if (parts.Length < 2) continue;
+                if (parts.Length < 5) continue;
 
-                string label = parts[1].Trim(); // column B
-                string key = parts[4].Trim();   // column E
+                string columnB = parts[1].Trim();
+                string columnE = parts[4].Trim();
 
-                string display = $"{label} — {key}";
-                if (!itemToLineMap.ContainsKey(display))
+                // Determine key and display text based on whether this is a healing cap
+                bool isHealing = columnB.Equals("ICamRef", StringComparison.OrdinalIgnoreCase);
+                string display = isHealing ? columnE : columnB;
+
+                if (!itemToLinesMap.TryGetValue(display, out var list))
                 {
-                    itemToLineMap[display] = line;
-                    checkedListBox1.Items.Add(display);
+                    list = new List<string>();
+                    itemToLinesMap[display] = list;
                 }
+                list.Add(line);
+                if (isHealing)
+                    healingKeys.Add(display);
+                else
+                    screwKeys.Add(display);
+            }
+
+            foreach (var key in screwKeys.OrderBy(k => k, StringComparer.OrdinalIgnoreCase))
+            {
+                checkedListBox1.Items.Add(key);
+            }
+
+            if (healingKeys.Any())
+            {
+                checkedListBox1.Items.Add(Separator);
+            }
+
+            foreach (var key in healingKeys.OrderBy(k => k, StringComparer.OrdinalIgnoreCase))
+            {
+                checkedListBox1.Items.Add(key);
             }
         }
 
@@ -73,9 +101,13 @@ namespace ICam4DSetup
 
             foreach (var selected in selectedItems)
             {
-                if (itemToLineMap.TryGetValue(selected, out var lineToRemove))
+                if (itemToLinesMap.TryGetValue(selected, out var linesToRemove))
                 {
-                    dataLines.RemoveAll(l => l.Equals(lineToRemove));
+                    foreach (var lineToRemove in linesToRemove)
+                    {
+                        if (selected == Separator) continue;
+                        dataLines.RemoveAll(l => l.Equals(lineToRemove));
+                    }
                 }
             }
 
