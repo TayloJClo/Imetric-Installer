@@ -10,7 +10,6 @@ namespace ICam4DSetup
     public partial class CsvRemoveForm : Form
     {
         private string localCsvPath = string.Empty; // Initialize with a default value
-        private const string Separator = "----------------";
         private Dictionary<string, List<string>> itemToLinesMap = new();
         private HashSet<string> screwKeys = new();
         private HashSet<string> healingKeys = new();
@@ -44,7 +43,8 @@ namespace ICam4DSetup
             itemToLinesMap.Clear();
             screwKeys.Clear();
             healingKeys.Clear();
-            checkedListBox1.Items.Clear();
+            checkedListBoxScrews.Items.Clear();
+            checkedListBoxHealing.Items.Clear();
 
             foreach (var line in lines.Skip(1)) // skip header row
             {
@@ -72,23 +72,19 @@ namespace ICam4DSetup
 
             foreach (var key in screwKeys.OrderBy(k => k, StringComparer.OrdinalIgnoreCase))
             {
-                checkedListBox1.Items.Add(key);
-            }
-
-            if (healingKeys.Any())
-            {
-                checkedListBox1.Items.Add(Separator);
+                checkedListBoxScrews.Items.Add(key);
             }
 
             foreach (var key in healingKeys.OrderBy(k => k, StringComparer.OrdinalIgnoreCase))
             {
-                checkedListBox1.Items.Add(key);
+                checkedListBoxHealing.Items.Add(key);
             }
         }
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            var selectedItems = checkedListBox1.CheckedItems.Cast<string>().ToList();
+            var selectedItems = checkedListBoxScrews.CheckedItems.Cast<string>()
+                .Concat(checkedListBoxHealing.CheckedItems.Cast<string>()).ToList();
             if (!selectedItems.Any())
             {
                 MessageBox.Show("No items selected.");
@@ -105,7 +101,6 @@ namespace ICam4DSetup
                 {
                     foreach (var lineToRemove in linesToRemove)
                     {
-                        if (selected == Separator) continue;
                         dataLines.RemoveAll(l => l.Equals(lineToRemove));
                     }
                 }
