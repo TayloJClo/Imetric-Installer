@@ -25,48 +25,86 @@
         /// <summary>
         /// Required method for Designer support - do not modify the contents of this method with the code editor.
         /// </summary>
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBoxScrews;
+        private System.Windows.Forms.CheckedListBox checkedListBoxHealing;
+        private System.Windows.Forms.Label labelScrews;
+        private System.Windows.Forms.Label labelHealing;
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Button buttonCancel;
 
         private void InitializeComponent()
         {
-            checkedListBox1 = new CheckedListBox();
+            checkedListBoxScrews = new CheckedListBox();
+            checkedListBoxHealing = new CheckedListBox();
+            labelScrews = new Label();
+            labelHealing = new Label();
             buttonRemove = new Button();
             buttonCancel = new Button();
             SuspendLayout();
-            // 
-            // checkedListBox1
-            // 
-            checkedListBox1.CheckOnClick = true;
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(20, 25);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(520, 452);
-            checkedListBox1.TabIndex = 0;
+            //
+            // checkedListBoxScrews
+            //
+            checkedListBoxScrews.CheckOnClick = true;
+            checkedListBoxScrews.FormattingEnabled = true;
+            checkedListBoxScrews.Location = new Point(36, 95);
+            checkedListBoxScrews.Name = "checkedListBoxScrews";
+            checkedListBoxScrews.Size = new Size(539, 480);
+            checkedListBoxScrews.TabIndex = 0;
+            //
+            // checkedListBoxHealing
+            //
+            checkedListBoxHealing.CheckOnClick = true;
+            checkedListBoxHealing.FormattingEnabled = true;
+            checkedListBoxHealing.Location = new Point(615, 95);
+            checkedListBoxHealing.Name = "checkedListBoxHealing";
+            checkedListBoxHealing.Size = new Size(539, 480);
+            checkedListBoxHealing.TabIndex = 1;
+            //
+            // labelScrews
+            //
+            labelScrews.AutoSize = true;
+            labelScrews.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            labelScrews.Location = new Point(213, 41);
+            labelScrews.Name = "labelScrews";
+            labelScrews.Size = new Size(174, 30);
+            labelScrews.TabIndex = 4;
+            labelScrews.Text = "Screw Channels";
+            //
+            // labelHealing
+            //
+            labelHealing.AutoSize = true;
+            labelHealing.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            labelHealing.Location = new Point(824, 41);
+            labelHealing.Name = "labelHealing";
+            labelHealing.Size = new Size(149, 30);
+            labelHealing.TabIndex = 5;
+            labelHealing.Text = "Healing Caps";
             // 
             // buttonRemove
             // 
-            buttonRemove.Location = new Point(56, 523);
+            buttonRemove.Location = new Point(412, 588);
             buttonRemove.Name = "buttonRemove";
-            buttonRemove.Size = new Size(192, 44);
-            buttonRemove.TabIndex = 1;
+            buttonRemove.Size = new Size(163, 58);
+            buttonRemove.TabIndex = 2;
             buttonRemove.Text = "Remove Selected";
             buttonRemove.Click += buttonRemove_Click;
-            // 
+            //
             // buttonCancel
-            // 
-            buttonCancel.Location = new Point(301, 523);
+            //
+            buttonCancel.Location = new Point(615, 588);
             buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(193, 44);
-            buttonCancel.TabIndex = 2;
+            buttonCancel.Size = new Size(163, 58);
+            buttonCancel.TabIndex = 3;
             buttonCancel.Text = "Cancel";
             buttonCancel.Click += buttonCancel_Click;
-            // 
+            //
             // CsvRemoveForm
-            // 
-            ClientSize = new Size(572, 613);
-            Controls.Add(checkedListBox1);
+            //
+            ClientSize = new Size(1184, 694);
+            Controls.Add(labelHealing);
+            Controls.Add(labelScrews);
+            Controls.Add(checkedListBoxHealing);
+            Controls.Add(checkedListBoxScrews);
             Controls.Add(buttonRemove);
             Controls.Add(buttonCancel);
             MaximizeBox = false;
