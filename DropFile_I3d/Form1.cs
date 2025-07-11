@@ -52,18 +52,19 @@ namespace DropFile_I3d
             installInf("C:\\I3D_Software\\Drivers\\Projector Imetric4D 9\\cyusb3.inf");
         }
 
-        private void buttonIScan3d_Click(object sender, EventArgs e)
+        private async void buttonIScan3d_Click(object sender, EventArgs e)
         {
             var popup = new OptionPopupForm();
 
             if (popup.ShowDialog() == DialogResult.OK)
             {
                 string selected = popup.SelectedOption;
-                string sourceCsvPath = selected switch
+
+                string remoteCsvUrl = selected switch
                 {
-                    "Default" => "C:\\I3D_Software\\General\\CSV's\\Default.csv",
-                    "Nobel" => "C:\\I3D_Software\\General\\CSV's\\Nobel.csv",
-                    "Straumann" => "C:\\I3D_Software\\General\\CSV's\\Straumann.csv",
+                    "Default" => "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Default.csv",
+                    "Nobel" => "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Nobel.csv",
+                    "Straumann" => "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Straumann.csv",
                     _ => ""
                 };
 
@@ -72,19 +73,23 @@ namespace DropFile_I3d
 
                 try
                 {
-                    if (!File.Exists(sourceCsvPath))
-                    {
-                        MessageBox.Show("Source CSV file not found: " + sourceCsvPath);
-                        return;
-                    }
-
                     if (!Directory.Exists(destinationDir))
                     {
                         Directory.CreateDirectory(destinationDir);
                     }
 
-                    File.Copy(sourceCsvPath, destinationCsvPath, overwrite: true);
-                    MessageBox.Show($"Copied {selected} CSV to: {destinationCsvPath}");
+                    if (!string.IsNullOrWhiteSpace(remoteCsvUrl))
+                    {
+                        using HttpClient client = new HttpClient();
+                        byte[] data = await client.GetByteArrayAsync(remoteCsvUrl);
+                        await File.WriteAllBytesAsync(destinationCsvPath, data);
+                        MessageBox.Show($"Downloaded {selected} CSV to: {destinationCsvPath}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No download URL available.");
+                        return;
+                    }
 
                     install("C:\\I3D_Software\\Imetric4D Software\\IScan3D Dental\\IScan3D_Dental_v9.1.113_2025-04-01_64bit.msi");
 
