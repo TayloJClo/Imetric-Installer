@@ -1,6 +1,5 @@
 ﻿using System.Data;
 using System.Diagnostics;
-using System.Net.Http;
 using System.Text;
 
 namespace ICam4DSetup
