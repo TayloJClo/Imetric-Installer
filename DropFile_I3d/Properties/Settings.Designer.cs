@@ -38,5 +38,20 @@ namespace DropFile_I3d.Properties
                 this["HideImplantHowTo"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSetting()]
+        [global::System.Diagnostics.DebuggerNonUserCode()]
+        [global::System.Configuration.DefaultSettingValue("")]
+        public string LastCsvDir
+        {
+            get
+            {
+                return ((string)(this["LastCsvDir"]));
+            }
+            set
+            {
+                this["LastCsvDir"] = value;
+            }
+        }
     }
 }
