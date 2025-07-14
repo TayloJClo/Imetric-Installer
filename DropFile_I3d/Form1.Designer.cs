@@ -44,7 +44,6 @@ namespace DropFile_I3d
             button3 = new Button();
             button1 = new Button();
             comboBoxCsvDir = new ComboBox();
-            buttonSelectCsvDir = new Button();
             toolTip1 = new ToolTip(components);
             label1 = new Label();
             label2 = new Label();
@@ -181,15 +180,6 @@ namespace DropFile_I3d
             comboBoxCsvDir.Size = new Size(306, 33);
             comboBoxCsvDir.TabIndex = 28;
             // 
-            // buttonSelectCsvDir
-            // 
-            buttonSelectCsvDir.Location = new Point(330, 25);
-            buttonSelectCsvDir.Name = "buttonSelectCsvDir";
-            buttonSelectCsvDir.Size = new Size(207, 38);
-            buttonSelectCsvDir.TabIndex = 29;
-            buttonSelectCsvDir.Text = "Browse CSV Folder";
-            buttonSelectCsvDir.UseVisualStyleBackColor = true;
-            buttonSelectCsvDir.Click += buttonSelectCsvDir_Click;
             // 
             // label1
             // 
@@ -224,7 +214,6 @@ namespace DropFile_I3d
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(buttonSelectCsvDir);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(comboBoxCsvDir);
             groupBox2.Controls.Add(buttonRemove);
@@ -311,6 +300,5 @@ namespace DropFile_I3d
         private Label labelVersion;
         private Button button2;
         private ComboBox comboBoxCsvDir;
-        private Button buttonSelectCsvDir;
     }
 }

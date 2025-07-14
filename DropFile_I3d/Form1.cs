@@ -37,6 +37,7 @@ namespace DropFile_I3d
             iniFile = new IniFile(Path.Combine(Application.StartupPath, "config.ini"));
             labelVersion.Text = "V" + Assembly.GetExecutingAssembly()
                                      .GetName().Version?.ToString();
+            PopulateCsvDirectories();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e) => Application.Exit();
@@ -181,20 +182,17 @@ namespace DropFile_I3d
 
         private void buttonAddComponents_Click(object sender, EventArgs e)
         {
-            using OpenFileDialog openFileDialog = new OpenFileDialog
+            string csvPath = Path.Combine(SelectedCsvDirectory, "ICamBody Library.csv");
+            if (!File.Exists(csvPath))
             {
-                Title = "Select your ICamBody Library CSV file",
-                Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*",
-                InitialDirectory = @"C:\\I3D_Systems\\"
-            };
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                using var form = new CsvSelectionForm(
-                    "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv",
-                    openFileDialog.FileName);
-                form.ShowDialog();
+                MessageBox.Show($"CSV file not found: {csvPath}");
+                return;
             }
+
+            using var form = new CsvSelectionForm(
+                "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv",
+                csvPath);
+            form.ShowDialog();
         }
 
         private void installbat(string batFilePath)
@@ -314,7 +312,14 @@ namespace DropFile_I3d
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            var removeForm = new CsvRemoveForm();
+            string csvPath = Path.Combine(SelectedCsvDirectory, "ICamBody Library.csv");
+            if (!File.Exists(csvPath))
+            {
+                MessageBox.Show($"CSV file not found: {csvPath}");
+                return;
+            }
+
+            using var removeForm = new CsvRemoveForm(csvPath);
             removeForm.ShowDialog();
         }
 
@@ -330,6 +335,7 @@ namespace DropFile_I3d
         private void MainForm_Load(object sender, EventArgs e)
         {
             AutoUpdater.Start("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Version.xml");
+            PopulateCsvDirectories();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -337,17 +343,24 @@ namespace DropFile_I3d
 
         }
 
-        private void buttonSelectCsvDir_Click(object sender, EventArgs e)
+        private void PopulateCsvDirectories()
         {
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                string folderPath = folderBrowserDialog.SelectedPath;
-                string folderName = Path.GetFileName(folderPath);
-                string displayName = folderName.Split(' ')[0];
+            comboBoxCsvDir.Items.Clear();
+            string baseDir = @"C:\\I3D_Systems";
+            if (!Directory.Exists(baseDir))
+                return;
 
-                comboBoxCsvDir.Items.Add(new FolderItem { DisplayName = displayName, Path = folderPath });
-                comboBoxCsvDir.SelectedIndex = comboBoxCsvDir.Items.Count - 1;
+            var dirs = Directory.GetDirectories(baseDir, "*ICamBody Library", SearchOption.TopDirectoryOnly);
+            foreach (var dir in dirs)
+            {
+                string folderName = Path.GetFileName(dir);
+                string displayName = folderName.Split(' ')[0];
+                comboBoxCsvDir.Items.Add(new FolderItem { DisplayName = displayName, Path = dir });
             }
+
+            if (comboBoxCsvDir.Items.Count > 0)
+                comboBoxCsvDir.SelectedIndex = 0;
         }
+
     }
 }
