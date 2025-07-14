@@ -20,10 +20,20 @@ namespace DropFile_I3d
         private string iCamSerialNo = "";
         private IniFile iniFile;
 
+        private class FolderItem
+        {
+            public string DisplayName { get; init; } = "";
+            public string Path { get; init; } = "";
+            public override string ToString() => DisplayName;
+        }
+
+        public string SelectedCsvDirectory => (comboBoxCsvDir.SelectedItem as FolderItem)?.Path ?? string.Empty;
+
 
         public Form1()
         {
             InitializeComponent();
+            comboBoxCsvDir.DropDownStyle = ComboBoxStyle.DropDownList;
             iniFile = new IniFile(Path.Combine(Application.StartupPath, "config.ini"));
             labelVersion.Text = "V" + Assembly.GetExecutingAssembly()
                                      .GetName().Version?.ToString();
@@ -325,6 +335,19 @@ namespace DropFile_I3d
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonSelectCsvDir_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                string folderPath = folderBrowserDialog.SelectedPath;
+                string folderName = Path.GetFileName(folderPath);
+                string displayName = folderName.Split(' ')[0];
+
+                comboBoxCsvDir.Items.Add(new FolderItem { DisplayName = displayName, Path = folderPath });
+                comboBoxCsvDir.SelectedIndex = comboBoxCsvDir.Items.Count - 1;
+            }
         }
     }
 }
