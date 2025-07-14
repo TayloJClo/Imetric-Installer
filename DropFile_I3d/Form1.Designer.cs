@@ -230,6 +230,7 @@ namespace DropFile_I3d
             // 
             // button2
             // 
+            button2.AllowDrop = true;
             button2.Location = new Point(285, 86);
             button2.Name = "button2";
             button2.Size = new Size(238, 59);
@@ -237,6 +238,8 @@ namespace DropFile_I3d
             button2.Text = "Add ICamBodies";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
+            button2.DragEnter += button2_DragEnter;
+            button2.DragDrop += button2_DragDrop;
             // 
             // groupBox3
             // 
