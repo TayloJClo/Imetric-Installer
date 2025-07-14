@@ -339,6 +339,8 @@ namespace DropFile_I3d
         {
             AutoUpdater.Start("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Version.xml");
             PopulateCsvDirectories();
+            groupBox3.Visible = true;
+            groupBox2.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -510,6 +512,23 @@ namespace DropFile_I3d
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void installToolsMenuItem_Click(object sender, EventArgs e)
+        {
+            groupBox3.Visible = true;
+            groupBox2.Visible = false;
+        }
+
+        private void libraryCreatorMenuItem_Click(object sender, EventArgs e)
+        {
+            groupBox3.Visible = false;
+            groupBox2.Visible = true;
+        }
+
+        private void hotSwapHelperMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("HotSwap Helper not implemented yet.");
         }
     }
 }
