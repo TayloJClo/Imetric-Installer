@@ -14,26 +14,18 @@ namespace ICam4DSetup
         private HashSet<string> screwKeys = new();
         private HashSet<string> healingKeys = new();
 
-        public CsvRemoveForm()
+        public CsvRemoveForm(string csvPath)
         {
             InitializeComponent();
-
-            using OpenFileDialog openFileDialog = new OpenFileDialog
+            localCsvPath = csvPath;
+            if (File.Exists(localCsvPath))
             {
-                Title = "Select your ICamBody Library CSV file",
-                Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*",
-                InitialDirectory = @"C:\I3D_Systems\"
-            };
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                localCsvPath = openFileDialog.FileName;
                 LoadCsv();
             }
             else
             {
-                MessageBox.Show("No file selected. Closing.");
-                this.Close();
+                MessageBox.Show($"CSV not found: {localCsvPath}");
+                Close();
             }
         }
 
