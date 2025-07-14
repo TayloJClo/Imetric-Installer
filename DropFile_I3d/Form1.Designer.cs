@@ -49,10 +49,10 @@ namespace DropFile_I3d
             label2 = new Label();
             labelVersion = new Label();
             groupBox2 = new GroupBox();
+            label4 = new Label();
             label3 = new Label();
             button2 = new Button();
             groupBox3 = new GroupBox();
-            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -176,6 +176,8 @@ namespace DropFile_I3d
             // 
             // comboBoxCsvDir
             // 
+            comboBoxCsvDir.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxCsvDir.ForeColor = SystemColors.ControlText;
             comboBoxCsvDir.FormattingEnabled = true;
             comboBoxCsvDir.Location = new Point(217, 30);
             comboBoxCsvDir.Name = "comboBoxCsvDir";
@@ -187,7 +189,7 @@ namespace DropFile_I3d
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(195, 119);
+            label1.Location = new Point(205, 119);
             label1.Name = "label1";
             label1.Size = new Size(210, 32);
             label1.TabIndex = 25;
@@ -196,10 +198,10 @@ namespace DropFile_I3d
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(237, 382);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(229, 380);
             label2.Name = "label2";
-            label2.Size = new Size(146, 30);
+            label2.Size = new Size(162, 32);
             label2.TabIndex = 26;
             label2.Text = "Library Tools";
             // 
@@ -230,12 +232,23 @@ namespace DropFile_I3d
             groupBox2.TabIndex = 23;
             groupBox2.TabStop = false;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(197, 224);
+            label4.Name = "label4";
+            label4.Size = new Size(139, 21);
+            label4.TabIndex = 28;
+            label4.Text = "Add ICamBodies:";
+            // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(37, 33);
             label3.Name = "label3";
-            label3.Size = new Size(174, 25);
+            label3.Size = new Size(168, 21);
             label3.TabIndex = 28;
             label3.Text = "ICam Serial Number:";
             label3.Click += label3_Click;
@@ -243,12 +256,16 @@ namespace DropFile_I3d
             // button2
             // 
             button2.AllowDrop = true;
-            button2.Location = new Point(95, 263);
+            button2.BackColor = Color.AliceBlue;
+            button2.FlatAppearance.BorderColor = Color.Black;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            button2.Location = new Point(18, 252);
             button2.Name = "button2";
-            button2.Size = new Size(349, 94);
+            button2.Size = new Size(505, 105);
             button2.TabIndex = 25;
             button2.Text = "Drag-and-drop ICamBody folder here";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             button2.DragDrop += button2_DragDrop;
             button2.DragEnter += button2_DragEnter;
@@ -265,15 +282,6 @@ namespace DropFile_I3d
             groupBox3.Size = new Size(553, 200);
             groupBox3.TabIndex = 24;
             groupBox3.TabStop = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(197, 235);
-            label4.Name = "label4";
-            label4.Size = new Size(149, 25);
-            label4.TabIndex = 28;
-            label4.Text = "Add ICamBodies:";
             // 
             // Form1
             // 
