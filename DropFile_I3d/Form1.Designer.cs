@@ -49,6 +49,7 @@ namespace DropFile_I3d
             labelVersion = new Label();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -62,7 +63,6 @@ namespace DropFile_I3d
             labelProgress.Name = "labelProgress";
             labelProgress.Size = new Size(0, 25);
             labelProgress.TabIndex = 8;
-            // 
             // 
             // openFileDialog
             // 
@@ -151,9 +151,9 @@ namespace DropFile_I3d
             // 
             // button3
             // 
-            button3.Location = new Point(285, 62);
+            button3.Location = new Point(285, 119);
             button3.Name = "button3";
-            button3.Size = new Size(238, 90);
+            button3.Size = new Size(238, 59);
             button3.TabIndex = 24;
             button3.Text = "Implant Position Editor";
             toolTip1.SetToolTip(button3, "Use this tool to edit the library for exocad if you\r\nchose the wrong one in the scanning process\r\n");
@@ -204,6 +204,7 @@ namespace DropFile_I3d
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(buttonRemove);
             groupBox2.Controls.Add(button3);
             groupBox2.Controls.Add(button1);
@@ -226,6 +227,16 @@ namespace DropFile_I3d
             groupBox3.Size = new Size(553, 200);
             groupBox3.TabIndex = 24;
             groupBox3.TabStop = false;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(285, 40);
+            button2.Name = "button2";
+            button2.Size = new Size(238, 59);
+            button2.TabIndex = 25;
+            button2.Text = "Add ICamBodies";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
@@ -276,6 +287,6 @@ namespace DropFile_I3d
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private Label labelVersion;
-
+        private Button button2;
     }
 }

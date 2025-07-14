@@ -322,5 +322,9 @@ namespace DropFile_I3d
             AutoUpdater.Start("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Version.xml");
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
