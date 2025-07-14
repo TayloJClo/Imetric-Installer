@@ -36,6 +36,7 @@ namespace DropFile_I3d
         {
             InitializeComponent();
             comboBoxCsvDir.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxCsvDir.SelectedIndexChanged += ComboBoxCsvDir_SelectedIndexChanged;
             iniFile = new IniFile(Path.Combine(Application.StartupPath, "config.ini"));
             labelVersion.Text = "V" + Assembly.GetExecutingAssembly()
                                      .GetName().Version?.ToString();
@@ -485,7 +486,25 @@ namespace DropFile_I3d
             }
 
             if (comboBoxCsvDir.Items.Count > 0)
-                comboBoxCsvDir.SelectedIndex = 0;
+            {
+                string lastPath = Properties.Settings.Default.LastCsvDir;
+                int index = -1;
+                if (!string.IsNullOrWhiteSpace(lastPath))
+                {
+                    index = comboBoxCsvDir.Items.Cast<FolderItem>().ToList()
+                        .FindIndex(fi => fi.Path.Equals(lastPath, StringComparison.OrdinalIgnoreCase));
+                }
+                comboBoxCsvDir.SelectedIndex = index >= 0 ? index : 0;
+            }
+        }
+
+        private void ComboBoxCsvDir_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+            if (comboBoxCsvDir.SelectedItem is FolderItem item)
+            {
+                Properties.Settings.Default.LastCsvDir = item.Path;
+                Properties.Settings.Default.Save();
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
