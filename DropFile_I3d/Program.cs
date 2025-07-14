@@ -1,6 +1,7 @@
 using AutoUpdaterDotNET;
 using System.Diagnostics;
 using System.IO;
+using System;
 
 namespace DropFile_I3d
 {
@@ -24,7 +25,10 @@ namespace DropFile_I3d
             Directory.CreateDirectory(updatePath);
             AutoUpdater.DownloadPath = updatePath;
 
-            AutoUpdater.Start("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Version.xml");
+            if (!UpdateHelper.IsAutoUpdateDisabled())
+            {
+                AutoUpdater.Start("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Version.xml");
+            }
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
@@ -38,6 +42,7 @@ namespace DropFile_I3d
             // will relaunch the application when extraction is complete.
             Environment.Exit(0);
         }
+
     }
 }
 
