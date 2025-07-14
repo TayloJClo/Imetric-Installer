@@ -43,6 +43,8 @@ namespace DropFile_I3d
             buttonRemove = new Button();
             button3 = new Button();
             button1 = new Button();
+            comboBoxCsvDir = new ComboBox();
+            buttonSelectCsvDir = new Button();
             toolTip1 = new ToolTip(components);
             label1 = new Label();
             label2 = new Label();
@@ -65,9 +67,9 @@ namespace DropFile_I3d
             labelProgress.TabIndex = 8;
             // 
             // openFileDialog
-            // 
+            //
             openFileDialog.FileName = "openFileDialog";
-            // 
+            //
             // buttonInstallDriver
             // 
             buttonInstallDriver.BackColor = SystemColors.ButtonHighlight;
@@ -127,6 +129,24 @@ namespace DropFile_I3d
             buttonNotePadPlus.Text = "Install NotePad ++";
             buttonNotePadPlus.UseVisualStyleBackColor = true;
             buttonNotePadPlus.Click += buttonNotePadPlus_Click;
+            //
+            // comboBoxCsvDir
+            //
+            comboBoxCsvDir.FormattingEnabled = true;
+            comboBoxCsvDir.Location = new Point(37, 365);
+            comboBoxCsvDir.Name = "comboBoxCsvDir";
+            comboBoxCsvDir.Size = new Size(306, 33);
+            comboBoxCsvDir.TabIndex = 28;
+            //
+            // buttonSelectCsvDir
+            //
+            buttonSelectCsvDir.Location = new Point(359, 363);
+            buttonSelectCsvDir.Name = "buttonSelectCsvDir";
+            buttonSelectCsvDir.Size = new Size(231, 38);
+            buttonSelectCsvDir.TabIndex = 29;
+            buttonSelectCsvDir.Text = "Browse CSV Folder";
+            buttonSelectCsvDir.UseVisualStyleBackColor = true;
+            buttonSelectCsvDir.Click += buttonSelectCsvDir_Click;
             // 
             // pictureBox1
             // 
@@ -244,6 +264,8 @@ namespace DropFile_I3d
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(624, 637);
+            Controls.Add(buttonSelectCsvDir);
+            Controls.Add(comboBoxCsvDir);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(groupBox3);
@@ -288,5 +310,7 @@ namespace DropFile_I3d
         private GroupBox groupBox3;
         private Label labelVersion;
         private Button button2;
+        private ComboBox comboBoxCsvDir;
+        private Button buttonSelectCsvDir;
     }
 }
