@@ -49,9 +49,10 @@ namespace DropFile_I3d
             label2 = new Label();
             labelVersion = new Label();
             groupBox2 = new GroupBox();
+            label3 = new Label();
             button2 = new Button();
             groupBox3 = new GroupBox();
-            label3 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -153,9 +154,9 @@ namespace DropFile_I3d
             // 
             // button3
             // 
-            button3.Location = new Point(285, 162);
+            button3.Location = new Point(285, 110);
             button3.Name = "button3";
-            button3.Size = new Size(238, 59);
+            button3.Size = new Size(238, 90);
             button3.TabIndex = 24;
             button3.Text = "Implant Position Editor";
             toolTip1.SetToolTip(button3, "Use this tool to edit the library for exocad if you\r\nchose the wrong one in the scanning process\r\n");
@@ -206,15 +207,16 @@ namespace DropFile_I3d
             // 
             labelVersion.AutoSize = true;
             labelVersion.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            labelVersion.Location = new Point(547, 670);
+            labelVersion.Location = new Point(547, 797);
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(65, 21);
             labelVersion.TabIndex = 27;
-            labelVersion.Text = "V8.1.3.5";
+            labelVersion.Text = "V8.1.4.0";
             labelVersion.Click += labelVersion_Click;
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(comboBoxCsvDir);
@@ -224,22 +226,32 @@ namespace DropFile_I3d
             groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(37, 415);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(553, 252);
+            groupBox2.Size = new Size(553, 379);
             groupBox2.TabIndex = 23;
             groupBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(37, 33);
+            label3.Name = "label3";
+            label3.Size = new Size(174, 25);
+            label3.TabIndex = 28;
+            label3.Text = "ICam Serial Number:";
+            label3.Click += label3_Click;
             // 
             // button2
             // 
             button2.AllowDrop = true;
-            button2.Location = new Point(285, 86);
+            button2.Location = new Point(95, 263);
             button2.Name = "button2";
-            button2.Size = new Size(238, 59);
+            button2.Size = new Size(349, 94);
             button2.TabIndex = 25;
-            button2.Text = "Add ICamBodies";
+            button2.Text = "Drag-and-drop ICamBody folder here";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
-            button2.DragEnter += button2_DragEnter;
             button2.DragDrop += button2_DragDrop;
+            button2.DragEnter += button2_DragEnter;
             // 
             // groupBox3
             // 
@@ -254,22 +266,21 @@ namespace DropFile_I3d
             groupBox3.TabIndex = 24;
             groupBox3.TabStop = false;
             // 
-            // label3
+            // label4
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(37, 33);
-            label3.Name = "label3";
-            label3.Size = new Size(174, 25);
-            label3.TabIndex = 28;
-            label3.Text = "ICam Serial Number:";
-            label3.Click += label3_Click;
+            label4.AutoSize = true;
+            label4.Location = new Point(197, 235);
+            label4.Name = "label4";
+            label4.Size = new Size(149, 25);
+            label4.TabIndex = 28;
+            label4.Text = "Add ICamBodies:";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(624, 700);
+            ClientSize = new Size(624, 827);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(groupBox3);
@@ -317,5 +328,6 @@ namespace DropFile_I3d
         private Button button2;
         private ComboBox comboBoxCsvDir;
         private Label label3;
+        private Label label4;
     }
 }
