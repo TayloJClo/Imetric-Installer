@@ -53,18 +53,13 @@ namespace DropFile_I3d
             label3 = new Label();
             button2 = new Button();
             groupBox3 = new GroupBox();
-            menuStrip1 = new MenuStrip();
-            installToolsMenuItem = new ToolStripMenuItem();
-            libraryCreatorMenuItem = new ToolStripMenuItem();
-            hotSwapHelperMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
-            menuStrip1.SuspendLayout();
             SuspendLayout();
-            //
+            // 
             // labelProgress
-            //
+            // 
             labelProgress.AutoSize = true;
             labelProgress.Location = new Point(3, 357);
             labelProgress.Margin = new Padding(4, 0, 4, 0);
@@ -274,9 +269,9 @@ namespace DropFile_I3d
             button2.Click += button2_Click;
             button2.DragDrop += button2_DragDrop;
             button2.DragEnter += button2_DragEnter;
-            //
+            // 
             // groupBox3
-            //
+            // 
             groupBox3.Controls.Add(buttonInstallDriver);
             groupBox3.Controls.Add(buttonInstallZip7);
             groupBox3.Controls.Add(buttonInstallOffice);
@@ -287,45 +282,13 @@ namespace DropFile_I3d
             groupBox3.Size = new Size(553, 200);
             groupBox3.TabIndex = 24;
             groupBox3.TabStop = false;
-            //
-            // menuStrip1
-            //
-            menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { installToolsMenuItem, libraryCreatorMenuItem, hotSwapHelperMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(624, 33);
-            menuStrip1.TabIndex = 30;
-            menuStrip1.Text = "menuStrip1";
-            //
-            // installToolsMenuItem
-            //
-            installToolsMenuItem.Name = "installToolsMenuItem";
-            installToolsMenuItem.Size = new Size(121, 29);
-            installToolsMenuItem.Text = "Install Tools";
-            installToolsMenuItem.Click += installToolsMenuItem_Click;
-            //
-            // libraryCreatorMenuItem
-            //
-            libraryCreatorMenuItem.Name = "libraryCreatorMenuItem";
-            libraryCreatorMenuItem.Size = new Size(145, 29);
-            libraryCreatorMenuItem.Text = "Library Creator";
-            libraryCreatorMenuItem.Click += libraryCreatorMenuItem_Click;
-            //
-            // hotSwapHelperMenuItem
-            //
-            hotSwapHelperMenuItem.Name = "hotSwapHelperMenuItem";
-            hotSwapHelperMenuItem.Size = new Size(160, 29);
-            hotSwapHelperMenuItem.Text = "HotSwap Helper";
-            hotSwapHelperMenuItem.Click += hotSwapHelperMenuItem_Click;
-            //
+            // 
             // Form1
-            //
+            // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(624, 827);
-            Controls.Add(menuStrip1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(groupBox3);
@@ -344,8 +307,6 @@ namespace DropFile_I3d
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
 
@@ -376,9 +337,5 @@ namespace DropFile_I3d
         private ComboBox comboBoxCsvDir;
         private Label label3;
         private Label label4;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem installToolsMenuItem;
-        private ToolStripMenuItem libraryCreatorMenuItem;
-        private ToolStripMenuItem hotSwapHelperMenuItem;
     }
 }
