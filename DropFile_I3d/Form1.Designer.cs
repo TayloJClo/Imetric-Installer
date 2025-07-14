@@ -50,8 +50,8 @@ namespace DropFile_I3d
             label2 = new Label();
             labelVersion = new Label();
             groupBox2 = new GroupBox();
-            groupBox3 = new GroupBox();
             button2 = new Button();
+            groupBox3 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -67,9 +67,9 @@ namespace DropFile_I3d
             labelProgress.TabIndex = 8;
             // 
             // openFileDialog
-            //
+            // 
             openFileDialog.FileName = "openFileDialog";
-            //
+            // 
             // buttonInstallDriver
             // 
             buttonInstallDriver.BackColor = SystemColors.ButtonHighlight;
@@ -129,24 +129,6 @@ namespace DropFile_I3d
             buttonNotePadPlus.Text = "Install NotePad ++";
             buttonNotePadPlus.UseVisualStyleBackColor = true;
             buttonNotePadPlus.Click += buttonNotePadPlus_Click;
-            //
-            // comboBoxCsvDir
-            //
-            comboBoxCsvDir.FormattingEnabled = true;
-            comboBoxCsvDir.Location = new Point(37, 365);
-            comboBoxCsvDir.Name = "comboBoxCsvDir";
-            comboBoxCsvDir.Size = new Size(306, 33);
-            comboBoxCsvDir.TabIndex = 28;
-            //
-            // buttonSelectCsvDir
-            //
-            buttonSelectCsvDir.Location = new Point(359, 363);
-            buttonSelectCsvDir.Name = "buttonSelectCsvDir";
-            buttonSelectCsvDir.Size = new Size(231, 38);
-            buttonSelectCsvDir.TabIndex = 29;
-            buttonSelectCsvDir.Text = "Browse CSV Folder";
-            buttonSelectCsvDir.UseVisualStyleBackColor = true;
-            buttonSelectCsvDir.Click += buttonSelectCsvDir_Click;
             // 
             // pictureBox1
             // 
@@ -161,7 +143,7 @@ namespace DropFile_I3d
             // 
             // buttonRemove
             // 
-            buttonRemove.Location = new Point(18, 119);
+            buttonRemove.Location = new Point(18, 162);
             buttonRemove.Name = "buttonRemove";
             buttonRemove.Size = new Size(238, 59);
             buttonRemove.TabIndex = 0;
@@ -171,7 +153,7 @@ namespace DropFile_I3d
             // 
             // button3
             // 
-            button3.Location = new Point(285, 119);
+            button3.Location = new Point(285, 162);
             button3.Name = "button3";
             button3.Size = new Size(238, 59);
             button3.TabIndex = 24;
@@ -182,7 +164,7 @@ namespace DropFile_I3d
             // 
             // button1
             // 
-            button1.Location = new Point(18, 40);
+            button1.Location = new Point(18, 86);
             button1.Name = "button1";
             button1.Size = new Size(238, 59);
             button1.TabIndex = 0;
@@ -191,11 +173,29 @@ namespace DropFile_I3d
             button1.UseVisualStyleBackColor = true;
             button1.Click += buttonAddComponents_Click;
             // 
+            // comboBoxCsvDir
+            // 
+            comboBoxCsvDir.FormattingEnabled = true;
+            comboBoxCsvDir.Location = new Point(18, 30);
+            comboBoxCsvDir.Name = "comboBoxCsvDir";
+            comboBoxCsvDir.Size = new Size(306, 33);
+            comboBoxCsvDir.TabIndex = 28;
+            // 
+            // buttonSelectCsvDir
+            // 
+            buttonSelectCsvDir.Location = new Point(330, 25);
+            buttonSelectCsvDir.Name = "buttonSelectCsvDir";
+            buttonSelectCsvDir.Size = new Size(207, 38);
+            buttonSelectCsvDir.TabIndex = 29;
+            buttonSelectCsvDir.Text = "Browse CSV Folder";
+            buttonSelectCsvDir.UseVisualStyleBackColor = true;
+            buttonSelectCsvDir.Click += buttonSelectCsvDir_Click;
+            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(202, 129);
+            label1.Location = new Point(195, 119);
             label1.Name = "label1";
             label1.Size = new Size(210, 32);
             label1.TabIndex = 25;
@@ -215,7 +215,7 @@ namespace DropFile_I3d
             // 
             labelVersion.AutoSize = true;
             labelVersion.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            labelVersion.Location = new Point(547, 616);
+            labelVersion.Location = new Point(547, 670);
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(65, 21);
             labelVersion.TabIndex = 27;
@@ -224,16 +224,28 @@ namespace DropFile_I3d
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(buttonSelectCsvDir);
             groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(comboBoxCsvDir);
             groupBox2.Controls.Add(buttonRemove);
             groupBox2.Controls.Add(button3);
             groupBox2.Controls.Add(button1);
             groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(37, 415);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(553, 198);
+            groupBox2.Size = new Size(553, 252);
             groupBox2.TabIndex = 23;
             groupBox2.TabStop = false;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(285, 86);
+            button2.Name = "button2";
+            button2.Size = new Size(238, 59);
+            button2.TabIndex = 25;
+            button2.Text = "Add ICamBodies";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // groupBox3
             // 
@@ -242,30 +254,18 @@ namespace DropFile_I3d
             groupBox3.Controls.Add(buttonInstallOffice);
             groupBox3.Controls.Add(buttonIScan3d);
             groupBox3.Controls.Add(buttonNotePadPlus);
-            groupBox3.Location = new Point(37, 164);
+            groupBox3.Location = new Point(37, 154);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(553, 200);
             groupBox3.TabIndex = 24;
             groupBox3.TabStop = false;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(285, 40);
-            button2.Name = "button2";
-            button2.Size = new Size(238, 59);
-            button2.TabIndex = 25;
-            button2.Text = "Add ICamBodies";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(624, 637);
-            Controls.Add(buttonSelectCsvDir);
-            Controls.Add(comboBoxCsvDir);
+            ClientSize = new Size(624, 700);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(groupBox3);
