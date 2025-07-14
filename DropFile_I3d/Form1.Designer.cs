@@ -51,6 +51,7 @@ namespace DropFile_I3d
             groupBox2 = new GroupBox();
             button2 = new Button();
             groupBox3 = new GroupBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -175,11 +176,11 @@ namespace DropFile_I3d
             // comboBoxCsvDir
             // 
             comboBoxCsvDir.FormattingEnabled = true;
-            comboBoxCsvDir.Location = new Point(18, 30);
+            comboBoxCsvDir.Location = new Point(217, 30);
             comboBoxCsvDir.Name = "comboBoxCsvDir";
             comboBoxCsvDir.Size = new Size(306, 33);
             comboBoxCsvDir.TabIndex = 28;
-            // 
+            toolTip1.SetToolTip(comboBoxCsvDir, "Please select the ICam you would like to edit");
             // 
             // label1
             // 
@@ -214,6 +215,7 @@ namespace DropFile_I3d
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(comboBoxCsvDir);
             groupBox2.Controls.Add(buttonRemove);
@@ -249,6 +251,16 @@ namespace DropFile_I3d
             groupBox3.TabIndex = 24;
             groupBox3.TabStop = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(37, 33);
+            label3.Name = "label3";
+            label3.Size = new Size(174, 25);
+            label3.TabIndex = 28;
+            label3.Text = "ICam Serial Number:";
+            label3.Click += label3_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -271,6 +283,7 @@ namespace DropFile_I3d
             Load += MainForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -300,5 +313,6 @@ namespace DropFile_I3d
         private Label labelVersion;
         private Button button2;
         private ComboBox comboBoxCsvDir;
+        private Label label3;
     }
 }

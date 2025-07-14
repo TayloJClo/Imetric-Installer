@@ -362,5 +362,9 @@ namespace DropFile_I3d
                 comboBoxCsvDir.SelectedIndex = 0;
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
