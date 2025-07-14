@@ -60,14 +60,6 @@ namespace DropFile_I3d
             {
                 string selected = popup.SelectedOption;
 
-                string sourceCsvPath = selected switch
-                {
-                    "Default" => "C:\\I3D_Software\\General\\CSV's\\Default.csv",
-                    "Nobel" => "C:\\I3D_Software\\General\\CSV's\\Nobel.csv",
-                    "Straumann" => "C:\\I3D_Software\\General\\CSV's\\Straumann.csv",
-                    _ => ""
-                };
-
                 string remoteCsvUrl = selected switch
                 {
                     "Default" => "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Default.csv",
@@ -86,12 +78,7 @@ namespace DropFile_I3d
                         Directory.CreateDirectory(destinationDir);
                     }
 
-                    if (File.Exists(sourceCsvPath))
-                    {
-                        File.Copy(sourceCsvPath, destinationCsvPath, overwrite: true);
-                        MessageBox.Show($"Copied {selected} CSV to: {destinationCsvPath}");
-                    }
-                    else if (!string.IsNullOrWhiteSpace(remoteCsvUrl))
+                    if (!string.IsNullOrWhiteSpace(remoteCsvUrl))
                     {
                         using HttpClient client = new HttpClient();
                         byte[] data = await client.GetByteArrayAsync(remoteCsvUrl);
@@ -100,7 +87,7 @@ namespace DropFile_I3d
                     }
                     else
                     {
-                        MessageBox.Show("Source CSV file not found and no download URL available.");
+                        MessageBox.Show("No download URL available.");
                         return;
                     }
 

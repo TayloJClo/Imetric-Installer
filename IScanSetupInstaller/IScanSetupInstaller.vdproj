@@ -369,12 +369,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_52FFE579DCF74F878129CF90D1E392BD"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_583A121236B94877A13906FEA4106D1F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -472,12 +466,6 @@
         "Entry"
         {
         "MsmKey" = "8:_7124659054E0432A87B2FF9DB59CA3C9"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7260B645AAD1440B999D99D5496C83BD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -892,12 +880,6 @@
         "Entry"
         {
         "MsmKey" = "8:_CE92E0770F654470AFE31C8B36C7B204"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CED74D38AB0844138E973F18FE88B394"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2480,26 +2462,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_52FFE579DCF74F878129CF90D1E392BD"
-            {
-            "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\CSV's\\Nobel.csv"
-            "TargetName" = "8:Nobel.csv"
-            "Tag" = "8:"
-            "Folder" = "8:_126FF03E76404F0680CDE2364511FB01"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_583A121236B94877A13906FEA4106D1F"
             {
             "SourcePath" = "8:C:\\Newest Version of IScan\\Imetric4D Data\\ICam4D Workflow Sample1\\CAD-Data exocad project finished\\2021-01-20_00001-001\\2021-01-20_00001-001-preview.png"
@@ -2826,26 +2788,6 @@
             "TargetName" = "8:ScanAdapters l4d1.stl"
             "Tag" = "8:"
             "Folder" = "8:_244889995C8843F3A48721E65A6E9A82"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7260B645AAD1440B999D99D5496C83BD"
-            {
-            "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\CSV's\\Straumann.csv"
-            "TargetName" = "8:Straumann.csv"
-            "Tag" = "8:"
-            "Folder" = "8:_126FF03E76404F0680CDE2364511FB01"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4248,26 +4190,6 @@
             "TargetName" = "8:ICamRef DESS 400071 2.stl"
             "Tag" = "8:"
             "Folder" = "8:_B3F72295BCB84605980A3CB16B93C342"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CED74D38AB0844138E973F18FE88B394"
-            {
-            "SourcePath" = "8:C:\\Newest Version of IScan\\I3D_Software\\General\\CSV's\\Default.csv"
-            "TargetName" = "8:Default.csv"
-            "Tag" = "8:"
-            "Folder" = "8:_126FF03E76404F0680CDE2364511FB01"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5727,17 +5649,6 @@
                             "Property" = "8:_5CD2D7B76F9E42D69BC43F848DEF8A93"
                                 "Folders"
                                 {
-                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_126FF03E76404F0680CDE2364511FB01"
-                                    {
-                                    "Name" = "8:CSV's"
-                                    "AlwaysCreate" = "11:FALSE"
-                                    "Condition" = "8:"
-                                    "Transitive" = "11:FALSE"
-                                    "Property" = "8:_5185F089E975480C993682A4806D2A2C"
-                                        "Folders"
-                                        {
-                                        }
-                                    }
                                     "{9EF0B969-E518-4E46-987F-47570745A589}:_796D54B3E75B4A8A89EEF8735395C58A"
                                     {
                                     "Name" = "8:TeamViewer"
@@ -5916,7 +5827,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:IScanSetupInstaller"
         "ProductCode" = "8:{AA89878A-E900-4994-83A5-890981AE5962}"
-        "PackageCode" = "8:{4F5134A9-0812-4310-86AE-3106A22543E3}"
+        "PackageCode" = "8:{6AA7ECC0-6038-4A16-B22D-1C47781DC0C6}"
         "UpgradeCode" = "8:{DEB6F008-45E9-4308-9549-819547B95B0B}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -6493,7 +6404,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0BEB5965ABE04B06BA58381ABBC3EBDC"
             {
-            "SourcePath" = "8:..\\DropFile_I3d\\obj\\Release\\net6.0-windows\\ICam4DSetup.dll"
+            "SourcePath" = "8:..\\DropFile_I3d\\obj\\Debug\\net6.0-windows\\ICam4DSetup.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_84268E489E454194AE18583A016D26E1"
