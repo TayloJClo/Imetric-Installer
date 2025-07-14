@@ -337,7 +337,10 @@ namespace DropFile_I3d
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-            AutoUpdater.Start("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Version.xml");
+            if (!UpdateHelper.IsAutoUpdateDisabled())
+            {
+                AutoUpdater.Start("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Version.xml");
+            }
             PopulateCsvDirectories();
             groupBox3.Visible = false;
             groupBox2.Visible = true;
