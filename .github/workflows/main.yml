@@ -74,10 +74,18 @@ jobs:
 
 
 
-        # 6. Update Version.xml
+      # 6. Update Version.xml (version + URL)
       - name: Update Version.xml
         run: |
-          (Get-Content Version.xml) -replace '<version>.*</version>', "<version>${{ env.NEW_VERSION }}</version>" | Set-Content Version.xml
+          $versionTag = "v${{ env.NEW_VERSION }}"   # Always lowercase "v" going forward
+          $downloadUrl = "https://github.com/TayloJClo/Imetric-Installer/releases/download/$versionTag/ICam4DSetup.zip"
+
+          # Update <version> and <url>
+          (Get-Content Version.xml) `
+            -replace '<version>.*</version>', "<version>${{ env.NEW_VERSION }}</version>" `
+            -replace '<url>.*</url>', "<url>$downloadUrl</url>" `
+          | Set-Content Version.xml
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add Version.xml
