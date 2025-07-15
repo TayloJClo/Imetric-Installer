@@ -100,7 +100,7 @@ jobs:
 
       # 7. Zip the installer files
       - name: Zip build files
-        run: Compress-Archive -Path build_output\* -DestinationPath Imetric_Installer_${{ env.NEW_VERSION }}.zip
+        run: Compress-Archive -Path build_output\* -DestinationPath ICam4DSetup.zip -Force
 
       # 8. Create a new Git tag
       - name: Create Git tag
