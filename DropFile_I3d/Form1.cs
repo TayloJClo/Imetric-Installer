@@ -1,6 +1,5 @@
 using AutoUpdaterDotNET;
 using ICam4DSetup;
-using ICam4DSetup.bin;
 using ImplantPositionEditor;
 using System;
 using System.Diagnostics;
