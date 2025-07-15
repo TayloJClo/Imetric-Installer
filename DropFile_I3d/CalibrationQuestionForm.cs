@@ -40,7 +40,8 @@ namespace DropFile_I3d
 
         private void buttonNo_Click(object sender, EventArgs e)
         {
-            using var calibForm = new CalibrationPlateForm();
+            string destRef = Path.Combine(newIcamFolder, "0References");
+            using var calibForm = new CalibrationPlateForm(destRef);
             calibForm.ShowDialog();
             Close();
         }
