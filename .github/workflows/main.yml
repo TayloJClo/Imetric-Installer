@@ -113,5 +113,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.NEW_VERSION }}
-          name: Imetric Installer v${{ env.NEW_VERSION }}
-          files: Imetric_Installer_${{ env.NEW_VERSION }}.zip
+          name: IScan Tools v${{ env.NEW_VERSION }}
+          files: ICam4DSetup.zip
