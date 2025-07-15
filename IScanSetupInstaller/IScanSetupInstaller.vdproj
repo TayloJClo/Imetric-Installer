@@ -5852,7 +5852,6 @@
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
-        "DISABLEADVTSHORTCUTS" = "11:TRUE"
         }
         "Registry"
         {
