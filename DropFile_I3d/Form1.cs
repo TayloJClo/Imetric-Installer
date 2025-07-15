@@ -453,6 +453,11 @@ namespace DropFile_I3d
             ShowComingSoon();
         }
 
+        private void implantPositionEditorMenuItem_Click(object sender, EventArgs e)
+        {
+            buttonEditor_Click(sender, e);
+        }
+
         private void hotSwapHelperMenuItem_Click(object sender, EventArgs e)
         {
             using var form = new HotSwapHelperForm();

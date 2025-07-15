@@ -42,9 +42,9 @@ namespace DropFile_I3d
             createNewLibraryMenuItem = new ToolStripMenuItem();
             hotSwapHelperMenuItem = new ToolStripMenuItem();
             troubleshootingMenuItem = new ToolStripMenuItem();
+            implantPositionEditorMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             buttonRemove = new Button();
-            button3 = new Button();
             button1 = new Button();
             comboBoxCsvDir = new ComboBox();
             toolTip1 = new ToolTip(components);
@@ -105,20 +105,27 @@ namespace DropFile_I3d
             // 
             // moreToolsMenuItem
             // 
-            moreToolsMenuItem.DropDownItems.AddRange(new ToolStripItem[] { createNewLibraryMenuItem, hotSwapHelperMenuItem, troubleshootingMenuItem });
+            moreToolsMenuItem.DropDownItems.AddRange(new ToolStripItem[] { implantPositionEditorMenuItem, createNewLibraryMenuItem, hotSwapHelperMenuItem, troubleshootingMenuItem });
             moreToolsMenuItem.Name = "moreToolsMenuItem";
             moreToolsMenuItem.Size = new Size(116, 29);
             moreToolsMenuItem.Text = "More Tools";
             // 
             // createNewLibraryMenuItem
-            // 
+            //
             createNewLibraryMenuItem.Name = "createNewLibraryMenuItem";
             createNewLibraryMenuItem.Size = new Size(270, 34);
             createNewLibraryMenuItem.Text = "Create New Library";
             createNewLibraryMenuItem.Click += createNewLibraryMenuItem_Click;
-            // 
+            //
+            // implantPositionEditorMenuItem
+            //
+            implantPositionEditorMenuItem.Name = "implantPositionEditorMenuItem";
+            implantPositionEditorMenuItem.Size = new Size(270, 34);
+            implantPositionEditorMenuItem.Text = "Implant Position Editor";
+            implantPositionEditorMenuItem.Click += implantPositionEditorMenuItem_Click;
+            //
             // hotSwapHelperMenuItem
-            // 
+            //
             hotSwapHelperMenuItem.Name = "hotSwapHelperMenuItem";
             hotSwapHelperMenuItem.Size = new Size(270, 34);
             hotSwapHelperMenuItem.Text = "HotSwap Helper";
@@ -152,16 +159,6 @@ namespace DropFile_I3d
             toolTip1.SetToolTip(buttonRemove, "Click here to remove options from your\r\ndropdown menus");
             buttonRemove.Click += buttonRemove_Click;
             // 
-            // button3
-            // 
-            button3.Location = new Point(289, 52);
-            button3.Name = "button3";
-            button3.Size = new Size(238, 90);
-            button3.TabIndex = 24;
-            button3.Text = "Implant Position Editor";
-            toolTip1.SetToolTip(button3, "Use this tool to edit the library for exocad if you\r\nchose the wrong one in the scanning process\r\n");
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += buttonEditor_Click;
             // 
             // button1
             // 
@@ -211,7 +208,6 @@ namespace DropFile_I3d
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(buttonRemove);
-            groupBox2.Controls.Add(button3);
             groupBox2.Controls.Add(button1);
             groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(37, 274);
@@ -297,7 +293,6 @@ namespace DropFile_I3d
         private Button button1;
         private EventHandler button1_Click_1;
         private EventHandler button2_Click_2;
-        private Button button3;
         private Button buttonRemove;
         private ToolTip toolTip1;
         private Label label2;
@@ -315,5 +310,6 @@ namespace DropFile_I3d
         private ToolStripMenuItem createNewLibraryMenuItem;
         private ToolStripMenuItem hotSwapHelperMenuItem;
         private ToolStripMenuItem troubleshootingMenuItem;
+        private ToolStripMenuItem implantPositionEditorMenuItem;
     }
 }
