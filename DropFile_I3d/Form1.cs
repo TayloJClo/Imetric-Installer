@@ -464,7 +464,8 @@ namespace DropFile_I3d
 
         private void createNewLibraryMenuItem_Click(object sender, EventArgs e)
         {
-            ShowComingSoon();
+            using var form = new NewLibraryForm();
+            form.ShowDialog();
         }
 
         private void implantPositionEditorMenuItem_Click(object sender, EventArgs e)
