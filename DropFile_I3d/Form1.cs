@@ -523,14 +523,25 @@ namespace DropFile_I3d
             groupBox2.Visible = false;
         }
 
-        private void libraryCreatorMenuItem_Click(object sender, EventArgs e)
+        private void createNewLibraryMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Library Creator not implemented yet.");
+            ShowComingSoon();
         }
 
         private void hotSwapHelperMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("HotSwap Helper not implemented yet.");
+            ShowComingSoon();
+        }
+
+        private void troubleshootingMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowComingSoon();
+        }
+
+        private static void ShowComingSoon()
+        {
+            using var form = new ComingSoonForm();
+            form.ShowDialog();
         }
     }
 }
