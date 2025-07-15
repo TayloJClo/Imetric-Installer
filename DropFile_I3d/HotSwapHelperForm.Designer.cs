@@ -19,46 +19,48 @@ namespace DropFile_I3d
 
         private void InitializeComponent()
         {
-            labelOld = new System.Windows.Forms.Label();
-            comboBoxOldIcam = new System.Windows.Forms.ComboBox();
-            dropArea = new System.Windows.Forms.Button();
-            buttonApply = new System.Windows.Forms.Button();
+            labelOld = new Label();
+            comboBoxOldIcam = new ComboBox();
+            dropArea = new Button();
+            buttonApply = new Button();
             SuspendLayout();
             // 
             // labelOld
             // 
             labelOld.AutoSize = true;
-            labelOld.Location = new System.Drawing.Point(30, 25);
+            labelOld.Location = new Point(87, 27);
             labelOld.Name = "labelOld";
-            labelOld.Size = new System.Drawing.Size(171, 25);
+            labelOld.Size = new Size(187, 25);
             labelOld.TabIndex = 0;
-            labelOld.Text = "Please select Old ICam";
+            labelOld.Text = "Please select old ICam";
             // 
             // comboBoxOldIcam
             // 
             comboBoxOldIcam.FormattingEnabled = true;
-            comboBoxOldIcam.Location = new System.Drawing.Point(34, 55);
+            comboBoxOldIcam.Location = new Point(34, 55);
             comboBoxOldIcam.Name = "comboBoxOldIcam";
-            comboBoxOldIcam.Size = new System.Drawing.Size(300, 33);
+            comboBoxOldIcam.Size = new Size(300, 33);
             comboBoxOldIcam.TabIndex = 1;
             // 
             // dropArea
             // 
             dropArea.AllowDrop = true;
-            dropArea.BackColor = System.Drawing.Color.AliceBlue;
-            dropArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            dropArea.Location = new System.Drawing.Point(34, 110);
+            dropArea.BackColor = SystemColors.Window;
+            dropArea.FlatStyle = FlatStyle.Flat;
+            dropArea.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            dropArea.ForeColor = SystemColors.GrayText;
+            dropArea.Location = new Point(34, 110);
             dropArea.Name = "dropArea";
-            dropArea.Size = new System.Drawing.Size(300, 80);
+            dropArea.Size = new Size(300, 80);
             dropArea.TabIndex = 2;
             dropArea.Text = "Drag-and-drop new ICam data here";
             dropArea.UseVisualStyleBackColor = false;
             // 
             // buttonApply
             // 
-            buttonApply.Location = new System.Drawing.Point(120, 210);
+            buttonApply.Location = new Point(120, 210);
             buttonApply.Name = "buttonApply";
-            buttonApply.Size = new System.Drawing.Size(120, 40);
+            buttonApply.Size = new Size(120, 40);
             buttonApply.TabIndex = 3;
             buttonApply.Text = "Apply";
             buttonApply.UseVisualStyleBackColor = true;
@@ -66,9 +68,9 @@ namespace DropFile_I3d
             // 
             // HotSwapHelperForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(368, 274);
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(368, 274);
             Controls.Add(buttonApply);
             Controls.Add(dropArea);
             Controls.Add(comboBoxOldIcam);

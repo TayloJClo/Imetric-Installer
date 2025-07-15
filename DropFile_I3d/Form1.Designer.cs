@@ -92,14 +92,14 @@ namespace DropFile_I3d
             // installIScanMenuItem
             // 
             installIScanMenuItem.Name = "installIScanMenuItem";
-            installIScanMenuItem.Size = new Size(270, 34);
+            installIScanMenuItem.Size = new Size(234, 34);
             installIScanMenuItem.Text = "Install IScan";
             installIScanMenuItem.Click += installIScanMenuItem_Click;
             // 
             // otherSoftwareMenuItem
             // 
             otherSoftwareMenuItem.Name = "otherSoftwareMenuItem";
-            otherSoftwareMenuItem.Size = new Size(270, 34);
+            otherSoftwareMenuItem.Size = new Size(234, 34);
             otherSoftwareMenuItem.Text = "Other Software";
             otherSoftwareMenuItem.Click += otherSoftwareMenuItem_Click;
             // 
@@ -228,7 +228,7 @@ namespace DropFile_I3d
             // button2
             // 
             button2.AllowDrop = true;
-            button2.BackColor = Color.AliceBlue;
+            button2.BackColor = SystemColors.Window;
             button2.FlatAppearance.BorderColor = Color.Black;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
