@@ -51,10 +51,10 @@ namespace DropFile_I3d
             label2 = new Label();
             labelVersion = new Label();
             groupBox2 = new GroupBox();
+            label1 = new Label();
             label4 = new Label();
             button2 = new Button();
             label3 = new Label();
-            label1 = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
@@ -93,14 +93,14 @@ namespace DropFile_I3d
             // installIScanMenuItem
             // 
             installIScanMenuItem.Name = "installIScanMenuItem";
-            installIScanMenuItem.Size = new Size(270, 34);
+            installIScanMenuItem.Size = new Size(234, 34);
             installIScanMenuItem.Text = "Install IScan";
             installIScanMenuItem.Click += installIScanMenuItem_Click;
             // 
             // otherSoftwareMenuItem
             // 
             otherSoftwareMenuItem.Name = "otherSoftwareMenuItem";
-            otherSoftwareMenuItem.Size = new Size(270, 34);
+            otherSoftwareMenuItem.Size = new Size(234, 34);
             otherSoftwareMenuItem.Text = "Other Software";
             otherSoftwareMenuItem.Click += otherSoftwareMenuItem_Click;
             // 
@@ -217,11 +217,21 @@ namespace DropFile_I3d
             groupBox2.TabIndex = 23;
             groupBox2.TabStop = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(34, 42);
+            label1.Name = "label1";
+            label1.Size = new Size(229, 21);
+            label1.TabIndex = 29;
+            label1.Text = "Screw Channels/Healing Caps:";
+            // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(333, 42);
+            label4.Location = new Point(347, 42);
             label4.Name = "label4";
             label4.Size = new Size(136, 21);
             label4.TabIndex = 28;
@@ -255,16 +265,6 @@ namespace DropFile_I3d
             label3.TabIndex = 28;
             label3.Text = "Please select your ICam Serial Number:";
             label3.Click += label3_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(34, 42);
-            label1.Name = "label1";
-            label1.Size = new Size(229, 21);
-            label1.TabIndex = 29;
-            label1.Text = "Screw Channels/Healing Caps:";
             // 
             // Form1
             // 

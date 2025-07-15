@@ -34,6 +34,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CsvRemoveForm));
             checkedListBoxScrews = new CheckedListBox();
             checkedListBoxHealing = new CheckedListBox();
             labelScrews = new Label();
@@ -41,27 +42,27 @@
             buttonRemove = new Button();
             buttonCancel = new Button();
             SuspendLayout();
-            //
+            // 
             // checkedListBoxScrews
-            //
+            // 
             checkedListBoxScrews.CheckOnClick = true;
             checkedListBoxScrews.FormattingEnabled = true;
             checkedListBoxScrews.Location = new Point(36, 95);
             checkedListBoxScrews.Name = "checkedListBoxScrews";
             checkedListBoxScrews.Size = new Size(539, 480);
             checkedListBoxScrews.TabIndex = 0;
-            //
+            // 
             // checkedListBoxHealing
-            //
+            // 
             checkedListBoxHealing.CheckOnClick = true;
             checkedListBoxHealing.FormattingEnabled = true;
             checkedListBoxHealing.Location = new Point(615, 95);
             checkedListBoxHealing.Name = "checkedListBoxHealing";
             checkedListBoxHealing.Size = new Size(539, 480);
             checkedListBoxHealing.TabIndex = 1;
-            //
+            // 
             // labelScrews
-            //
+            // 
             labelScrews.AutoSize = true;
             labelScrews.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             labelScrews.Location = new Point(213, 41);
@@ -69,9 +70,9 @@
             labelScrews.Size = new Size(174, 30);
             labelScrews.TabIndex = 4;
             labelScrews.Text = "Screw Channels";
-            //
+            // 
             // labelHealing
-            //
+            // 
             labelHealing.AutoSize = true;
             labelHealing.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             labelHealing.Location = new Point(824, 41);
@@ -88,18 +89,18 @@
             buttonRemove.TabIndex = 2;
             buttonRemove.Text = "Remove Selected";
             buttonRemove.Click += buttonRemove_Click;
-            //
+            // 
             // buttonCancel
-            //
+            // 
             buttonCancel.Location = new Point(615, 588);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(163, 58);
             buttonCancel.TabIndex = 3;
             buttonCancel.Text = "Cancel";
             buttonCancel.Click += buttonCancel_Click;
-            //
+            // 
             // CsvRemoveForm
-            //
+            // 
             ClientSize = new Size(1184, 694);
             Controls.Add(labelHealing);
             Controls.Add(labelScrews);
@@ -107,10 +108,12 @@
             Controls.Add(checkedListBoxScrews);
             Controls.Add(buttonRemove);
             Controls.Add(buttonCancel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "CsvRemoveForm";
             Text = "Remove From CSV";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

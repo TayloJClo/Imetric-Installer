@@ -19,6 +19,7 @@ namespace DropFile_I3d
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotSwapHelperForm));
             labelOld = new Label();
             comboBoxOldIcam = new ComboBox();
             dropArea = new Button();
@@ -75,6 +76,7 @@ namespace DropFile_I3d
             Controls.Add(dropArea);
             Controls.Add(comboBoxOldIcam);
             Controls.Add(labelOld);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "HotSwapHelperForm";

@@ -18,6 +18,7 @@ namespace DropFile_I3d
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalibrationQuestionForm));
             labelQuestion = new Label();
             buttonYes = new Button();
             buttonNo = new Button();
@@ -60,6 +61,7 @@ namespace DropFile_I3d
             Controls.Add(buttonNo);
             Controls.Add(buttonYes);
             Controls.Add(labelQuestion);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "CalibrationQuestionForm";

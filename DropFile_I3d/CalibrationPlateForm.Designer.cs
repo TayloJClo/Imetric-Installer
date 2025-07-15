@@ -18,6 +18,7 @@ namespace DropFile_I3d
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalibrationPlateForm));
             labelInstruction = new Label();
             dropBox1 = new Button();
             dropBox2 = new Button();
@@ -68,6 +69,7 @@ namespace DropFile_I3d
             Controls.Add(dropBox2);
             Controls.Add(dropBox1);
             Controls.Add(labelInstruction);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "CalibrationPlateForm";

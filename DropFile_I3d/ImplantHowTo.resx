@@ -118,14 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label2.Text" xml:space="preserve">
-    <value>
-1. Load Implant Files:
+    <value>1. Load Implant Files:
 Drag and drop your .implantPosition files into the white space — or click "Load File" and select all your implant position files at once.
 
-3. Select a Screw Channel:
+2. Select a Screw Channel:
 Use the dropdown menu to choose the screw channel you’d like to apply to the loaded implants.
 
-4. Save Changes:
+3. Save Changes:
 Click "Save" to overwrite the original files or "Save As" to export the modified files to a new folder.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
