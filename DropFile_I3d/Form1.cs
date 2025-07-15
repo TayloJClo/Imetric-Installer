@@ -530,7 +530,8 @@ namespace DropFile_I3d
 
         private void hotSwapHelperMenuItem_Click(object sender, EventArgs e)
         {
-            ShowComingSoon();
+            using var form = new HotSwapHelperForm();
+            form.ShowDialog();
         }
 
         private void troubleshootingMenuItem_Click(object sender, EventArgs e)
