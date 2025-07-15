@@ -32,7 +32,10 @@ namespace DropFile_I3d
             comboBoxOldIcam.Items.Clear();
             if (!Directory.Exists(baseDir))
                 return;
-            var dirs = Directory.GetDirectories(baseDir, "*ICamBody Library", SearchOption.TopDirectoryOnly);
+            var dirs = Directory.GetDirectories(baseDir, "*", SearchOption.TopDirectoryOnly)
+                .Where(d => d.Contains("ICamBody Library", StringComparison.OrdinalIgnoreCase)
+                         || d.Contains("ICamBodyLibrary", StringComparison.OrdinalIgnoreCase))
+                .ToArray();
             foreach (var dir in dirs)
             {
                 string folderName = Path.GetFileName(dir);
