@@ -68,6 +68,25 @@ namespace DropFile_I3d
 
         private void UpdateCalibrationFiles()
         {
+            string archiveDir = Path.Combine(destRef, "_0Archive");
+            Directory.CreateDirectory(archiveDir);
+
+            foreach (var file in Directory.GetFiles(destRef, "CP100_*.obr"))
+            {
+                string target = Path.Combine(archiveDir, Path.GetFileName(file));
+                if (File.Exists(target))
+                    File.Delete(target);
+                File.Move(file, target);
+            }
+
+            foreach (var file in Directory.GetFiles(destRef, "RD_CP100_*.obr").Where(f => !f.Contains("_IPD1")))
+            {
+                string target = Path.Combine(archiveDir, Path.GetFileName(file));
+                if (File.Exists(target))
+                    File.Delete(target);
+                File.Move(file, target);
+            }
+
             string cpDest = Path.Combine(destRef, Path.GetFileName(cpFilePath));
             File.Copy(cpFilePath, cpDest, true);
 
