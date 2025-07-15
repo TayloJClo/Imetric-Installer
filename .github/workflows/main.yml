@@ -30,18 +30,38 @@ jobs:
       - name: Build project
         run: dotnet publish Imetric_Installer.sln -c Release -o build_output
 
-            # 5. Get the latest version tag & bump the last number
+      # 5. Get the latest version tag & bump version based on commit message keywords
       - name: Bump version
         id: versioning
         shell: pwsh
         run: |
+          # Get latest tag or set starting version
           $latestTag = (git describe --tags --abbrev=0) 2>$null
-          if (-not $latestTag) { $latestTag = "v8.1.5.0" }  # Starting point if no tags
+          if (-not $latestTag) { $latestTag = "v8.1.5.0" }
+          
+          # Split into semantic version parts
           $ver = $latestTag.TrimStart('v').Split('.')
           $major = [int]$ver[0]
           $minor = [int]$ver[1]
           $patch = [int]$ver[2]
-          $build = [int]$ver[3] + 1
+          $build = [int]$ver[3]
+
+          # Check latest commit message for keywords
+          $commitMessage = (git log -1 --pretty=%B)
+
+          if ($commitMessage -match "\[minor\]") {
+            $minor += 1
+            $patch = 0
+            $build = 0
+          }
+          elseif ($commitMessage -match "\[patch\]") {
+            $patch += 1
+            $build = 0
+          }
+          else {
+            $build += 1
+          }
+
           $newVersion = "$major.$minor.$patch.$build"
           echo "NEW_VERSION=$newVersion" >> $env:GITHUB_ENV
 
