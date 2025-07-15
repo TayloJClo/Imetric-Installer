@@ -38,9 +38,12 @@ jobs:
           # Get latest tag or set starting version
           $latestTag = (git describe --tags --abbrev=0) 2>$null
           if (-not $latestTag) { $latestTag = "v8.1.5.0" }
-          
+
+          # Normalize the tag (remove v or V)
+          $normalizedTag = $latestTag -replace '^[vV]', ''
+
           # Split into semantic version parts
-          $ver = $latestTag.TrimStart('v').Split('.')
+          $ver = $normalizedTag.Split('.')
           $major = [int]$ver[0]
           $minor = [int]$ver[1]
           $patch = [int]$ver[2]
@@ -64,6 +67,7 @@ jobs:
 
           $newVersion = "$major.$minor.$patch.$build"
           echo "NEW_VERSION=$newVersion" >> $env:GITHUB_ENV
+
 
 
       # 6. Update Version.xml
