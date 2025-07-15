@@ -39,10 +39,10 @@ namespace DropFile_I3d
             installIScanMenuItem = new ToolStripMenuItem();
             otherSoftwareMenuItem = new ToolStripMenuItem();
             moreToolsMenuItem = new ToolStripMenuItem();
+            implantPositionEditorMenuItem = new ToolStripMenuItem();
             createNewLibraryMenuItem = new ToolStripMenuItem();
             hotSwapHelperMenuItem = new ToolStripMenuItem();
             troubleshootingMenuItem = new ToolStripMenuItem();
-            implantPositionEditorMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             buttonRemove = new Button();
             button1 = new Button();
@@ -52,8 +52,8 @@ namespace DropFile_I3d
             labelVersion = new Label();
             groupBox2 = new GroupBox();
             label4 = new Label();
-            label3 = new Label();
             button2 = new Button();
+            label3 = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
@@ -92,14 +92,14 @@ namespace DropFile_I3d
             // installIScanMenuItem
             // 
             installIScanMenuItem.Name = "installIScanMenuItem";
-            installIScanMenuItem.Size = new Size(234, 34);
+            installIScanMenuItem.Size = new Size(270, 34);
             installIScanMenuItem.Text = "Install IScan";
             installIScanMenuItem.Click += installIScanMenuItem_Click;
             // 
             // otherSoftwareMenuItem
             // 
             otherSoftwareMenuItem.Name = "otherSoftwareMenuItem";
-            otherSoftwareMenuItem.Size = new Size(234, 34);
+            otherSoftwareMenuItem.Size = new Size(270, 34);
             otherSoftwareMenuItem.Text = "Other Software";
             otherSoftwareMenuItem.Click += otherSoftwareMenuItem_Click;
             // 
@@ -110,31 +110,31 @@ namespace DropFile_I3d
             moreToolsMenuItem.Size = new Size(116, 29);
             moreToolsMenuItem.Text = "More Tools";
             // 
-            // createNewLibraryMenuItem
-            //
-            createNewLibraryMenuItem.Name = "createNewLibraryMenuItem";
-            createNewLibraryMenuItem.Size = new Size(270, 34);
-            createNewLibraryMenuItem.Text = "Create New Library";
-            createNewLibraryMenuItem.Click += createNewLibraryMenuItem_Click;
-            //
             // implantPositionEditorMenuItem
-            //
+            // 
             implantPositionEditorMenuItem.Name = "implantPositionEditorMenuItem";
-            implantPositionEditorMenuItem.Size = new Size(270, 34);
+            implantPositionEditorMenuItem.Size = new Size(295, 34);
             implantPositionEditorMenuItem.Text = "Implant Position Editor";
             implantPositionEditorMenuItem.Click += implantPositionEditorMenuItem_Click;
-            //
+            // 
+            // createNewLibraryMenuItem
+            // 
+            createNewLibraryMenuItem.Name = "createNewLibraryMenuItem";
+            createNewLibraryMenuItem.Size = new Size(295, 34);
+            createNewLibraryMenuItem.Text = "Create New Library";
+            createNewLibraryMenuItem.Click += createNewLibraryMenuItem_Click;
+            // 
             // hotSwapHelperMenuItem
-            //
+            // 
             hotSwapHelperMenuItem.Name = "hotSwapHelperMenuItem";
-            hotSwapHelperMenuItem.Size = new Size(270, 34);
+            hotSwapHelperMenuItem.Size = new Size(295, 34);
             hotSwapHelperMenuItem.Text = "HotSwap Helper";
             hotSwapHelperMenuItem.Click += hotSwapHelperMenuItem_Click;
             // 
             // troubleshootingMenuItem
             // 
             troubleshootingMenuItem.Name = "troubleshootingMenuItem";
-            troubleshootingMenuItem.Size = new Size(270, 34);
+            troubleshootingMenuItem.Size = new Size(295, 34);
             troubleshootingMenuItem.Text = "Troubleshooting";
             troubleshootingMenuItem.Click += troubleshootingMenuItem_Click;
             // 
@@ -158,7 +158,6 @@ namespace DropFile_I3d
             buttonRemove.Text = "Remove Screws/Healing Caps";
             toolTip1.SetToolTip(buttonRemove, "Click here to remove options from your\r\ndropdown menus");
             buttonRemove.Click += buttonRemove_Click;
-            // 
             // 
             // button1
             // 
@@ -196,7 +195,7 @@ namespace DropFile_I3d
             // 
             labelVersion.AutoSize = true;
             labelVersion.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            labelVersion.Location = new Point(547, 614);
+            labelVersion.Location = new Point(547, 492);
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(65, 21);
             labelVersion.TabIndex = 27;
@@ -212,7 +211,7 @@ namespace DropFile_I3d
             groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(37, 274);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(553, 328);
+            groupBox2.Size = new Size(553, 194);
             groupBox2.TabIndex = 23;
             groupBox2.TabStop = false;
             // 
@@ -220,11 +219,28 @@ namespace DropFile_I3d
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(201, 166);
+            label4.Location = new Point(337, 27);
             label4.Name = "label4";
             label4.Size = new Size(139, 21);
             label4.TabIndex = 28;
             label4.Text = "Add ICamBodies:";
+            // 
+            // button2
+            // 
+            button2.AllowDrop = true;
+            button2.BackColor = Color.AliceBlue;
+            button2.FlatAppearance.BorderColor = Color.Black;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
+            button2.Location = new Point(292, 58);
+            button2.Name = "button2";
+            button2.Size = new Size(238, 105);
+            button2.TabIndex = 25;
+            button2.Text = "Drag-and-drop ICamBody folder here";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            button2.DragDrop += button2_DragDrop;
+            button2.DragEnter += button2_DragEnter;
             // 
             // label3
             // 
@@ -237,29 +253,12 @@ namespace DropFile_I3d
             label3.Text = "Please select your ICam Serial Number:";
             label3.Click += label3_Click;
             // 
-            // button2
-            // 
-            button2.AllowDrop = true;
-            button2.BackColor = Color.AliceBlue;
-            button2.FlatAppearance.BorderColor = Color.Black;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button2.Location = new Point(22, 194);
-            button2.Name = "button2";
-            button2.Size = new Size(505, 105);
-            button2.TabIndex = 25;
-            button2.Text = "Drag-and-drop ICamBody folder here";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            button2.DragDrop += button2_DragDrop;
-            button2.DragEnter += button2_DragEnter;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(624, 644);
+            ClientSize = new Size(624, 522);
             Controls.Add(menuStrip1);
             Controls.Add(label3);
             Controls.Add(label2);
