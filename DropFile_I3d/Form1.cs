@@ -269,7 +269,6 @@ namespace DropFile_I3d
                 AutoUpdater.Start("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Version.xml");
             }
             PopulateCsvDirectories();
-            groupBox3.Visible = false;
             groupBox2.Visible = true;
         }
 
@@ -446,7 +445,6 @@ namespace DropFile_I3d
 
         private void installToolsMenuItem_Click(object sender, EventArgs e)
         {
-            groupBox3.Visible = true;
             groupBox2.Visible = false;
         }
 
