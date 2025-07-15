@@ -87,6 +87,8 @@ namespace DropFile_I3d
                 string newLibraryTarget = Path.Combine(baseDir, newFolderName + " ICamBody Library");
                 CopyDirectory(selected.Path, newLibraryTarget);
 
+                MessageBox.Show($"Copied new ICam data to '{newFolderTarget}' and library to '{newLibraryTarget}'.", "HotSwap Complete");
+
                 using var question = new CalibrationQuestionForm(selected.Path, newFolderTarget);
                 question.ShowDialog();
                 Close();
@@ -99,6 +101,7 @@ namespace DropFile_I3d
 
         private static void CopyDirectory(string sourceDir, string targetDir)
         {
+            Directory.CreateDirectory(targetDir);
             foreach (string dir in Directory.GetDirectories(sourceDir, "*", SearchOption.AllDirectories))
             {
                 string targetSubDir = dir.Replace(sourceDir, targetDir);
