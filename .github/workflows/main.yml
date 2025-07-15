@@ -34,14 +34,18 @@ jobs:
       - name: Build project
         run: dotnet publish Imetric_Installer.sln -c Release -o build_output
 
-      # 5. Get the latest version tag & bump version based on commit message keywords
+      # 5. Get the highest version tag & bump version based on commit message keywords
       - name: Bump version
         id: versioning
         shell: pwsh
         run: |
-          # Get latest tag or set starting version
-          $latestTag = (git describe --tags --abbrev=0) 2>$null
-          if (-not $latestTag) { $latestTag = "v8.1.5.0" }
+          # Get all tags that look like versions and pick the highest
+          $allTags = (git tag) -match '^[vV]\d+\.\d+\.\d+\.\d+$'
+          if (-not $allTags) { $latestTag = "v8.1.5.0" } else {
+            $latestTag = $allTags | Sort-Object { 
+              [version]($_ -replace '^[vV]', '') 
+            } -Descending | Select-Object -First 1
+          }
 
           # Normalize the tag (remove v or V)
           $normalizedTag = $latestTag -replace '^[vV]', ''
@@ -71,6 +75,7 @@ jobs:
 
           $newVersion = "$major.$minor.$patch.$build"
           echo "NEW_VERSION=$newVersion" >> $env:GITHUB_ENV
+
 
 
 
