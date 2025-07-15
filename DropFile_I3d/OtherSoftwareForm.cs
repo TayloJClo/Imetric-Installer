@@ -65,18 +65,7 @@ namespace DropFile_I3d
         {
             try
             {
-                var processInfo = new ProcessStartInfo
-                {
-                    FileName = "winget",
-                    Arguments = "install --id TheDocumentFoundation.LibreOffice -e --silent",
-                    Verb = "runas",
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
-
-                using var process = Process.Start(processInfo);
-                process?.WaitForExit();
-                MessageBox.Show("LibreOffice installation complete.");
+                Process.Start(new ProcessStartInfo("explorer.exe", "https://www.libreoffice.org/download/"));
             }
             catch (Exception ex)
             {
