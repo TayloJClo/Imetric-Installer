@@ -35,15 +35,15 @@ namespace DropFile_I3d
             folderBrowserDialog = new FolderBrowserDialog();
             openFileDialog = new OpenFileDialog();
             menuStrip1 = new MenuStrip();
+            installationMenuItem = new ToolStripMenuItem();
+            installIScanMenuItem = new ToolStripMenuItem();
+            otherSoftwareMenuItem = new ToolStripMenuItem();
             moreToolsMenuItem = new ToolStripMenuItem();
             createNewLibraryMenuItem = new ToolStripMenuItem();
             hotSwapHelperMenuItem = new ToolStripMenuItem();
             troubleshootingMenuItem = new ToolStripMenuItem();
             buttonInstallDriver = new Button();
             buttonIScan3d = new Button();
-            buttonInstallZip7 = new Button();
-            buttonInstallOffice = new Button();
-            buttonNotePadPlus = new Button();
             pictureBox1 = new PictureBox();
             buttonRemove = new Button();
             button3 = new Button();
@@ -78,14 +78,35 @@ namespace DropFile_I3d
             openFileDialog.FileName = "openFileDialog";
             // 
             // menuStrip1
-            // 
+            //
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { moreToolsMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { installationMenuItem, moreToolsMenuItem });
             menuStrip1.Location = new Point(0, 116);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(624, 33);
             menuStrip1.TabIndex = 30;
             menuStrip1.Text = "menuStrip1";
+            //
+            // installationMenuItem
+            //
+            installationMenuItem.DropDownItems.AddRange(new ToolStripItem[] { installIScanMenuItem, otherSoftwareMenuItem });
+            installationMenuItem.Name = "installationMenuItem";
+            installationMenuItem.Size = new Size(118, 29);
+            installationMenuItem.Text = "Installation";
+            //
+            // installIScanMenuItem
+            //
+            installIScanMenuItem.Name = "installIScanMenuItem";
+            installIScanMenuItem.Size = new Size(208, 34);
+            installIScanMenuItem.Text = "Install IScan";
+            installIScanMenuItem.Click += installIScanMenuItem_Click;
+            //
+            // otherSoftwareMenuItem
+            //
+            otherSoftwareMenuItem.Name = "otherSoftwareMenuItem";
+            otherSoftwareMenuItem.Size = new Size(208, 34);
+            otherSoftwareMenuItem.Text = "Other Software";
+            otherSoftwareMenuItem.Click += otherSoftwareMenuItem_Click;
             // 
             // moreToolsMenuItem
             // 
@@ -142,38 +163,6 @@ namespace DropFile_I3d
             buttonIScan3d.UseVisualStyleBackColor = false;
             buttonIScan3d.Click += buttonIScan3d_Click;
             // 
-            // buttonInstallZip7
-            // 
-            buttonInstallZip7.Location = new Point(18, 35);
-            buttonInstallZip7.Margin = new Padding(4, 5, 4, 5);
-            buttonInstallZip7.Name = "buttonInstallZip7";
-            buttonInstallZip7.Size = new Size(238, 38);
-            buttonInstallZip7.TabIndex = 16;
-            buttonInstallZip7.Text = "Install 7Zip";
-            buttonInstallZip7.UseVisualStyleBackColor = true;
-            buttonInstallZip7.Click += buttonInstallZip7_Click;
-            // 
-            // buttonInstallOffice
-            // 
-            buttonInstallOffice.Location = new Point(18, 83);
-            buttonInstallOffice.Margin = new Padding(4, 5, 4, 5);
-            buttonInstallOffice.Name = "buttonInstallOffice";
-            buttonInstallOffice.Size = new Size(238, 38);
-            buttonInstallOffice.TabIndex = 17;
-            buttonInstallOffice.Text = "Install LibreOffice";
-            buttonInstallOffice.UseVisualStyleBackColor = true;
-            buttonInstallOffice.Click += buttonInstallOffice_Click;
-            // 
-            // buttonNotePadPlus
-            // 
-            buttonNotePadPlus.Location = new Point(18, 131);
-            buttonNotePadPlus.Margin = new Padding(4, 5, 4, 5);
-            buttonNotePadPlus.Name = "buttonNotePadPlus";
-            buttonNotePadPlus.Size = new Size(238, 38);
-            buttonNotePadPlus.TabIndex = 18;
-            buttonNotePadPlus.Text = "Install NotePad ++";
-            buttonNotePadPlus.UseVisualStyleBackColor = true;
-            buttonNotePadPlus.Click += buttonNotePadPlus_Click;
             // 
             // pictureBox1
             // 
@@ -317,10 +306,7 @@ namespace DropFile_I3d
             // groupBox3
             // 
             groupBox3.Controls.Add(buttonInstallDriver);
-            groupBox3.Controls.Add(buttonInstallZip7);
-            groupBox3.Controls.Add(buttonInstallOffice);
             groupBox3.Controls.Add(buttonIScan3d);
-            groupBox3.Controls.Add(buttonNotePadPlus);
             groupBox3.Location = new Point(37, 201);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(553, 200);
@@ -365,9 +351,6 @@ namespace DropFile_I3d
         private OpenFileDialog openFileDialog;
         private Button buttonInstallDriver;
         private Button buttonIScan3d;
-        private Button buttonInstallZip7;
-        private Button buttonInstallOffice;
-        private Button buttonNotePadPlus;
         private PictureBox pictureBox1;
         private Button button1;
         private EventHandler button1_Click_1;
@@ -385,6 +368,9 @@ namespace DropFile_I3d
         private Label label3;
         private Label label4;
         private MenuStrip menuStrip1;
+        private ToolStripMenuItem installationMenuItem;
+        private ToolStripMenuItem installIScanMenuItem;
+        private ToolStripMenuItem otherSoftwareMenuItem;
         private ToolStripMenuItem moreToolsMenuItem;
         private ToolStripMenuItem createNewLibraryMenuItem;
         private ToolStripMenuItem hotSwapHelperMenuItem;

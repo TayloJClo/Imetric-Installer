@@ -62,8 +62,8 @@ namespace DropFile_I3d
 
         private void buttonInstallDriver_Click(object sender, EventArgs e)
         {
-            installbat("C:\\I3D_Software\\Drivers\\Camera Flir\\Flir_1.23.0.27_Driver\\install.bat");
-            installInf("C:\\I3D_Software\\Drivers\\Projector Imetric4D 9\\cyusb3.inf");
+            InstallHelpers.InstallBat("C:\\I3D_Software\\Drivers\\Camera Flir\\Flir_1.23.0.27_Driver\\install.bat");
+            InstallHelpers.InstallInf("C:\\I3D_Software\\Drivers\\Projector Imetric4D 9\\cyusb3.inf");
         }
 
         private async void buttonIScan3d_Click(object sender, EventArgs e)
@@ -126,28 +126,7 @@ namespace DropFile_I3d
 
         private void installMsi(string msiPath)
         {
-            try
-            {
-                if (!File.Exists(msiPath))
-                {
-                    MessageBox.Show("MSI file not found: " + msiPath);
-                    return;
-                }
-
-                var processInfo = new ProcessStartInfo
-                {
-                    FileName = "msiexec.exe",
-                    Arguments = $"/i \"{msiPath}\" /passive",
-                    UseShellExecute = true,
-                    Verb = "runas"
-                };
-
-                Process.Start(processInfo);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("MSI install failed: " + ex.Message);
-            }
+            InstallHelpers.InstallMsi(msiPath);
         }
 
         private void buttonInstallOffice_Click(object sender, EventArgs e)
@@ -179,6 +158,22 @@ namespace DropFile_I3d
             }
         }
 
+        private void installIScanMenuItem_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Will this computer be using an ICam?", "Install IScan", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                buttonInstallDriver_Click(sender, e);
+            }
+            buttonIScan3d_Click(sender, e);
+        }
+
+        private void otherSoftwareMenuItem_Click(object sender, EventArgs e)
+        {
+            using var form = new OtherSoftwareForm();
+            form.ShowDialog();
+        }
+
 
 
 
@@ -200,85 +195,17 @@ namespace DropFile_I3d
 
         private void installbat(string batFilePath)
         {
-            try
-            {
-                var processInfo = new ProcessStartInfo
-                {
-                    FileName = batFilePath,
-                    Verb = V,
-                    UseShellExecute = true,
-                    CreateNoWindow = true
-                };
-
-                using var process = Process.Start(processInfo);
-                process.WaitForExit();
-                MessageBox.Show("Installation complete.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
+            InstallHelpers.InstallBat(batFilePath);
         }
 
         private void installInf(string batFilePath)
         {
-            try
-            {
-                var processInfo = new ProcessStartInfo
-                {
-                    FileName = "powershell.exe",
-                    Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"Start-Process pnputil.exe -ArgumentList '/add-driver `{batFilePath}` /install' -Verb RunAs\"",
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true
-                };
-
-                using var process = Process.Start(processInfo);
-                string output = process.StandardOutput.ReadToEnd();
-                string error = process.StandardError.ReadToEnd();
-
-                process.WaitForExit();
-
-                if (!string.IsNullOrEmpty(output)) MessageBox.Show("Output: " + output);
-                if (!string.IsNullOrEmpty(error)) MessageBox.Show("Error: " + error);
-
-                MessageBox.Show("Driver installation complete.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Driver installation failed: " + ex.Message);
-            }
+            InstallHelpers.InstallInf(batFilePath);
         }
 
         private void install(string batFilePath)
         {
-            try
-            {
-                var processInfo = new ProcessStartInfo
-                {
-                    FileName = "powershell.exe",
-                    Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"& '{batFilePath}'\"",
-                    Verb = V,
-                    CreateNoWindow = true,
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true
-                };
-
-                using var process = Process.Start(processInfo);
-                string output = process.StandardOutput.ReadToEnd();
-                string error = process.StandardError.ReadToEnd();
-
-                process.WaitForExit();
-
-                if (!string.IsNullOrWhiteSpace(output)) MessageBox.Show("Output: " + output);
-                if (!string.IsNullOrWhiteSpace(error)) MessageBox.Show("Error: " + error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
+            InstallHelpers.Install(batFilePath);
         }
 
         private void buttonEditor_Click(object sender, EventArgs e)
