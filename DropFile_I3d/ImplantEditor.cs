@@ -117,7 +117,7 @@ namespace ImplantPositionEditor
             }
         }
 
-        private async Task LoadCSVFromGithub(string url)
+        private async Task<bool> TryLoadCSVFromGithub(string url)
         {
             label4.Text = "Loading CSV from GitHub...";
             try
@@ -127,10 +127,25 @@ namespace ImplantPositionEditor
                 var lines = csvData.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
                 ParseCsvLines(lines);
                 label4.Text = "CSV Loaded from GitHub";
+                return true;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Error loading CSV from GitHub: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                label4.Text = "Error loading CSV. Retrying...";
+                return false;
+            }
+        }
+
+        private async Task LoadCSVWithRetry(string url)
+        {
+            const int delay = 2000;
+            while (!IsDisposed)
+            {
+                bool loaded = await TryLoadCSVFromGithub(url);
+                if (loaded && cmbTemplates.Items.Count > 0)
+                    break;
+
+                await Task.Delay(delay);
             }
         }
 
@@ -358,7 +373,7 @@ namespace ImplantPositionEditor
         private async void Form1_Load(object sender, EventArgs e)
         {
             string url = "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv";
-            await LoadCSVFromGithub(url);
+            await LoadCSVWithRetry(url);
         }
 
         private void label3_Click(object sender, EventArgs e)
