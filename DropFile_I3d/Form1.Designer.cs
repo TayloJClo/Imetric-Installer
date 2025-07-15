@@ -58,10 +58,10 @@ namespace DropFile_I3d
             label3 = new Label();
             button2 = new Button();
             groupBox3 = new GroupBox();
+            menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
-            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // labelProgress
@@ -76,6 +76,44 @@ namespace DropFile_I3d
             // openFileDialog
             // 
             openFileDialog.FileName = "openFileDialog";
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { moreToolsMenuItem });
+            menuStrip1.Location = new Point(0, 116);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(624, 33);
+            menuStrip1.TabIndex = 30;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // moreToolsMenuItem
+            // 
+            moreToolsMenuItem.DropDownItems.AddRange(new ToolStripItem[] { createNewLibraryMenuItem, hotSwapHelperMenuItem, troubleshootingMenuItem });
+            moreToolsMenuItem.Name = "moreToolsMenuItem";
+            moreToolsMenuItem.Size = new Size(116, 29);
+            moreToolsMenuItem.Text = "More Tools";
+            // 
+            // createNewLibraryMenuItem
+            // 
+            createNewLibraryMenuItem.Name = "createNewLibraryMenuItem";
+            createNewLibraryMenuItem.Size = new Size(270, 34);
+            createNewLibraryMenuItem.Text = "Create New Library";
+            createNewLibraryMenuItem.Click += createNewLibraryMenuItem_Click;
+            // 
+            // hotSwapHelperMenuItem
+            // 
+            hotSwapHelperMenuItem.Name = "hotSwapHelperMenuItem";
+            hotSwapHelperMenuItem.Size = new Size(270, 34);
+            hotSwapHelperMenuItem.Text = "HotSwap Helper";
+            hotSwapHelperMenuItem.Click += hotSwapHelperMenuItem_Click;
+            // 
+            // troubleshootingMenuItem
+            // 
+            troubleshootingMenuItem.Name = "troubleshootingMenuItem";
+            troubleshootingMenuItem.Size = new Size(270, 34);
+            troubleshootingMenuItem.Text = "Troubleshooting";
+            troubleshootingMenuItem.Click += troubleshootingMenuItem_Click;
             // 
             // buttonInstallDriver
             // 
@@ -195,7 +233,7 @@ namespace DropFile_I3d
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(205, 119);
+            label1.Location = new Point(207, 166);
             label1.Name = "label1";
             label1.Size = new Size(210, 32);
             label1.TabIndex = 25;
@@ -205,7 +243,7 @@ namespace DropFile_I3d
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(229, 380);
+            label2.Location = new Point(224, 404);
             label2.Name = "label2";
             label2.Size = new Size(162, 32);
             label2.TabIndex = 26;
@@ -215,7 +253,7 @@ namespace DropFile_I3d
             // 
             labelVersion.AutoSize = true;
             labelVersion.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            labelVersion.Location = new Point(547, 797);
+            labelVersion.Location = new Point(547, 821);
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(65, 21);
             labelVersion.TabIndex = 27;
@@ -232,7 +270,7 @@ namespace DropFile_I3d
             groupBox2.Controls.Add(button3);
             groupBox2.Controls.Add(button1);
             groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(37, 415);
+            groupBox2.Location = new Point(37, 439);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(553, 379);
             groupBox2.TabIndex = 23;
@@ -283,56 +321,18 @@ namespace DropFile_I3d
             groupBox3.Controls.Add(buttonInstallOffice);
             groupBox3.Controls.Add(buttonIScan3d);
             groupBox3.Controls.Add(buttonNotePadPlus);
-            groupBox3.Location = new Point(37, 154);
+            groupBox3.Location = new Point(37, 201);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(553, 200);
             groupBox3.TabIndex = 24;
             groupBox3.TabStop = false;
-            //
-            // menuStrip1
-            //
-            menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { moreToolsMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(624, 33);
-            menuStrip1.TabIndex = 30;
-            menuStrip1.Text = "menuStrip1";
-            //
-            // moreToolsMenuItem
-            //
-            moreToolsMenuItem.DropDownItems.AddRange(new ToolStripItem[] { createNewLibraryMenuItem, hotSwapHelperMenuItem, troubleshootingMenuItem });
-            moreToolsMenuItem.Name = "moreToolsMenuItem";
-            moreToolsMenuItem.Size = new Size(114, 29);
-            moreToolsMenuItem.Text = "More Tools";
-            //
-            // createNewLibraryMenuItem
-            //
-            createNewLibraryMenuItem.Name = "createNewLibraryMenuItem";
-            createNewLibraryMenuItem.Size = new Size(248, 34);
-            createNewLibraryMenuItem.Text = "Create New Library";
-            createNewLibraryMenuItem.Click += createNewLibraryMenuItem_Click;
-            //
-            // hotSwapHelperMenuItem
-            //
-            hotSwapHelperMenuItem.Name = "hotSwapHelperMenuItem";
-            hotSwapHelperMenuItem.Size = new Size(248, 34);
-            hotSwapHelperMenuItem.Text = "HotSwap Helper";
-            hotSwapHelperMenuItem.Click += hotSwapHelperMenuItem_Click;
-            //
-            // troubleshootingMenuItem
-            //
-            troubleshootingMenuItem.Name = "troubleshootingMenuItem";
-            troubleshootingMenuItem.Size = new Size(248, 34);
-            troubleshootingMenuItem.Text = "Troubleshooting";
-            troubleshootingMenuItem.Click += troubleshootingMenuItem_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(624, 827);
+            ClientSize = new Size(624, 851);
             Controls.Add(menuStrip1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -348,12 +348,12 @@ namespace DropFile_I3d
             Name = "Form1";
             ShowInTaskbar = false;
             Load += MainForm_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
 
