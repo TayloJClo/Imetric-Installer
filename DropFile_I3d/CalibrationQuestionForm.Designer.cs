@@ -18,25 +18,25 @@ namespace DropFile_I3d
 
         private void InitializeComponent()
         {
-            labelQuestion = new System.Windows.Forms.Label();
-            buttonYes = new System.Windows.Forms.Button();
-            buttonNo = new System.Windows.Forms.Button();
+            labelQuestion = new Label();
+            buttonYes = new Button();
+            buttonNo = new Button();
             SuspendLayout();
             // 
             // labelQuestion
             // 
             labelQuestion.AutoSize = true;
-            labelQuestion.Location = new System.Drawing.Point(34, 27);
+            labelQuestion.Location = new Point(34, 27);
             labelQuestion.Name = "labelQuestion";
-            labelQuestion.Size = new System.Drawing.Size(283, 25);
+            labelQuestion.Size = new Size(358, 25);
             labelQuestion.TabIndex = 0;
             labelQuestion.Text = "Are you keeping the same calibration plate?";
             // 
             // buttonYes
             // 
-            buttonYes.Location = new System.Drawing.Point(38, 70);
+            buttonYes.Location = new Point(91, 72);
             buttonYes.Name = "buttonYes";
-            buttonYes.Size = new System.Drawing.Size(94, 34);
+            buttonYes.Size = new Size(94, 34);
             buttonYes.TabIndex = 1;
             buttonYes.Text = "Yes";
             buttonYes.UseVisualStyleBackColor = true;
@@ -44,9 +44,9 @@ namespace DropFile_I3d
             // 
             // buttonNo
             // 
-            buttonNo.Location = new System.Drawing.Point(223, 70);
+            buttonNo.Location = new Point(227, 72);
             buttonNo.Name = "buttonNo";
-            buttonNo.Size = new System.Drawing.Size(94, 34);
+            buttonNo.Size = new Size(94, 34);
             buttonNo.TabIndex = 2;
             buttonNo.Text = "No";
             buttonNo.UseVisualStyleBackColor = true;
@@ -54,9 +54,9 @@ namespace DropFile_I3d
             // 
             // CalibrationQuestionForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(358, 128);
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(420, 123);
             Controls.Add(buttonNo);
             Controls.Add(buttonYes);
             Controls.Add(labelQuestion);
