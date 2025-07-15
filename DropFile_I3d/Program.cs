@@ -27,7 +27,7 @@ namespace DropFile_I3d
 
             if (!UpdateHelper.IsAutoUpdateDisabled())
             {
-                AutoUpdater.Start("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/main/Version.xml");
+                AutoUpdater.Start("https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/master/Version.xml");
             }
 
             // To customize application configuration such as set high DPI settings or default font,
