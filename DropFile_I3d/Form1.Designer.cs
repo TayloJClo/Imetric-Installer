@@ -54,6 +54,7 @@ namespace DropFile_I3d
             label4 = new Label();
             button2 = new Button();
             label3 = new Label();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
@@ -92,14 +93,14 @@ namespace DropFile_I3d
             // installIScanMenuItem
             // 
             installIScanMenuItem.Name = "installIScanMenuItem";
-            installIScanMenuItem.Size = new Size(234, 34);
+            installIScanMenuItem.Size = new Size(270, 34);
             installIScanMenuItem.Text = "Install IScan";
             installIScanMenuItem.Click += installIScanMenuItem_Click;
             // 
             // otherSoftwareMenuItem
             // 
             otherSoftwareMenuItem.Name = "otherSoftwareMenuItem";
-            otherSoftwareMenuItem.Size = new Size(234, 34);
+            otherSoftwareMenuItem.Size = new Size(270, 34);
             otherSoftwareMenuItem.Text = "Other Software";
             otherSoftwareMenuItem.Click += otherSoftwareMenuItem_Click;
             // 
@@ -151,21 +152,21 @@ namespace DropFile_I3d
             // 
             // buttonRemove
             // 
-            buttonRemove.Location = new Point(22, 104);
+            buttonRemove.Location = new Point(25, 148);
             buttonRemove.Name = "buttonRemove";
             buttonRemove.Size = new Size(238, 59);
             buttonRemove.TabIndex = 0;
-            buttonRemove.Text = "Remove Screws/Healing Caps";
+            buttonRemove.Text = "Remove";
             toolTip1.SetToolTip(buttonRemove, "Click here to remove options from your\r\ndropdown menus");
             buttonRemove.Click += buttonRemove_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(22, 28);
+            button1.Location = new Point(25, 83);
             button1.Name = "button1";
             button1.Size = new Size(238, 59);
             button1.TabIndex = 0;
-            button1.Text = "Add Screws/Healing Caps";
+            button1.Text = "Add";
             toolTip1.SetToolTip(button1, "Click here to add screw channels or \r\nhealing caps to your current library\r\n");
             button1.UseVisualStyleBackColor = true;
             button1.Click += buttonAddComponents_Click;
@@ -195,7 +196,7 @@ namespace DropFile_I3d
             // 
             labelVersion.AutoSize = true;
             labelVersion.Font = new Font("Segoe UI", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            labelVersion.Location = new Point(547, 492);
+            labelVersion.Location = new Point(547, 516);
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(65, 21);
             labelVersion.TabIndex = 27;
@@ -204,6 +205,7 @@ namespace DropFile_I3d
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(buttonRemove);
@@ -211,17 +213,17 @@ namespace DropFile_I3d
             groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(37, 274);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(553, 194);
+            groupBox2.Size = new Size(553, 221);
             groupBox2.TabIndex = 23;
             groupBox2.TabStop = false;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(337, 27);
+            label4.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(333, 42);
             label4.Name = "label4";
-            label4.Size = new Size(139, 21);
+            label4.Size = new Size(136, 21);
             label4.TabIndex = 28;
             label4.Text = "Add ICamBodies:";
             // 
@@ -232,9 +234,10 @@ namespace DropFile_I3d
             button2.FlatAppearance.BorderColor = Color.Black;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button2.Location = new Point(292, 58);
+            button2.ForeColor = SystemColors.ControlDark;
+            button2.Location = new Point(295, 83);
             button2.Name = "button2";
-            button2.Size = new Size(238, 105);
+            button2.Size = new Size(238, 124);
             button2.TabIndex = 25;
             button2.Text = "Drag-and-drop ICamBody folder here";
             button2.UseVisualStyleBackColor = false;
@@ -245,20 +248,30 @@ namespace DropFile_I3d
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(159, 162);
             label3.Name = "label3";
-            label3.Size = new Size(308, 21);
+            label3.Size = new Size(294, 21);
             label3.TabIndex = 28;
             label3.Text = "Please select your ICam Serial Number:";
             label3.Click += label3_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(34, 42);
+            label1.Name = "label1";
+            label1.Size = new Size(229, 21);
+            label1.TabIndex = 29;
+            label1.Text = "Screw Channels/Healing Caps:";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(624, 522);
+            ClientSize = new Size(624, 546);
             Controls.Add(menuStrip1);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -310,5 +323,6 @@ namespace DropFile_I3d
         private ToolStripMenuItem hotSwapHelperMenuItem;
         private ToolStripMenuItem troubleshootingMenuItem;
         private ToolStripMenuItem implantPositionEditorMenuItem;
+        private Label label1;
     }
 }
