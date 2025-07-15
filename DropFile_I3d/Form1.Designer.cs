@@ -42,8 +42,6 @@ namespace DropFile_I3d
             createNewLibraryMenuItem = new ToolStripMenuItem();
             hotSwapHelperMenuItem = new ToolStripMenuItem();
             troubleshootingMenuItem = new ToolStripMenuItem();
-            buttonInstallDriver = new Button();
-            buttonIScan3d = new Button();
             pictureBox1 = new PictureBox();
             buttonRemove = new Button();
             button3 = new Button();
@@ -136,32 +134,6 @@ namespace DropFile_I3d
             troubleshootingMenuItem.Text = "Troubleshooting";
             troubleshootingMenuItem.Click += troubleshootingMenuItem_Click;
             // 
-            // buttonInstallDriver
-            // 
-            buttonInstallDriver.BackColor = SystemColors.ButtonHighlight;
-            buttonInstallDriver.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            buttonInstallDriver.Location = new Point(285, 35);
-            buttonInstallDriver.Margin = new Padding(4, 5, 4, 5);
-            buttonInstallDriver.Name = "buttonInstallDriver";
-            buttonInstallDriver.Size = new Size(238, 38);
-            buttonInstallDriver.TabIndex = 14;
-            buttonInstallDriver.Text = "Install Drivers";
-            toolTip1.SetToolTip(buttonInstallDriver, "Only install drivers if you have an ICam\r\n");
-            buttonInstallDriver.UseVisualStyleBackColor = false;
-            buttonInstallDriver.Click += buttonInstallDriver_Click;
-            // 
-            // buttonIScan3d
-            // 
-            buttonIScan3d.BackColor = Color.White;
-            buttonIScan3d.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonIScan3d.Location = new Point(285, 83);
-            buttonIScan3d.Margin = new Padding(4, 5, 4, 5);
-            buttonIScan3d.Name = "buttonIScan3d";
-            buttonIScan3d.Size = new Size(238, 86);
-            buttonIScan3d.TabIndex = 15;
-            buttonIScan3d.Text = "Install IScan3D Dental";
-            buttonIScan3d.UseVisualStyleBackColor = false;
-            buttonIScan3d.Click += buttonIScan3d_Click;
             // 
             // 
             // pictureBox1
@@ -305,8 +277,6 @@ namespace DropFile_I3d
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(buttonInstallDriver);
-            groupBox3.Controls.Add(buttonIScan3d);
             groupBox3.Location = new Point(37, 201);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(553, 200);
@@ -349,8 +319,6 @@ namespace DropFile_I3d
         private Label labelProgress;
         private FolderBrowserDialog folderBrowserDialog;
         private OpenFileDialog openFileDialog;
-        private Button buttonInstallDriver;
-        private Button buttonIScan3d;
         private PictureBox pictureBox1;
         private Button button1;
         private EventHandler button1_Click_1;
