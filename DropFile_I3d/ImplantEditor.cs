@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Net.Http;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
@@ -46,30 +47,6 @@ namespace ImplantPositionEditor
             }
         }
 
-        private void btnLoadCSV_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Title = "Select your ICamBody Library CSV file";
-                openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
-                openFileDialog.InitialDirectory = @"C:\\I3D_Systems\\";
-
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    loadedFilePath = openFileDialog.FileName;
-                    LoadCSV(loadedFilePath);
-                }
-                else
-                {
-                    MessageBox.Show("No local CSV file selected. The form will now close.");
-                    this.Close();
-                    return;
-                }
-            }
-
-
-        }
 
         private void LoadCSV(string filePath)
         {
@@ -80,68 +57,80 @@ namespace ImplantPositionEditor
                 return;
             }
 
-            templateData.Clear();
-            cmbTemplates.Items.Clear();
-
             try
             {
-                using (StreamReader sr = new StreamReader(filePath, Encoding.UTF8))
-                {
-                    string line;
-                    bool firstLine = true;
-                    int rowIndex = 1;
-
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        if (firstLine)
-                        {
-                            firstLine = false; // Skip the header row
-                            continue;
-                        }
-
-                        // CSV is tab-separated (\t)
-                        string[] parts = line.Split('\t');
-
-                        if (parts.Length >= 10) // Ensure required columns exist (B, F, I, J)
-                        {
-                            string templateName = parts[1].Trim(); // Column B
-                            string library = parts[5].Trim();      // Column F
-                            string type = parts[8].Trim();         // Column I
-                            string subtype = parts[9].Trim();      // Column J (optional)
-
-                            // Check if the template name is "ICamRef" and skip it
-                            if (!string.IsNullOrWhiteSpace(templateName) && !string.Equals(templateName, "ICamRef", StringComparison.OrdinalIgnoreCase))
-                            {
-                                if (!templateData.ContainsKey(templateName))
-                                {
-                                    templateData[templateName] = (library, type, subtype);
-                                    cmbTemplates.Items.Add(templateName);
-                                    Console.WriteLine($"Loaded: {templateName} → Library: {library}, Type: {type}, Subtype: {subtype}");
-                                }
-                            }
-
-                        }
-                    }
-                }
-                // Sort dropdown alphabetically
-                var sortedItems = cmbTemplates.Items.Cast<string>().OrderBy(item => item).ToList();
-                cmbTemplates.Items.Clear();
-                cmbTemplates.Items.AddRange(sortedItems.ToArray());
-
-                if (cmbTemplates.Items.Count > 0)
-                {
-                    cmbTemplates.SelectedIndex = 0;
-                    MessageBox.Show("CSV loaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                else
-                {
-                    MessageBox.Show("No templates found in CSV!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                var lines = File.ReadAllLines(filePath, Encoding.UTF8);
+                ParseCsvLines(lines);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading CSV: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ParseCsvLines(IEnumerable<string> lines)
+        {
+            templateData.Clear();
+            cmbTemplates.Items.Clear();
+
+            bool firstLine = true;
+            foreach (var line in lines)
+            {
+                if (firstLine)
+                {
+                    firstLine = false; // Skip header
+                    continue;
+                }
+
+                string[] parts = line.Split('\t');
+                if (parts.Length >= 10)
+                {
+                    string templateName = parts[1].Trim();
+                    string library = parts[5].Trim();
+                    string type = parts[8].Trim();
+                    string subtype = parts[9].Trim();
+
+                    if (!string.IsNullOrWhiteSpace(templateName) && !string.Equals(templateName, "ICamRef", StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (!templateData.ContainsKey(templateName))
+                        {
+                            templateData[templateName] = (library, type, subtype);
+                            cmbTemplates.Items.Add(templateName);
+                            Console.WriteLine($"Loaded: {templateName} → Library: {library}, Type: {type}, Subtype: {subtype}");
+                        }
+                    }
+                }
+            }
+
+            var sortedItems = cmbTemplates.Items.Cast<string>().OrderBy(item => item).ToList();
+            cmbTemplates.Items.Clear();
+            cmbTemplates.Items.AddRange(sortedItems.ToArray());
+
+            if (cmbTemplates.Items.Count > 0)
+            {
+                cmbTemplates.SelectedIndex = 0;
+                MessageBox.Show("CSV loaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No templates found in CSV!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task LoadCSVFromGithub(string url)
+        {
+            label4.Text = "Loading CSV from GitHub...";
+            try
+            {
+                using HttpClient client = new HttpClient();
+                string csvData = await client.GetStringAsync(url);
+                var lines = csvData.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+                ParseCsvLines(lines);
+                label4.Text = "CSV Loaded from GitHub";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading CSV from GitHub: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -311,7 +300,7 @@ namespace ImplantPositionEditor
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                if (files.All(f => f.EndsWith(".implantPosition") || f.EndsWith(".csv") || f.EndsWith(".lnk")))
+                if (files.All(f => f.EndsWith(".implantPosition") || f.EndsWith(".lnk")))
                 {
                     e.Effect = DragDropEffects.Copy; // Allow drop
                 }
@@ -331,10 +320,6 @@ namespace ImplantPositionEditor
                 if (file.EndsWith(".implantPosition"))
                 {
                     LoadImplantPositionFile(file); // Properly load implant files
-                }
-                else if (file.EndsWith(".csv"))
-                {
-                    LoadCSV(file); // Load CSV templates
                 }
             }
 
@@ -370,9 +355,10 @@ namespace ImplantPositionEditor
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-
+            string url = "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv";
+            await LoadCSVFromGithub(url);
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -411,10 +397,6 @@ namespace ImplantPositionEditor
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

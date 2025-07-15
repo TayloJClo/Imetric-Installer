@@ -36,15 +36,12 @@
             cmbTemplates = new ComboBox();
             txtFileContent = new TextBox();
             btnSave = new Button();
-            btnLoadCSV = new Button();
             lstFiles = new ListBox();
             btnSaveAs = new Button();
             label3 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             label4 = new Label();
             pictureBox1 = new PictureBox();
-            label5 = new Label();
-            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -112,17 +109,6 @@
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
-            // btnLoadCSV
-            // 
-            btnLoadCSV.Location = new Point(290, 138);
-            btnLoadCSV.Margin = new Padding(4, 6, 4, 6);
-            btnLoadCSV.Name = "btnLoadCSV";
-            btnLoadCSV.Size = new Size(124, 44);
-            btnLoadCSV.TabIndex = 6;
-            btnLoadCSV.Text = "Load CSV";
-            toolTip1.SetToolTip(btnLoadCSV, "Find your CSV file in *you ICam serial*\r\nICamBody Library\r\n");
-            btnLoadCSV.UseVisualStyleBackColor = true;
-            btnLoadCSV.Click += btnLoadCSV_Click;
             // 
             // lstFiles
             // 
@@ -184,15 +170,6 @@
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(130, 148);
-            label5.Name = "label5";
-            label5.Size = new Size(157, 25);
-            label5.TabIndex = 12;
-            label5.Text = "Select Library CSV:";
-            label5.Click += label5_Click;
             // 
             // ImplantEditor
             // 
@@ -203,13 +180,11 @@
             BackColor = Color.FromArgb(224, 224, 224);
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1180, 834);
-            Controls.Add(label5);
             Controls.Add(pictureBox1);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(btnSaveAs);
             Controls.Add(lstFiles);
-            Controls.Add(btnLoadCSV);
             Controls.Add(btnSave);
             Controls.Add(txtFileContent);
             Controls.Add(cmbTemplates);
@@ -236,15 +211,12 @@
         private System.Windows.Forms.ComboBox cmbTemplates;
         private System.Windows.Forms.TextBox txtFileContent;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnLoadCSV;
         private System.Windows.Forms.ListBox lstFiles;
         private System.Windows.Forms.Button btnSaveAs;
         private System.Windows.Forms.Label label3;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label5;
-        private ToolTip toolTip1;
     }
 }
 
