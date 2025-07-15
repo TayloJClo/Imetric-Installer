@@ -34,6 +34,11 @@ namespace DropFile_I3d
             labelProgress = new Label();
             folderBrowserDialog = new FolderBrowserDialog();
             openFileDialog = new OpenFileDialog();
+            menuStrip1 = new MenuStrip();
+            moreToolsMenuItem = new ToolStripMenuItem();
+            createNewLibraryMenuItem = new ToolStripMenuItem();
+            hotSwapHelperMenuItem = new ToolStripMenuItem();
+            troubleshootingMenuItem = new ToolStripMenuItem();
             buttonInstallDriver = new Button();
             buttonIScan3d = new Button();
             buttonInstallZip7 = new Button();
@@ -56,6 +61,7 @@ namespace DropFile_I3d
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // labelProgress
@@ -282,6 +288,44 @@ namespace DropFile_I3d
             groupBox3.Size = new Size(553, 200);
             groupBox3.TabIndex = 24;
             groupBox3.TabStop = false;
+            //
+            // menuStrip1
+            //
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { moreToolsMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(624, 33);
+            menuStrip1.TabIndex = 30;
+            menuStrip1.Text = "menuStrip1";
+            //
+            // moreToolsMenuItem
+            //
+            moreToolsMenuItem.DropDownItems.AddRange(new ToolStripItem[] { createNewLibraryMenuItem, hotSwapHelperMenuItem, troubleshootingMenuItem });
+            moreToolsMenuItem.Name = "moreToolsMenuItem";
+            moreToolsMenuItem.Size = new Size(114, 29);
+            moreToolsMenuItem.Text = "More Tools";
+            //
+            // createNewLibraryMenuItem
+            //
+            createNewLibraryMenuItem.Name = "createNewLibraryMenuItem";
+            createNewLibraryMenuItem.Size = new Size(248, 34);
+            createNewLibraryMenuItem.Text = "Create New Library";
+            createNewLibraryMenuItem.Click += createNewLibraryMenuItem_Click;
+            //
+            // hotSwapHelperMenuItem
+            //
+            hotSwapHelperMenuItem.Name = "hotSwapHelperMenuItem";
+            hotSwapHelperMenuItem.Size = new Size(248, 34);
+            hotSwapHelperMenuItem.Text = "HotSwap Helper";
+            hotSwapHelperMenuItem.Click += hotSwapHelperMenuItem_Click;
+            //
+            // troubleshootingMenuItem
+            //
+            troubleshootingMenuItem.Name = "troubleshootingMenuItem";
+            troubleshootingMenuItem.Size = new Size(248, 34);
+            troubleshootingMenuItem.Text = "Troubleshooting";
+            troubleshootingMenuItem.Click += troubleshootingMenuItem_Click;
             // 
             // Form1
             // 
@@ -289,6 +333,7 @@ namespace DropFile_I3d
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(624, 827);
+            Controls.Add(menuStrip1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(groupBox3);
@@ -307,6 +352,8 @@ namespace DropFile_I3d
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
 
@@ -337,5 +384,10 @@ namespace DropFile_I3d
         private ComboBox comboBoxCsvDir;
         private Label label3;
         private Label label4;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem moreToolsMenuItem;
+        private ToolStripMenuItem createNewLibraryMenuItem;
+        private ToolStripMenuItem hotSwapHelperMenuItem;
+        private ToolStripMenuItem troubleshootingMenuItem;
     }
 }
