@@ -10,48 +10,64 @@ jobs:
     runs-on: windows-latest   # Since you’re building a Windows .NET app
 
     steps:
-      # 1. Checkout the repo
+      # 1. Checkout the repo with full history (needed for tags)
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # 2. Set up .NET
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 6.0.x   # Change to your version if needed
+          dotnet-version: 6.0.x
 
-      # 3. Restore NuGet dependencies
+      # 3. Restore dependencies
       - name: Restore dependencies
         run: dotnet restore
 
-      # 4. Build the project in Release mode
+      # 4. Build project in Release mode
       - name: Build project
         run: dotnet publish Imetric_Installer.sln -c Release -o build_output
-        
-      # 5. Auto bump version (1.0.<GitHub Run #>)
-      - name: Set version variable
-        id: version
-        run: echo "VERSION=1.0.${{ github.run_number }}" >> $env:GITHUB_ENV
+
+      # 5. Get the latest version tag & bump patch version
+      - name: Bump version
+        id: versioning
+        shell: pwsh
+        run: |
+          $latestTag = (git describe --tags --abbrev=0) 2>$null
+          if (-not $latestTag) { $latestTag = "v1.0.0" }
+          $ver = $latestTag.TrimStart('v').Split('.')
+          $major = [int]$ver[0]
+          $minor = [int]$ver[1]
+          $patch = [int]$ver[2] + 1
+          $newVersion = "$major.$minor.$patch"
+          echo "NEW_VERSION=$newVersion" >> $env:GITHUB_ENV
 
       # 6. Update Version.xml
       - name: Update Version.xml
         run: |
-          (Get-Content Version.xml) -replace '<version>.*</version>', "<version>${{ env.VERSION }}</version>" | Set-Content Version.xml
+          (Get-Content Version.xml) -replace '<version>.*</version>', "<version>${{ env.NEW_VERSION }}</version>" | Set-Content Version.xml
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add Version.xml
-          git commit -m "Auto-update Version.xml to ${{ env.VERSION }}"
+          git commit -m "Auto-update Version.xml to ${{ env.NEW_VERSION }}"
           git push
 
       # 7. Zip the installer files
       - name: Zip build files
-        run: Compress-Archive -Path build_output\* -DestinationPath ICam4DSetup_${{ env.VERSION }}.zip
+        run: Compress-Archive -Path build_output\* -DestinationPath Imetric_Installer_${{ env.NEW_VERSION }}.zip
 
-      # 8. Create a GitHub Release
+      # 8. Create a new Git tag
+      - name: Create Git tag
+        run: |
+          git tag v${{ env.NEW_VERSION }}
+          git push origin v${{ env.NEW_VERSION }}
+
+      # 9. Create a GitHub Release
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ env.VERSION }}
-          name: ICam4D Release v${{ env.VERSION }}
-          files: ICam4DSetup_${{ env.VERSION }}.zip
-
+          tag_name: v${{ env.NEW_VERSION }}
+          name: Imetric Installer v${{ env.NEW_VERSION }}
+          files: Imetric_Installer_${{ env.NEW_VERSION }}.zip
