@@ -50,7 +50,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(718, 495);
+            checkBox1.Location = new Point(706, 453);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(210, 29);
             checkBox1.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(486, 477);
+            button1.Location = new Point(474, 435);
             button1.Name = "button1";
             button1.Size = new Size(171, 63);
             button1.TabIndex = 2;
@@ -72,7 +72,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(24, 177);
             label2.Name = "label2";
-            label2.Size = new Size(1092, 275);
+            label2.Size = new Size(1059, 225);
             label2.TabIndex = 3;
             label2.Text = resources.GetString("label2.Text");
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -92,7 +92,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1128, 573);
+            ClientSize = new Size(1128, 528);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(button1);
