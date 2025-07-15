@@ -30,19 +30,21 @@ jobs:
       - name: Build project
         run: dotnet publish Imetric_Installer.sln -c Release -o build_output
 
-      # 5. Get the latest version tag & bump patch version
+            # 5. Get the latest version tag & bump the last number
       - name: Bump version
         id: versioning
         shell: pwsh
         run: |
           $latestTag = (git describe --tags --abbrev=0) 2>$null
-          if (-not $latestTag) { $latestTag = "v1.0.0" }
+          if (-not $latestTag) { $latestTag = "v8.1.5.0" }  # Starting point if no tags
           $ver = $latestTag.TrimStart('v').Split('.')
           $major = [int]$ver[0]
           $minor = [int]$ver[1]
-          $patch = [int]$ver[2] + 1
-          $newVersion = "$major.$minor.$patch"
+          $patch = [int]$ver[2]
+          $build = [int]$ver[3] + 1
+          $newVersion = "$major.$minor.$patch.$build"
           echo "NEW_VERSION=$newVersion" >> $env:GITHUB_ENV
+
 
       # 6. Update Version.xml
       - name: Update Version.xml
