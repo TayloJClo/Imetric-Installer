@@ -11,15 +11,16 @@
     <Platforms>AnyCPU;x86</Platforms>
     <ApplicationIcon>Iscan with cogs.ico</ApplicationIcon>
     <AssemblyVersion>8.1.6.0</AssemblyVersion>
-    <FileVersion>8.1.4.1</FileVersion>
+    <FileVersion>8.1.6.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="OpenSans-Light.ttf" />
+    <None Remove="Resources\Iscan with cogs.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Iscan with cogs.ico" />
+    <Content Include="Resources\Iscan with cogs.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="OpenSans-Light.ttf" />
+    <Content Include="Resources\OpenSans-Light.ttf" />
   </ItemGroup>
 
   <ItemGroup>
