@@ -1,7 +1,7 @@
 ﻿
 namespace DropFile_I3d
 {
-    partial class Form1
+    partial class IScanTools
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,7 +30,7 @@ namespace DropFile_I3d
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IScanTools));
             labelProgress = new Label();
             folderBrowserDialog = new FolderBrowserDialog();
             openFileDialog = new OpenFileDialog();
@@ -266,7 +266,7 @@ namespace DropFile_I3d
             label1.TabIndex = 29;
             label1.Text = "Screw Channels/Healing Caps:";
             // 
-            // Form1
+            // IScanTools
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -284,7 +284,7 @@ namespace DropFile_I3d
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
-            Name = "Form1";
+            Name = "IScanTools";
             ShowInTaskbar = false;
             Load += MainForm_Load;
             menuStrip1.ResumeLayout(false);

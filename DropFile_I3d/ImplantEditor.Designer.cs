@@ -196,7 +196,7 @@
             MaximizeBox = false;
             Name = "ImplantEditor";
             Text = "Implant Position Editor";
-            Load += Form1_Load;
+            Load += IScanTools_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
