@@ -20,8 +20,8 @@ namespace ImplantPositionEditor
         public ImplantEditor()
         {
             InitializeComponent();
-            this.DragEnter += new DragEventHandler(Form1_DragEnter);
-            this.DragDrop += new DragEventHandler(Form1_DragDrop);
+            this.DragEnter += new DragEventHandler(IScanTools_DragEnter);
+            this.DragDrop += new DragEventHandler(IScanTools_DragDrop);
         }
 
         private void btnLoadFile_Click(object sender, EventArgs e)
@@ -310,7 +310,7 @@ namespace ImplantPositionEditor
                 }
             }
         }
-        private void Form1_DragEnter(object sender, DragEventArgs e)
+        private void IScanTools_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
@@ -326,7 +326,7 @@ namespace ImplantPositionEditor
             }
         }
 
-        private void Form1_DragDrop(object sender, DragEventArgs e)
+        private void IScanTools_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
@@ -370,7 +370,7 @@ namespace ImplantPositionEditor
 
         }
 
-        private async void Form1_Load(object sender, EventArgs e)
+        private async void IScanTools_Load(object sender, EventArgs e)
         {
             string url = "https://raw.githubusercontent.com/TayloJClo/Imetric-Installer/refs/heads/main/ICamBody%20Library%20Master%20(test).csv";
             await LoadCSVWithRetry(url);

@@ -16,7 +16,7 @@ using System.Reflection;
 
 namespace DropFile_I3d
 {
-    public partial class Form1 : Form
+    public partial class IScanTools : Form
     {
         private const string V = "runas";
         private string iCamSerialNo = "";
@@ -32,7 +32,7 @@ namespace DropFile_I3d
         public string SelectedCsvDirectory => (comboBoxCsvDir.SelectedItem as FolderItem)?.Path ?? string.Empty;
 
 
-        public Form1()
+        public IScanTools()
         {
             InitializeComponent();
             comboBoxCsvDir.DropDownStyle = ComboBoxStyle.DropDownList;
