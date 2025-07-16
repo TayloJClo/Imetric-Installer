@@ -470,7 +470,8 @@ namespace DropFile_I3d
 
         private void troubleshootingMenuItem_Click(object sender, EventArgs e)
         {
-            ShowComingSoon();
+            using var form = new SupportForm();
+            form.ShowDialog();
         }
 
         private static void ShowComingSoon()
