@@ -237,3 +237,6 @@ ICam4D	ICamRef	RP	Multiple	TrueAbutment MU Scanbody	ICamRef	ICamRef DAS_E_0025_S
 ICam4D	ICamRef	RP	Multiple	Vortex Desktop 6048	ICamRef	SCN 6048.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;5.600000															
 ICam4D	ICamRef	RP	Multiple	Xgate D Type Short	ICamRef	xGate D type short.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;5.00000															
 ICam4D	ICamRef	RP	Multiple	XGate UMHD-0004 V1	ICamRef	ICamRef XGate UMHD-0004 V1.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.5000000;3.500000															 .000000;-2.5000000;3.500000															 
+ICam4D	ICamRef	RP	Multiple	BK-MU4 - SB_KECESCANP_00-1.STL	ICamRef	BK-MU4 - SB_KECESCANP_00-1.STL	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	1.000000;0.000000;0.000000	2.500000;0.000000;7.500000															 
+ICam4D	ICamRef	RP	Multiple	SB_KECESCAN.STL	ICamRef	SB_KECESCAN.STL	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	0.00000;2.500000;7.500000															 
+
