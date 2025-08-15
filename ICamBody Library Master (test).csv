@@ -244,6 +244,9 @@ ICam4D	ICamRef	RP	Multiple	SB_KECESCAN.STL	ICamRef	SB_KECESCAN.STL	Mesh to mesh	
 ICam4D	ICamRef	RP	Multiple	EVCASBCES_Imetric	ICamRef	EVCASBCES_Imetric.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	0.00000;3.750000;5.500000															 
 ICam4D	ICamRef	RP	Multiple	Kontact Multi Ã4 Ti-Co Scanbody	ICamRef	BK-MU4 â SB_KECESCANP_00-1.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	-1.000000;0.000000;0.000000	2.100000;0.000000;6.800000
 ICam4D	ICamRef	RP	Multiple	BioHorizon PXMUTSB	ICamRef	STL-PXMUTSB-EX-SCAN Rev A.STL	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.009;-1.524;4.243
+ICam4D	ICamRef	RP	Multiple	JD Evolution Scanbody	ICamRef	JdentalCare_Mua_unico_Scanbody_Exocad.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	0.080000;4.000000;10.000000
+ICam4D	ICamRef	RP	Multiple	JD Evolution Scanbody On-Top	ICamRef	SCBO_EVCASBCES.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-0.060000;-1.600000;6.000000
+
 
 
 
