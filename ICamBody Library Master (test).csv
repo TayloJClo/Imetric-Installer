@@ -58,6 +58,8 @@ ICam4D	Neodent Mini GM IO New SRBB One Step Hybrid 118.382	RP	Multiple	MURPXXXXX
 ICam4D	Neodent Mini GM IO SRBB One Step Hybrid 118.379	RP	Multiple	MURPXXXXXX	Neodent_Abutment_Level_local-milling	MURPXXXXXX.ad	ICam4D	MiniAbutmentGMIO	SRBBOneStepHybrid	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-1.931523323059080;0.016806364059448;7.34744167327881									
 ICam4D	Neodent Mini GM 4.1 IO New SRBB One Step Hybrid 118.302	RP	Multiple	MURPXXXXXX	Neodent_Abutment_Level_local-milling	MURPXXXXXX.ad	ICam4D	MiniAbutment41IO	NewSRBBOneStepHybrid	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-1.931523323059080;0.016806364059448;7.34744167327881									
 ICam4D	Neodent Mini Pillar 118.330	RP	Multiple	MURPXXXXXX	Neodent_Abutment_Level_inhouse	MURPXXXXXX.ad	ICam4D	MiniAbutment41IO	SRBBOneStepHybrid	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
+ICam4D	NobelProcera MUA NP\RP Temp	RP	Multiple	MURPXXXXXX	DESS_MULTI_TEMPORARY_Multi_Intraoral	MURPXXXXXX.ad	ICam4D	MU		ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000
+ICam4D	NobelProcera  MUA NP\RP Final	RP	Multiple	MURPXXXXXX	Nobel_Biocare_NobelProcera_FCZ_Implant_Bridge_fda	MURPXXXXXX.ad	ICam4D	MUANPRP	ELOSIO2C-A	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000
 ICam4D	Nobel Procera DTXEXO	RP	Multiple	MURPXXXXXX	Nobel_Biocare_Temporary_Implant_Bridge_fda	MURPXXXXXX.ad	ICam4D	TempBridgeExocadDefaultSettings-MUANPRP	NobelDesktop	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	Nobel Procera MUA NP/RP FDA	RP	Multiple	MURPXXXXXX	Nobel_Biocare_NobelProcera_FCZ_Implant_Bridge_fda	MURPXXXXXX.ad	ICam4D	MUANPRP	NobelDesktop	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	Non Hyperdent/Printing MUA Powerball	RP	Multiple	MURPXXXXXX	XCELL LIBRARY FOR PB AND THS 2022-05-04	MURPXXXXXX.ad	ICam4D	NONHYPERDENTPRINTINGMUAPOWERBALL		ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
@@ -253,4 +255,5 @@ ICam4D	ICamRef	RP	Multiple	TrueAbutment MU Scanbody	ICamRef	ICamRef DAS_E_0025_S
 ICam4D	ICamRef	RP	Multiple	Vortex Desktop 6048	ICamRef	SCN 6048.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;5.600000									
 ICam4D	ICamRef	RP	Multiple	Xgate D Type Short	ICamRef	xGate D type short.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;5.00000									
 ICam4D	ICamRef	RP	Multiple	XGate UMHD-0004 V1	ICamRef	ICamRef XGate UMHD-0004 V1.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.5000000;3.500000									
+
 
