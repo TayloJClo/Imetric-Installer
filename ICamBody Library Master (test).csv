@@ -96,8 +96,8 @@ ICam4D	TruBase Short 60	RP	Multiple	MURPXXXXXX	TruAbutment_AOT_New_Scan_Body_con
 ICam4D	TruBase Short 60 (2024)	RP	Multiple	MURPXXXXXX	TruAbutment_ioConnect_AOT_HS_Cap_Small_fda_Imetric_Z	MURPXXXXXX.ad	ICam4D	TruBaseShort	60Micron	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	TruBase Short 90	RP	Multiple	MURPXXXXXX	TruAbutment_AOT_New_Scan_Body_conid-imetric-only	MURPXXXXXX.ad	ICam4D	TruBaseShort	90Micron	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	TruBase Short 90 (2024)	RP	Multiple	MURPXXXXXX	TruAbutment_ioConnect_AOT_HS_Cap_Small_fda_Imetric_Z	MURPXXXXXX.ad	ICam4D	TruBaseShort	90Micron	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
-ICam4D	Vortex 0.4 mm (Bar)	RP	Multiple	MURPXXXXXX	LouisianaDentalImplantLab_Vortex_intraoral	MURPXXXXXX.ad	ICam4D	DESSCompatibleIntraoral	04mmBar	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
-ICam4D	Vortex 0.4 mm (Bar) (New)	RP	Multiple	MURPXXXXXX	LouisianaDentalImplantLab_Vortex_intraoral	MURPXXXXXX.ad	ICam4D	DESSIOScanBody52007	04mmBar	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
+ICam4D	Vortex 0.4 mm (Bar)	RP	Multiple	MURPXXXXXX	LouisianaDentalImplantLab_Vortex_intraoral	MURPXXXXXX.ad	ICam4D	DESSCompatibleIntraoral	04mmSeatBar	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
+ICam4D	Vortex 0.4 mm (Bar) (New)	RP	Multiple	MURPXXXXXX	LouisianaDentalImplantLab_Vortex_intraoral	MURPXXXXXX.ad	ICam4D	DESSIOScanBody52007	04mmSeatBar	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	Vortex 0.8 mm Seat	RP	Multiple	MURPXXXXXX	LouisianaDentalImplantLab_Vortex_intraoral	MURPXXXXXX.ad	ICam4D	DESSCompatibleIntraoral	08mmSeat	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	Vortex 0.8 mm Seat (New)	RP	Multiple	MURPXXXXXX	LouisianaDentalImplantLab_Vortex_intraoral	MURPXXXXXX.ad	ICam4D	DESSIOScanBody52007	08mmSeat	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	Vortex 1.0 mm Seat	RP	Multiple	MURPXXXXXX	LouisianaDentalImplantLab_Vortex_intraoral	MURPXXXXXX.ad	ICam4D	DESSCompatibleIntraoral	10mmSeat	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
@@ -255,5 +255,6 @@ ICam4D	ICamRef	RP	Multiple	TrueAbutment MU Scanbody	ICamRef	ICamRef DAS_E_0025_S
 ICam4D	ICamRef	RP	Multiple	Vortex Desktop 6048	ICamRef	SCN 6048.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;5.600000									
 ICam4D	ICamRef	RP	Multiple	Xgate D Type Short	ICamRef	xGate D type short.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;5.00000									
 ICam4D	ICamRef	RP	Multiple	XGate UMHD-0004 V1	ICamRef	ICamRef XGate UMHD-0004 V1.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.5000000;3.500000									
+
 
 
