@@ -187,6 +187,7 @@ ICam4D	ICamRef	RP	Multiple	Multi Unit Scan Body	ICamRef	Multi-Unit_Scan_Body.stl
 ICam4D	ICamRef	RP	Multiple	Naxis Multiunit Scan	ICamRef	NXMUS.STL	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	0.000000;1.00000;7.000000									
 ICam4D	ICamRef	RP	Multiple	NB HC MU 300162	ICamRef	ICamRef NB HC MU 300162.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;3.400000									
 ICam4D	ICamRef	RP	Multiple	NB HC MU 300163	ICamRef	ICamRef NB HC MU 300163.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;3.400000									
+ICam4D	ICamRef	RP	Multiple	NB HC MU 300164	ICamRef	ART_300164.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.0200;-2.70000;3.0000
 ICam4D	ICamRef	RP	Multiple	NB HC MU 300165	ICamRef	ICamRef NB HC MU 300165.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.7000000;4.400000									
 ICam4D	ICamRef	RP	Multiple	NB HC MU 300167	ICamRef	ART_300167.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	1.000000;0.000000;0.000000	3.45;-0.005417346954346;3.5									
 ICam4D	ICamRef	RP	Multiple	NB HC MU Plastic 31145	ICamRef	ICamRef NB HC MU Plastic 31145.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-1.700000;3.800000									
@@ -255,6 +256,7 @@ ICam4D	ICamRef	RP	Multiple	TrueAbutment MU Scanbody	ICamRef	ICamRef DAS_E_0025_S
 ICam4D	ICamRef	RP	Multiple	Vortex Desktop 6048	ICamRef	SCN 6048.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;5.600000									
 ICam4D	ICamRef	RP	Multiple	Xgate D Type Short	ICamRef	xGate D type short.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;5.00000									
 ICam4D	ICamRef	RP	Multiple	XGate UMHD-0004 V1	ICamRef	ICamRef XGate UMHD-0004 V1.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.5000000;3.500000									
+
 
 
 
