@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <item>
-  <version>8.1.7.4</version>
-  <url>https://github.com/TayloJClo/Imetric-Installer/releases/download/v8.1.7.4/ICam4DSetup.zip</url>
-  <changelog>https://github.com/TayloJClo/Imetric-Installer/releases/tag/v8.1.7.4</changelog>
+  <version>8.1.7.5</version>
+  <url>https://github.com/TayloJClo/Imetric-Installer/releases/download/v8.1.7.5/ICam4DSetup.zip</url>
+  <changelog>https://github.com/TayloJClo/Imetric-Installer/releases/tag/v8.1.7.5</changelog>
   <mandatory>false</mandatory>
-  <checksum algorithm="SHA256">9751ce1da79e35769f8f7568cb6e0350ed7d36b733f012970f0a6b054203eb20</checksum>
+  <checksum algorithm="SHA256">9cec50f4cfa641c837bf0f8c91681d5126939a88a8b81c7ce23f136f585aa5f0</checksum>
 </item>
