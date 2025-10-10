@@ -251,12 +251,14 @@ ICam4D	ICamRef	RP	Multiple	THS MU 2mm	ICamRef	sbthsmu2mm.stl	Mesh to mesh	Ref	Re
 ICam4D	ICamRef	RP	Multiple	THS MU 3mm	ICamRef	sbthsmu3mm.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	-1.000000;0.00000;0.000000	-1.280000;0.000000;6.500000									
 ICam4D	ICamRef	RP	Multiple	THS MU 4mm	ICamRef	sbthsmu4mm.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	-1.000000;0.00000;0.000000	-1.280000;0.000000;7.500000									
 ICam4D	ICamRef	RP	Multiple	Tru AOT New Scanbody	ICamRef	Imetric Tru abutment healing cap.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.200000;5.600000									
-ICam4D	ICamRef	RP	Multiple	TruAbut AOT HS Cap Small Scanbody	ICamRef	TruAbut AOT HS Small Scanbody.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	-0.022730082273483;2.04575347900391;5.18929243087769									
+ICam4D	ICamRef	RP	Multiple	TruAbut ioConnect AOT HS Cap	ICamRef	ioConnect_AOT_HS_Cap.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	0.040000;3.00000;5.200000
+ICam4D	ICamRef	RP	Multiple	TruAbut ioConnect AOT HS Cap Small	ICamRef	ioConnect_AOT_HS_Cap_Small.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	-0.054000;2.180000;5.000
 ICam4D	ICamRef	RP	Multiple	TruAbut ST46 HS Cap Small Scanbody	ICamRef	TruAbut ST46 HS Small Scanbody.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	-0.052759289741516;2.13658142089844;5.25491523742676									
 ICam4D	ICamRef	RP	Multiple	TrueAbutment MU Scanbody	ICamRef	ICamRef DAS_E_0025_SBIND3MURP.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000; -1.550000;8.500000									
 ICam4D	ICamRef	RP	Multiple	Vortex Desktop 6048	ICamRef	SCN 6048.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;5.600000									
 ICam4D	ICamRef	RP	Multiple	Xgate D Type Short	ICamRef	xGate D type short.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;5.00000									
 ICam4D	ICamRef	RP	Multiple	XGate UMHD-0004 V1	ICamRef	ICamRef XGate UMHD-0004 V1.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.5000000;3.500000									
+
 
 
 
