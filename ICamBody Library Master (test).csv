@@ -112,6 +112,7 @@ ICam4D	Vortex Ti Base (New)	RP	Multiple	MURPXXXXXX	LouisianaDentalImplantLab_Vor
 ICam4D	ICamRef	RP	Multiple	101_SC_R	ICamRef	101_SC_R.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;4.00000									
 ICam4D	ICamRef	RP	Multiple	10mm Combined Cylinder	ICamRef	10mmCylinder_0.1Mesh_2024-11-19.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;4.00000									
 ICam4D	ICamRef	RP	Multiple	25_CS_R	ICamRef	25_CS_R.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;4.00000									
+ICam4D	ICamRef	RP	Multiple	3I Healing Cap	ICamRef	3I Healing Cap.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.100000;-2.39000000;3.520000
 ICam4D	ICamRef	RP	Multiple	Abenaim GF1	ICamRef	Abenaim GF1.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	0.000000;1.200000;4.700000									
 ICam4D	ICamRef	RP	Multiple	Abenaim GF2	ICamRef	Abenaim GF2.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	0.000000;1.200000;5.700000									
 ICam4D	ICamRef	RP	Multiple	Abenaim GF3	ICamRef	Abenaim GF3.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	0.000000;1.200000;6.700000									
@@ -258,6 +259,7 @@ ICam4D	ICamRef	RP	Multiple	TrueAbutment MU Scanbody	ICamRef	ICamRef DAS_E_0025_S
 ICam4D	ICamRef	RP	Multiple	Vortex Desktop 6048	ICamRef	SCN 6048.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;5.600000									
 ICam4D	ICamRef	RP	Multiple	Xgate D Type Short	ICamRef	xGate D type short.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;5.00000									
 ICam4D	ICamRef	RP	Multiple	XGate UMHD-0004 V1	ICamRef	ICamRef XGate UMHD-0004 V1.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.5000000;3.500000									
+
 
 
 
