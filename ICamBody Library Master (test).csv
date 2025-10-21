@@ -1,4 +1,4 @@
-	Implant	Platform	Single/Multiple	Scan Adapter Name	Directory	Scan Adapter STL	Method	ImplantTypeKwd	SubtypeKwd	Adapter Type	Offset	Height	Diameter	HFlat	RFlat	HoleDiameter	C1	C2	AnalogCutOffset	AnalogCutHeight	AnalogCutDiameter	AxisOcclusal	AxisAsymmetric	RegistrationClickCenter	Q1	Q2	Q3	Q4	Q5	Q6	Q7	Q8	Q9
+Library	Implant	Platform	Single/Multiple	Scan Adapter Name	Directory	Scan Adapter STL	Method	ImplantTypeKwd	SubtypeKwd	Adapter Type	Offset	Height	Diameter	HFlat	RFlat	HoleDiameter	C1	C2	AnalogCutOffset	AnalogCutHeight	AnalogCutDiameter	AxisOcclusal	AxisAsymmetric	RegistrationClickCenter	Q1	Q2	Q3	Q4	Q5	Q6	Q7	Q8	Q9
 ICam4D	Badger Screw_MURP	RP	Multiple	MURPXXXXXX	smartmouth_badger_exocad_proto_2	MURPXXXXXX.ad	ICam4D	Badger_MU_RP	BeaconBody	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	Badger Screw_SRA 	RP	Multiple	MURPXXXXXX	smartmouth_badger_exocad_proto_2	MURPXXXXXX.ad	ICam4D	Badger_SRA	BeaconBody	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	BioHorizon MU TiBase	RP	Multiple	MURPXXXXXX	BioHorizons_Hybrid_Abutments_Non-Hexed_Vulcan	MURPXXXXXX.ad	ICam4D	MultiunitPXMUPFC	MultiunitCoverCapPXMUCC	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
@@ -51,6 +51,7 @@ ICam4D	MU-RP Standard Screw	RP	Multiple	MURPXXXXXX	MU-RP	MURPXXXXXX.ad	ICam4D	MU
 ICam4D	MU-RP Straumann 3.5	RP	Multiple	MURPXXXXXX	Elos_Accurate_Custom_Bar_Bridge_SSA	MURPXXXXXX.ad	ICam4D	Straumann-Screw-Retained35	IO4D-A	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	MU-RP Straumann 4.6	RP	Multiple	MURPXXXXXX	Elos_Accurate_Custom_Bar_Bridge_SSA	MURPXXXXXX.ad	ICam4D	Straumann-Screw-Retained46	IO4D-B	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	Naxis	RP	Multiple	MURPXXXXXX	NAXIS DIXITAL	MURPXXXXXX.ad	ICam4D	MultiUnit	DirectHEX	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
+ICam4D	Neobiotech_IOS_IS_MUA MUAS14	RP	Multiple	MURPXXXXXX	Neobiotech_IOS_IS_MUA	MURPXXXXXX.ad	ICam4D	MUASB48	NonCylinder	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000
 ICam4D	Neodent 3.5 GMT Local Milling	RP	Multiple	MURPXXXXXX	Neodent_GM_local-milling	MURPXXXXXX.ad	ICam4D	GMTitaniumBase35Lab		ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	Neodent 4.5 GMT Local Milling	RP	Multiple	MURPXXXXXX	Neodent_GM_local-milling	MURPXXXXXX.ad	ICam4D	GMTitaniumBase45Lab		ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	Neodent CM 3.5x4x0.8	RP	Multiple	MURPXXXXXX	Neodent_CM_local-milling	MURPXXXXXX.ad	ICam4D	CMTitaniumBase35IO	D354x08	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
@@ -262,6 +263,7 @@ ICam4D	ICamRef	RP	Multiple	TrueAbutment MU Scanbody	ICamRef	ICamRef DAS_E_0025_S
 ICam4D	ICamRef	RP	Multiple	Vortex Desktop 6048	ICamRef	SCN 6048.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;5.600000									
 ICam4D	ICamRef	RP	Multiple	Xgate D Type Short	ICamRef	xGate D type short.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;5.00000									
 ICam4D	ICamRef	RP	Multiple	XGate UMHD-0004 V1	ICamRef	ICamRef XGate UMHD-0004 V1.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.5000000;3.500000									
+
 
 
 
