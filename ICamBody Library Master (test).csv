@@ -194,6 +194,7 @@ ICam4D	ICamRef	RP	Multiple	NB HC MU 300165	ICamRef	ICamRef NB HC MU 300165.bms	M
 ICam4D	ICamRef	RP	Multiple	NB HC MU 300167	ICamRef	ART_300167.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	1.000000;0.000000;0.000000	3.45;-0.005417346954346;3.5									
 ICam4D	ICamRef	RP	Multiple	NB HC MU Plastic 31145	ICamRef	ICamRef NB HC MU Plastic 31145.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-1.700000;3.800000									
 ICam4D	ICamRef	RP	Multiple	NB HC Wide MU 300166 31146	ICamRef	ICamRef NB HC Wide MU 300166 31146.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.700000;2.900000									
+ICam4D	ICamRef	RP	Multiple	Neobiotech MUASB48P-SB2-z	ICamRef	MUASB48P-SB2-z.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-1.060000;-1.58000000;5.370000
 ICam4D	ICamRef	RP	Multiple	Neodent 106.054	ICamRef	ICamRef Neodent 106.054.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.100000;3.800000									
 ICam4D	ICamRef	RP	Multiple	Neodent 106.220	ICamRef	ICamRef Neodent 106220.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.100000;3.800000									
 ICam4D	ICamRef	RP	Multiple	Neodent 106.268	ICamRef	ICamRef Neodent 106268.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.800000;2.600000									
@@ -252,6 +253,7 @@ ICam4D	ICamRef	RP	Multiple	THS MU 1mm	ICamRef	sbthsmu1mm.stl	Mesh to mesh	Ref	Re
 ICam4D	ICamRef	RP	Multiple	THS MU 2mm	ICamRef	sbthsmu2mm.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	-1.000000;0.00000;0.000000	-1.280000;0.000000;5.500000									
 ICam4D	ICamRef	RP	Multiple	THS MU 3mm	ICamRef	sbthsmu3mm.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	-1.000000;0.00000;0.000000	-1.280000;0.000000;6.500000									
 ICam4D	ICamRef	RP	Multiple	THS MU 4mm	ICamRef	sbthsmu4mm.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	-1.000000;0.00000;0.000000	-1.280000;0.000000;7.500000									
+ICam4D	ICamRef	RP	Multiple	Trias_Multi_ScanBody	ICamRef	trias_multi_scan_bady.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-0.000000;-2.40000000;7.420000
 ICam4D	ICamRef	RP	Multiple	Tru AOT New Scanbody	ICamRef	Imetric Tru abutment healing cap.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.200000;5.600000									
 ICam4D	ICamRef	RP	Multiple	TruAbut ioConnect AOT HS Cap	ICamRef	ioConnect_AOT_HS_Cap.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	0.040000;3.00000;5.200000
 ICam4D	ICamRef	RP	Multiple	TruAbut ioConnect AOT HS Cap Small	ICamRef	ioConnect_AOT_HS_Cap_Small.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	-0.054000;2.180000;5.000
@@ -260,6 +262,7 @@ ICam4D	ICamRef	RP	Multiple	TrueAbutment MU Scanbody	ICamRef	ICamRef DAS_E_0025_S
 ICam4D	ICamRef	RP	Multiple	Vortex Desktop 6048	ICamRef	SCN 6048.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;5.600000									
 ICam4D	ICamRef	RP	Multiple	Xgate D Type Short	ICamRef	xGate D type short.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;5.00000									
 ICam4D	ICamRef	RP	Multiple	XGate UMHD-0004 V1	ICamRef	ICamRef XGate UMHD-0004 V1.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.5000000;3.500000									
+
 
 
 
