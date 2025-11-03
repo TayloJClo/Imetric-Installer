@@ -166,6 +166,7 @@ ICam4D	ICamRef	RP	Multiple	Implance BL MUA Scanbody None Index	ICamRef	PMUSB_sca
 ICam4D	ICamRef	RP	Multiple	ImplantSwiss MU Scan Body	ICamRef	S-PMUSB_scan_body.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	0.162765;2.100;9.915									
 ICam4D	ICamRef	RP	Multiple	ImplantSwiss Octo Scan Body	ICamRef	octo_hex_scan_Body.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	0.136658;2.000000;9.30491									
 ICam4D	ICamRef	RP	Multiple	iNCLUSIVE Temp HC	ICamRef	ICamRef iNCLUSIVE Temp HC.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.200000;3.500000									
+ICam4D	ICamRef	RP	Multiple	Inserta INPRO-NSBL	ICamRef	INPRO-NSBL.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.250000;4.8500000,,,,,,
 ICam4D	ICamRef	RP	Multiple	InstaRisa Healing Cap	ICamRef	ICamRef InstaRisa GingScan.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-3.000000;5.000000									
 ICam4D	ICamRef	RP	Multiple	InstaRisa ISB4 FP1 (MUA) No Cone	ICamRef	ICamRef IR ISB4 FP1 HA No Cone.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.200000;3.600000									
 ICam4D	ICamRef	RP	Multiple	InstaRisa ISB4 FP1 (MUA) With Cone	ICamRef	ICamRef IR ISB4 FP1 HA With Cone.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	-1.000000;0.000000;0.000000	-2.500000;0.000000;15.000000									
@@ -179,6 +180,7 @@ ICam4D	ICamRef	RP	Multiple	JD Evolution Scanbody On-Top	ICamRef	SCBO_EVCASBCES.s
 ICam4D	ICamRef	RP	Multiple	Jonathan Abenaim ScanTaper	ICamRef	ICamRef Jonathan Abenaim ScanTaper.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	1.000000;0.000000;0.000000	1.600000; 0.000000;4.000000									
 ICam4D	ICamRef	RP	Multiple	Kaplansky cap	ICamRef	ICamRef Kaplansky cap.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000; -3.000000;5.500000									
 ICam4D	ICamRef	RP	Multiple	Kontact Multi 40 Ti-Co Scanbody	ICamRef	BK-MU4 – SB_KECESCANP_00-1.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	-1.000000;0.000000;0.000000	2.100000;0.000000;6.800000									
+ICam4D	ICamRef	RP	Multiple	Lee Digital Guide Pin	ICamRef	Desired Screw.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-0.500000;-1.500000;15.00000,,,,,,
 ICam4D	ICamRef	RP	Multiple	Liza Healing Cap	ICamRef	Liza Healing Cap.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;3.00000									
 ICam4D	ICamRef	RP	Multiple	Marquis	ICamRef	Marquis.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.550000;2.500000									
 ICam4D	ICamRef	RP	Multiple	Megagen HC AB	ICamRef	AB-MG-HC1.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;1.000000;0.000000	0.000000;1.600000;4.750000									
@@ -211,12 +213,13 @@ ICam4D	ICamRef	RP	Multiple	NORIS Healing Cap PR-H7101	ICamRef	ICamRef Noris PR-H
 ICam4D	ICamRef	RP	Multiple	Noris Medical_10mm_C9210	ICamRef	NM-C9210_EC.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.000000;9.400000									
 ICam4D	ICamRef	RP	Multiple	nt-trading MU-RP ScanBody	ICamRef	ICamRef nt-trading MU-RP ScanBody.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	-1.000000;0.000000;0.000000	-2.300000; 0.000000;9.300000									
 ICam4D	ICamRef	RP	Multiple	Open Implant Scanbody	ICamRef	eOIScanbody.STL	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	-0.300000;0.000000;0.000000	-0.700000;-1.600000;9.900000									
+ICam4D	ICamRef	RP	Multiple	Optisplint - DA_MUA_SCANCAP-LIB	ICamRef	DA_MUA_SCANCAP_LIB.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.75000;7.500000,,,,,,
 ICam4D	ICamRef	RP	Multiple	Paltop  TiBase 42-70028 RP	ICamRef	MU Scan Abut interface Z-occl Imetric.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-0.00886;-2.249572;8.977553									
 ICam4D	ICamRef	RP	Multiple	Paltop MU Direct RP	ICamRef	MU - PEEK Head Z-occl Imetric.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-0.00886;-2.249572;8.977553									
 ICam4D	ICamRef	RP	Multiple	PIC EX scanbody-Z	ICamRef	PIC EX scanbody-Z.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.450000;5.00000									
 ICam4D	ICamRef	RP	Multiple	PIC MUA Base-Z	ICamRef	PIC MUA Base-Z.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.350000;0.400000									
 ICam4D	ICamRef	RP	Multiple	PIC MUA Scanbody-Z	ICamRef	PIC MUA Scanbody-Z.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-1.350000;1.600000									
-ICam4D	ICamRef	RP	Multiple	Protective Cap for Screw-retained Abutment D4,6 H4,5 wide, PEEK 024.0020-04 remesh.stl	ICamRef	Protective Cap for Screw-retained Abutment D4,6 H4,5 wide, PEEK 024.0020-04 remesh.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-0.009000;-2.45000000;4.060000
+ICam4D	ICamRef	RP	Multiple	Protective Cap for Screw-retained Abutment D4	ICamRef	Protective Cap for Screw-retained Abutment D4,6 H4,5 wide,PEEK 024.0020-04 remesh	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-0.009000;-2.45000000;4.060000,,,
 ICam4D	ICamRef	RP	Multiple	QA Scanbody	ICamRef	QA scanbody.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;5.00000									
 ICam4D	ICamRef	RP	Multiple	Ritter MUL-KS-HA	ICamRef	ICamRef Ritter MUL-KS-HA.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;4.200000									
 ICam4D	ICamRef	RP	Multiple	Rosen MUA Scanbody 4507	ICamRef	RAMUSP4507 SHELL.STL	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	1.000000;0.000000;0.000000	1.75;0.000000;5.600000									
@@ -230,6 +233,7 @@ ICam4D	ICamRef	RP	Multiple	SBHAP48	ICamRef	SBHAP48.stl	Mesh to mesh	Ref	Ref	Gene
 ICam4D	ICamRef	RP	Multiple	SegMarker Cap	ICamRef	SegMarker_shell v5.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;5.00000									
 ICam4D	ICamRef	RP	Multiple	SegMarker_V2	ICamRef	Segmaker V2.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	1.000000;0.000000;0.000000	2.750000;0.000000;7.400000									
 ICam4D	ICamRef	RP	Multiple	SIN Healing Cap PMA 4855	ICamRef	ICamRef SIN PMA_4855.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;3.500000									
+ICam4D	ICamRef	RP	Multiple	SIN PMA4855	ICamRef	SIN PMA4855.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.200000;3.00000,,,,,,
 ICam4D	ICamRef	RP	Multiple	Snow Cone	ICamRef	ICamRef Snow Cone.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-0.1000000;-3.300000;7.400000									
 ICam4D	ICamRef	RP	Multiple	Southern Implants HMC4	ICamRef	southern implant hmc4.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;4.00000									
 ICam4D	ICamRef	RP	Multiple	Southern Implants HMC6	ICamRef	ICamRef Southern Implants HMC6_R5-1.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000; -2.400000;5.500000									
@@ -264,8 +268,8 @@ ICam4D	ICamRef	RP	Multiple	TrueAbutment MU Scanbody	ICamRef	ICamRef DAS_E_0025_S
 ICam4D	ICamRef	RP	Multiple	Vortex Desktop 6048	ICamRef	SCN 6048.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.400000;5.600000									
 ICam4D	ICamRef	RP	Multiple	Xgate D Type Short	ICamRef	xGate D type short.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.500000;5.00000									
 ICam4D	ICamRef	RP	Multiple	XGate UMHD-0004 V1	ICamRef	ICamRef XGate UMHD-0004 V1.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.5000000;3.500000									
-
-
+ICam4D	ICamRef	RP	Multiple	Z Ref	ICamRef	Z_Ref.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-0.500000;-2.5000000;7.200000
+ICam4D	ICamRef	RP	Multiple	Z Ref Imetric	ICamRef	Z_Ref_2.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-0.500000;-2.5000000;7.200000
 
 
 
