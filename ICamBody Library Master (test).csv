@@ -1,6 +1,8 @@
 Library	Implant	Platform	Single/Multiple	Scan Adapter Name	Directory	Scan Adapter STL	Method	ImplantTypeKwd	SubtypeKwd	Adapter Type	Offset	Height	Diameter	HFlat	RFlat	HoleDiameter	C1	C2	AnalogCutOffset	AnalogCutHeight	AnalogCutDiameter	AxisOcclusal	AxisAsymmetric	RegistrationClickCenter	Q1	Q2	Q3	Q4	Q5	Q6	Q7	Q8	Q9
 ICam4D	Badger Screw_MURP	RP	Multiple	MURPXXXXXX	smartmouth_badger_exocad_proto_2	MURPXXXXXX.ad	ICam4D	Badger_MU_RP	BeaconBody	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
+ICam4D	Badger Screw_MURP (11/25)	RP	Multiple	MURPXXXXXX	SmartMouth_Badger_Screw_14_Exocad_Library_v1_02	MURPXXXXXX.ad	ICam4D	14NobelcompMUARP	Dess50007	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000
 ICam4D	Badger Screw_SRA 	RP	Multiple	MURPXXXXXX	smartmouth_badger_exocad_proto_2	MURPXXXXXX.ad	ICam4D	Badger_SRA	BeaconBody	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
+ICam4D	Badger Screw_SRA (11/25)	RP	Multiple	MURPXXXXXX	SmartMouth_Badger_Screw_14_Exocad_Library_v1_02	MURPXXXXXX.ad	ICam4D	14StraumannSRA	Des50007	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000
 ICam4D	BioHorizon MU TiBase	RP	Multiple	MURPXXXXXX	BioHorizons_Hybrid_Abutments_Non-Hexed_Vulcan	MURPXXXXXX.ad	ICam4D	MultiunitPXMUPFC	MultiunitCoverCapPXMUCC	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	BioThread	RP	Multiple	MURPXXXXXX	BioThread-MU	MURPXXXXXX.ad	ICam4D	MU-Direct-ConScrew	head	ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
 ICam4D	Colwellmedi Sub R	RP	Multiple	MURPXXXXXX	Cowellmedi_Sub_R_MU_DA_55_Z_Imetric	MURPXXXXXX.ad	ICam4D	2SMB001		ICam4D												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;0.000000;5.000000									
@@ -271,6 +273,7 @@ ICam4D	ICamRef	RP	Multiple	Xgate D Type Short	ICamRef	xGate D type short.stl	Mes
 ICam4D	ICamRef	RP	Multiple	XGate UMHD-0004 V1	ICamRef	ICamRef XGate UMHD-0004 V1.bms	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	0.000000;-2.5000000;3.500000									
 ICam4D	ICamRef	RP	Multiple	Z Ref	ICamRef	Z_Ref.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-0.500000;-2.5000000;7.200000
 ICam4D	ICamRef	RP	Multiple	Z Ref Imetric	ICamRef	Z_Ref_2.stl	Mesh to mesh	Ref	Ref	General												0.000000;0.000000;1.000000	0.000000;-1.000000;0.000000	-0.500000;-2.5000000;7.200000
+
 
 
 
